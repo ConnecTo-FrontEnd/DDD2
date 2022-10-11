@@ -1,3 +1,4 @@
 import render from './render/render.js';
+import App from  './App.js'
 
-render(document.getElementById('root'));
+render(App,document.getElementById('root'));
