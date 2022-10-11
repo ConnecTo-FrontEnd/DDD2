@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,node,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,node,visualstudiocode
 
@@ -229,4 +229,3 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,node,visualstudiocode
 =======
 /node_modules
->>>>>>> 9c05a725fddff16ea0993230b50758d29aa17017
