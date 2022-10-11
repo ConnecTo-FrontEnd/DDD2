@@ -1,6 +1,7 @@
 // 루트 컴포넌트
 import Component from './core/Component.js';
 import { Loading, Setting, MainBeforeSignIn, MainAfterSignIn, SignIn, SignUp } from './pages/index.js';
+import { routes } from './router/index.js';
 
 class App extends Component {
   constructor(props) {
@@ -16,16 +17,19 @@ class App extends Component {
         { link: '/', level: 5, title: '맘스터치' },
       ],
       isLogIn: true,
-      
     };
   }
 
   domStr() {
     // ${new MainBeforeSignIn(this.state).domStr()}
-    // ${new MainAfterSignIn(this.state).domStr()}
+    const currentPath = window.location.pathname.replace('/index.html', '');
+    const route = routes.find(({ path }) => path === currentPath);
+    const Page = route?.page ?? SignIn;
     return `
-    ${new SignIn().domStr()}
-      `;
+      ${new Page({
+        state: this.state,
+      }).render()}
+    `;
   }
 }
 
