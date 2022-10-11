@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const path = require('path');
+const user = require('./userCRUD.js');
 
 dotenv.config();
 
@@ -12,6 +13,12 @@ app.use(express.json());
 
 app.listen(port, () => {
   console.log(`app listening on http://localhost:${port}`);
+});
+
+app.post('/signin', (req, res) => {
+  const { id, password } = req.body;
+  const usersInfo = user.findInfo(id, password);
+  res.json(usersInfo);
 });
 
 app.get('*', (req, res) => {
