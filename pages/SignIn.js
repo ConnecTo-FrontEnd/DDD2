@@ -9,30 +9,49 @@ const styledNav = {
 };
 
 class SignIn extends Component {
+  addEventListener() {
+    return [
+      {
+        type: 'submit',
+        selector: '.signin-form',
+        handler: async e => {
+          e.preventDefault();
+          const res = await axios({
+            method: 'post',
+            url: '/signin',
+            data: {
+              id: e.target[0].value,
+              password: e.target[1].value,
+            },
+          });
+          console.log(res);
+        },
+      },
+    ];
+  }
+
   domStr() {
     return `
-      <header style="${this.converter(styledNav)}">
+      <div>
+        <header style="${this.converter(styledNav)}">
         ${new BackButton().render()}
-      </header>
-      <h1>로그인</h1>
-      <form>
-        ${new Input({
-          content: '아이디',
-          id: 'signin-userid',
-          name: 'userid',
-          onInput: this.onInput.bind(this),
-        }).render()}
-        ${new Input({
-          content: '비밀번호',
-          id: 'signin-password',
-          name: 'password',
-          onInput: this.onInput.bind(this),
-        }).render()}
-      </form>
-      `;
-  }
-  onInput(e) {
-    console.log(e.target.value);
+        </header>
+        <h1>로그인</h1>
+        <form class="signin-form">
+          ${new Input({
+            content: '아이디',
+            id: 'signin-userid',
+            name: 'userid',
+          }).render()}
+          ${new Input({
+            content: '비밀번호',
+            id: 'signin-password',
+            name: 'password',
+          }).render()}
+          <button>로그인</button>
+        </form>
+      </div>
+    `;
   }
 }
 

@@ -7,7 +7,7 @@ class Component {
     this.uuid = this.constructor.name + '-' + self.crypto.randomUUID().slice(0, 8);
     this.holdEvents();
   }
-  
+
   classAdder(domStr, uuid) {
     const firstTag = /<.*>/;
     const classRegex = /class( )*=( )*("|')(.)*('|")/;
@@ -22,6 +22,7 @@ class Component {
       .map(([property, value]) => `${property}: ${value}`)
       .join(';');
   }
+
   holdEvents() {
     const events = this.addEventListener?.();
     if (!events) return;
@@ -31,7 +32,6 @@ class Component {
         eventHolder.push(event);
         continue;
       }
-
       const { selector, handler } = event;
 
       event.handler = e => {

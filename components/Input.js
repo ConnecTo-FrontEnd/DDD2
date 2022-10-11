@@ -19,10 +19,11 @@ class Input extends Component {
       {
         type: 'input',
         selector: 'input',
-        handler: this.props.onInput,
+        handler: e => {},
       },
     ];
   }
+
   domStr() {
     return `
       <div style="${this.converter(styledInputContainer)}">
