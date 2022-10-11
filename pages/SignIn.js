@@ -12,14 +12,27 @@ class SignIn extends Component {
   domStr() {
     return `
       <header style="${this.converter(styledNav)}">
-        ${new BackButton().domStr()}
+        ${new BackButton().render()}
       </header>
       <h1>로그인</h1>
       <form>
-        ${new Input({ content: '아이디', id: 'signin-userid', name: 'userid' }).domStr()}
-        ${new Input({ content: '비밀번호', id: 'signin-password', name: 'password' }).domStr()}
+        ${new Input({
+          content: '아이디',
+          id: 'signin-userid',
+          name: 'userid',
+          onInput: this.onInput.bind(this),
+        }).render()}
+        ${new Input({
+          content: '비밀번호',
+          id: 'signin-password',
+          name: 'password',
+          onInput: this.onInput.bind(this),
+        }).render()}
       </form>
       `;
+  }
+  onInput(e) {
+    console.log(e.target.value);
   }
 }
 

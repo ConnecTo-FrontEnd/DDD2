@@ -6,7 +6,7 @@ const styledInputContainer = {
   'align-items': 'flex-start',
   gap: '0.5rem',
   margin: '3rem 4rem',
-}
+};
 
 // 이거 써줘야할까?
 // const styledInput = {
@@ -14,12 +14,21 @@ const styledInputContainer = {
 // }
 
 class Input extends Component {
+  addEventListener() {
+    return [
+      {
+        type: 'input',
+        selector: 'input',
+        handler: this.props.onInput,
+      },
+    ];
+  }
   domStr() {
     return `
       <div style="${this.converter(styledInputContainer)}">
         <label for="${this.props.id}">${this.props.content}</label>
         <input style="width: 100%" type="text" id="${this.props.id}" name="${this.props.name}" required />
-      </div>`
+      </div>`;
   }
 }
 

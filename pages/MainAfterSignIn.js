@@ -4,8 +4,8 @@ import { Profile, ProblemList } from '../components/index.js';
 class MainAfterSignIn extends Component {
   domStr() {
     return `
-    ${new Profile().domStr()}
-    ${new ProblemList(this.props).domStr()}`;
+    ${new Profile().render()}
+    ${new ProblemList(this.props).render()}`;
   }
 }
 
