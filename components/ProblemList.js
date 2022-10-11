@@ -30,22 +30,19 @@ const styledLoginPopUp = {
 };
 
 class ProblemList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   domStr() {
-    const { problems, isLogIn } = this.props;
+    const { problems, isLogIn } = this.props.state;
     return `
       <ul style="${this.converter(styledList)}">
-        ${problems.map(({ level, title }) => new Problem({ level, title }).domStr()).join('')}
+        ${problems.map(({ level, title }) => new Problem({ level, title }).render()).join('')}
         ${
           isLogIn
             ? ''
-            : `<div style="${this.converter(styledLoginPopUpContainer)}">
+            : `
+        <div style="${this.converter(styledLoginPopUpContainer)}">
           <div style="${this.converter(styledLoginPopUp)}">
             <p>더 많은 문제를 추천 받고 싶다면?</p>
-            ${new Button('로그인/회원가입').domStr()}
+            ${new Button('로그인/회원가입').render()}
           </div>
         </div>`
         }
