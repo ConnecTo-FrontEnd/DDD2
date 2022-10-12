@@ -31,7 +31,8 @@ const styledLoginPopUp = {
 
 class ProblemList extends Component {
   domStr() {
-    const { problems, isLogIn } = this.props.state;
+    const isLogIn = true;
+    const { problems } = this.props.state;
     return `
       <ul style="${this.converter(styledList)}">
         ${problems.map(({ level, title }) => new Problem({ level, title }).render()).join('')}
