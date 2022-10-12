@@ -1,4 +1,4 @@
-import Component from '../core/Component.js';
+import Component from '../library/Component.js';
 import { Button, ProblemList } from '../components/index.js';
 
 const styledNav = {
@@ -9,9 +9,6 @@ const styledNav = {
 };
 
 class MainBeforeSignIn extends Component {
-  constructor(props) {
-    super(props);
-  }
   domStr() {
     return `
     <header style="${this.converter(styledNav)}">${new Button('로그인/회원가입').domStr()}</header>

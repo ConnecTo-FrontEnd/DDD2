@@ -1,4 +1,38 @@
-const SignUp = 1;
+import Component from '../library/Component.js';
+import { Header, Form } from '../components/index.js';
+
+class SignUp extends Component {
+  addEventListener() {
+    return [
+      {
+        type: 'submit',
+        selector: '.signup-form',
+        handler: async e => {
+          e.preventDefault();
+          const res = await axios({
+            method: 'post',
+            url: '/signup',
+            data: {
+              id: e.target[0].value,
+              password: e.target[1].value,
+            },
+          });
+          console.log(res);
+        },
+      },
+    ];
+  }
+
+  domStr() {
+    return `
+      <div>
+        ${new Header().render()}
+        <h1>회원가입</h1>
+        ${new Form(this.props).render()}
+      </div>
+    `;
+  }
+}
 
 export default SignUp;
 

@@ -1,12 +1,5 @@
-import Component from '../core/Component.js';
-import { BackButton, Input, Button } from '../components/index.js';
-
-const styledNav = {
-  display: 'flex',
-  'align-items': 'center',
-  height: '6rem',
-  'background-color': '#d9d9d9',
-};
+import Component from '../library/Component.js';
+import { Header, Form } from '../components/index.js';
 
 class SignIn extends Component {
   addEventListener() {
@@ -33,23 +26,9 @@ class SignIn extends Component {
   domStr() {
     return `
       <div>
-        <header style="${this.converter(styledNav)}">
-        ${new BackButton().render()}
-        </header>
+        ${new Header().render()}
         <h1>로그인</h1>
-        <form class="signin-form">
-          ${new Input({
-            content: '아이디',
-            id: 'signin-userid',
-            name: 'userid',
-          }).render()}
-          ${new Input({
-            content: '비밀번호',
-            id: 'signin-password',
-            name: 'password',
-          }).render()}
-          <button>로그인</button>
-        </form>
+        ${new Form(this.props).render()}
       </div>
     `;
   }

@@ -1,4 +1,4 @@
-import Component from '../core/Component.js';
+import Component from '../library/Component.js';
 import { Profile, ProblemList } from '../components/index.js';
 
 class MainAfterSignIn extends Component {

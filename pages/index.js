@@ -1,8 +1,7 @@
-import Loading from './Loading.js';
 import Setting from './Setting.js';
-import MainBeforeSignIn from './MainBeforeSignIn.js';
-import MainAfterSignIn from './MainAfterSignIn.js';
 import SignIn from './SignIn.js';
 import SignUp from './SignUp.js';
+import Main from './Main.js';
+import NotFound from './404.js';
 
-export { Loading, Setting, MainBeforeSignIn, MainAfterSignIn, SignIn, SignUp };
+export { Setting, Main, SignIn, SignUp, NotFound };
