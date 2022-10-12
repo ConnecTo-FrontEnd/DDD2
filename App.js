@@ -20,14 +20,13 @@ class App extends Component {
     const route = routes.find(({ path }) => path === currentPath);
     const Page = route?.page ?? SignIn;
     return `
-      <div>
+    <div>
         <a href="/">Home </a>
         <a href="/mainAfterSignIn">mainAfterSignIn</a>
         ${new Page({
           state: this.state,
         }).render()}
-      </div>
-      
+    </div>
     `;
   }
 }

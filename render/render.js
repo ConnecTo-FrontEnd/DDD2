@@ -27,6 +27,8 @@ let $initContainer = null;
 const domStrToNode = domStr => {
   const $temp = document.createElement('div');
   $temp.innerHTML = domStr;
+  if ($temp.childElementCount > 1)
+    throw new Error(`컴포넌트는 하나의 태그로 감싸야합니다!!, ${domStr.slice(0, 100)}...`);
   return $temp.firstElementChild;
 };
 
