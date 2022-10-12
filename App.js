@@ -1,6 +1,6 @@
 // 루트 컴포넌트
-import Component from './core/Component.js';
-import { Loading, Setting, MainBeforeSignIn, MainAfterSignIn, SignIn, SignUp } from './pages/index.js';
+import Component from './library/Component.js';
+import { NotFound } from './pages/index.js';
 import { navigator, routes } from './router/index.js';
 
 class App extends Component {
@@ -18,11 +18,9 @@ class App extends Component {
     // ${new MainBeforeSignIn(this.state).domStr()}
     const currentPath = window.location.pathname.replace('/index.html', '');
     const route = routes.find(({ path }) => path === currentPath);
-    const Page = route?.page ?? SignIn;
+    const Page = route?.page ?? NotFound;
     return `
     <div>
-        <a href="/">Home </a>
-        <a href="/mainAfterSignIn">mainAfterSignIn</a>
         ${new Page({
           state: this.state,
         }).render()}
