@@ -1,4 +1,4 @@
-import Component from './BackButton.js';
+import Component from '../library/Component.js';
 
 const styledInputContainer = {
   display: 'flex',

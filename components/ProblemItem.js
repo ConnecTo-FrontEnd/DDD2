@@ -1,4 +1,4 @@
-import Component from '../core/Component.js';
+import Component from '../library/Component.js';
 
 const styledDiv = {
   display: 'flex',
@@ -11,11 +11,7 @@ const styledDiv = {
   'background-color': '#d9d9d9',
 };
 
-class Problem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+class ProblemItem extends Component {
   domStr() {
     return `
       <li style="${this.converter(styledDiv)}">
@@ -27,4 +23,4 @@ class Problem extends Component {
   }
 }
 
-export default Problem;
+export default ProblemItem;

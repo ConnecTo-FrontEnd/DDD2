@@ -1,11 +1,4 @@
-import Component from '../core/Component.js';
-
-const styledNav = {
-  display: 'flex',
-  'align-items': 'center',
-  height: '6rem',
-  'background-color': '#d9d9d9',
-};
+import Component from '../library/Component.js';
 
 const styledProfile = {
   position: 'absolute',
@@ -20,9 +13,8 @@ const styledProfile = {
 class Profile extends Component {
   domStr() {
     return `
-      <header style="${this.converter(styledNav)}">
         <button style="${this.converter(styledProfile)}">사람</button>
-      </header>`;
+      `;
   }
 }
 

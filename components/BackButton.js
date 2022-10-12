@@ -1,5 +1,4 @@
-// 뒤로가기 버튼
-import Component from '../core/Component.js';
+import Component from '../library/Component.js';
 
 const styledBack = {
   'margin-left': '2rem',

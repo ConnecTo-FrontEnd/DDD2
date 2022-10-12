@@ -1,6 +1,6 @@
-// 설정 (카테고리, 레벨, 플랫폼)에 따라 다르게 렌더링 되므로 문제 리스트도 컴포넌트
-import Component from '../core/Component.js';
-import { Problem, Button } from './index.js';
+import Component from '../library/Component.js';
+import ProblemItem from './ProblemItem.js';
+import Button from './Button.js';
 
 const styledList = {
   'margin-top': '3rem',
@@ -32,10 +32,10 @@ const styledLoginPopUp = {
 class ProblemList extends Component {
   domStr() {
     const isLogIn = true;
-    const { problems } = this.props.state;
+    const problems = [{ title: '', level: 1 }];
     return `
       <ul style="${this.converter(styledList)}">
-        ${problems.map(({ level, title }) => new Problem({ level, title }).render()).join('')}
+        ${problems.map(({ level, title }) => new ProblemItem({ level, title }).render()).join('')}
         ${
           isLogIn
             ? ''

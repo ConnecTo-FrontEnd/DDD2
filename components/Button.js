@@ -1,4 +1,4 @@
-import Component from '../core/Component.js';
+import Component from '../library/Component.js';
 
 const styledButton = {
   margin: '0 auto',
