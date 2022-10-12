@@ -1,5 +1,4 @@
-import eventHolder from '../render/eventHolder.js';
-import render from '../render/render.js';
+import { render, eventHolder } from './render/index.js';
 
 class Component {
   constructor(props) {

@@ -1,9 +1,12 @@
-import { SignIn, MainAfterSignIn } from '../pages/index.js';
-import render from '../render/render.js';
+import { SignIn, Main, SignUp, Setting } from '../pages/index.js';
+import { render } from '../library/render/index.js';
 
 const routes = [
+  { path: '/', page: Main },
+  { path: '/main', page: Main },
   { path: '/signin', page: SignIn },
-  { path: '/mainAfterSignIn', page: MainAfterSignIn },
+  { path: '/signup', page: SignUp },
+  { path: '/setting', page: Setting },
 ];
 
 const navigator = {
