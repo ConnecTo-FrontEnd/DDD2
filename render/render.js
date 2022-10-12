@@ -1,37 +1,52 @@
 import eventHolder from './eventHolder.js';
 import applyDiff from './applyDiff.js';
 
-let $root = null;
-let rootComponentInstance = null;
-
-const bindEventHandler = $root => {
-  for (const { type, selector, handler } of eventHolder) {
-    if (selector === 'window') window.addEventListener(type, handler);
-    else $root.addEventListener(type, handler);
-  }
+const bindEventHandler = () => {
+  for (const { type, handler } of eventHolder) window.addEventListener(type, handler);
 };
 
-const freeEventHandler = $root => {
-  for (const { type, selector, handler } of eventHolder) {
-    if (selector === 'window') window.removeEventListener(type, handler);
-    else $root.removeEventListener(type, handler);
+const unbindEventHandler = () => {
+  const removeHolders = [];
+
+  for (const holder of eventHolder) {
+    const { type, handler, uuid } = holder;
+    if (document.querySelector(`[data-uuid='${uuid}']`)) return;
+
+    window.removeEventListener(type, handler);
+    removeHolders.push(holder);
   }
+
+  eventHolder.length = 0;
+  eventHolder.push(...eventHolder.filter(holder => !removeHolders.includes(holder)));
 };
 
-const render = (RootComponent, $container) => {
-  if ($container) $root = $container;
-  if (RootComponent) rootComponentInstance = new RootComponent();
+let init = false;
+let initInstance = null;
+let $initContainer = null;
 
-  freeEventHandler($root);
-  while (eventHolder.length > 0) eventHolder.pop();
+const domStrToNode = domStr => {
+  const $temp = document.createElement('div');
+  $temp.innerHTML = domStr;
+  return $temp.firstElementChild;
+};
 
-  const $virtual = $root.cloneNode();
-  const domString = rootComponentInstance.render();
-  $virtual.innerHTML = domString;
+const render = (RootInstance, $container) => {
+  if (!init) {
+    init = true;
+    initInstance = typeof RootInstance === 'function' ? new RootInstance() : RootInstance;
+    $initContainer = $container;
+  }
 
-  applyDiff($root, $virtual);
+  const _RootInstance = typeof RootInstance === 'function' ? new RootInstance() : RootInstance ?? initInstance;
+  const $real = $container ?? $initContainer;
 
-  bindEventHandler($root);
+  unbindEventHandler();
+
+  const $virtual = domStrToNode(_RootInstance.render());
+
+  applyDiff($real, $virtual);
+
+  bindEventHandler();
 };
 
 export default render;
