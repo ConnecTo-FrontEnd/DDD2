@@ -36,8 +36,7 @@ class SignIn extends Component {
 
 export default SignIn;
 
-{
-  /* <header class="nav">
+/* <header class="nav">
       <button class="back">뒤로가기</button>
     </header>
     <h1>로그인</h1>
@@ -53,4 +52,3 @@ export default SignIn;
     </form>
     <button class="button signin-button" disabled>로그인</button>
     <button class="button">회원가입</button> */
-}

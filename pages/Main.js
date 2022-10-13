@@ -7,26 +7,9 @@ import HistoryList from '../components/HistoryList.js';
 class Main extends Component {
   constructor(props) {
     super(props);
-    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-    const problems = this.getCategorizedProblems(userInfo);
-    const isLoading = problems.unexpired.length === 0;
-
-    this.state = { isLoading };
-    if (isLoading) {
-      setTimeout(() => {
-        window.dispatchEvent(
-          new CustomEvent('patch', {
-            detail: axios({
-              method: 'post',
-              url: 'add',
-              data: {
-                id: userInfo.id,
-              },
-            }),
-          })
-        );
-      }, 1000);
-    }
+    this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+    this.problems = this.getCategorizedProblems(this.userInfo);
+    this.state = { isLoading: this.problems.unexpired.length === 0 };
   }
 
   domStr() {
@@ -44,12 +27,24 @@ class Main extends Component {
   addEventListener() {
     return [
       {
-        type: 'patch',
+        type: 'DOMContentLoaded',
         selector: 'window',
         handler: async e => {
-          const res = await e.detail;
+          if (!this.state.isLoading) return;
+
+          const res = await axios({
+            method: 'post',
+            url: 'add',
+            data: {
+              id: this.userInfo.id,
+            },
+          });
+
           sessionStorage.setItem('userInfo', JSON.stringify(res.data));
-          this.setState.call(this, { isLoading: false });
+
+          setTimeout(() => {
+            this.setState.call(this, { isLoading: false });
+          }, 1000);
         },
       },
     ];
