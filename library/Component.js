@@ -14,7 +14,7 @@ class Component {
   }
 
   uuidAdder(domStr, uuid) {
-    const firstTag = /<.*>/;
+    const firstTag = /<[^>]*>/;
     return domStr.replace(firstTag, tag => tag.split('>')[0] + ` data-uuid="${uuid}">`);
   }
 

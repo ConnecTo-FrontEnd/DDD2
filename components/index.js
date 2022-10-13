@@ -10,6 +10,7 @@ import Form from './Form.js';
 import UserSetting from './UserSetting.js';
 import Loading from './Loading.js';
 import HistoryItem from './HistoryItem.js';
+import HistoryList from './HistoryList.js';
 
 export {
   Button,
@@ -23,4 +24,5 @@ export {
   UserSetting,
   Loading,
   HistoryItem,
+  HistoryList,
 };
