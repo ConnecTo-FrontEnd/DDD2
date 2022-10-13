@@ -34,10 +34,18 @@ module.exports = {
   updateSetting(id, newSetting) {
     setData(data.map(user => (user.id === id ? { ...user, setting: { ...user.setting, ...newSetting } } : user)));
   },
-  
+
   addProblem(id, amount) {
+    // 새삥 추가
+    const { problemList } = this.getInfo(id);
     const date = new Date();
-    const newProblems = problems.getRandom(amount).map(problem => ({ ...problem, solved: false, givenDate: date }));
+
+    const newProblems = problems
+      .getRandom(amount, {
+        exceptIds: problemList.flatMap(({ id }) => id),
+      })
+      .map(problem => ({ ...problem, solved: false, givenDate: date }));
+
     setData(
       data.map(user => (user.id === id ? { ...user, problemList: [...user.problemList, ...newProblems] } : user))
     );

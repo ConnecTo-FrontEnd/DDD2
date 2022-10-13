@@ -17,7 +17,7 @@ class SignIn extends Component {
               password: e.target[1].value,
             },
           });
-          console.log(res);
+          sessionStorage.setItem('userInfo', JSON.stringify(res.data));
         },
       },
     ];

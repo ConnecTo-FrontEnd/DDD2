@@ -2,7 +2,7 @@ import Component from '../library/Component.js';
 
 class Loading extends Component {
   domStr() {
-    return `<p>Loading...</p>`;
+    return `<p>Loading</p>`;
   }
 }
 
