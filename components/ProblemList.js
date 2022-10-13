@@ -3,10 +3,10 @@ import ProblemItem from './ProblemItem.js';
 import Button from './Button.js';
 
 const styledList = {
-  'margin-top': '3rem',
   display: 'flex',
-  'flex-direction': 'column',
-  'align-items': 'center',
+  margin: '2rem',
+  'white-space': 'nowrap',
+  'overflow-x': 'scroll',
   gap: '3rem',
 };
 
@@ -32,13 +32,69 @@ const styledLoginPopUp = {
 class ProblemList extends Component {
   domStr() {
     const isLogIn = true;
-    const problems = [{ title: '', level: 1 }];
+    const problems = [
+      {
+        platform: 'programmers',
+        category: '정렬',
+        title: '사다리꼴 넓이',
+        link: 'https://www.acmicpc.net/problem/2557',
+        id: 'boj2557',
+        solved: false,
+        givenDate: '2022-10-10T04:28:49.103Z',
+      },
+      {
+        platform: 'boj',
+        category: '구현',
+        title: 'Hello World',
+        link: 'https://www.acmicpc.net/problem/2557',
+        id: 'boj2557',
+        solved: false,
+        givenDate: '2022-10-10T04:28:49.103Z',
+      },
+      {
+        platform: 'boj',
+        category: '구현',
+        title: 'Hello World',
+        link: 'https://www.acmicpc.net/problem/2557',
+        id: 'boj2557',
+        solved: false,
+        givenDate: '2022-10-10T04:28:49.103Z',
+      },
+      {
+        platform: 'boj',
+        category: '구현',
+        title: 'Hello World',
+        link: 'https://www.acmicpc.net/problem/2557',
+        id: 'boj2557',
+        solved: false,
+        givenDate: '2022-10-10T04:28:49.103Z',
+      },
+      {
+        platform: 'boj',
+        category: '구현',
+        title: 'Hello World',
+        link: 'https://www.acmicpc.net/problem/2557',
+        id: 'boj2557',
+        solved: false,
+        givenDate: '2022-10-10T04:28:49.103Z',
+      },
+      {
+        platform: 'boj',
+        category: '구현',
+        title: 'Hello World',
+        link: 'https://www.acmicpc.net/problem/2557',
+        id: 'boj2557',
+        solved: false,
+        givenDate: '2022-10-10T04:28:49.103Z',
+      },
+    ];
+
     return `
       <ul style="${this.converter(styledList)}">
-        ${problems.map(({ level, title }) => new ProblemItem({ level, title }).render()).join('')}
+        ${problems.map(problem => new ProblemItem(problem).render()).join('')}
         ${
           isLogIn
-            ? ''
+            ? ``
             : `
         <div style="${this.converter(styledLoginPopUpContainer)}">
           <div style="${this.converter(styledLoginPopUp)}">
@@ -47,7 +103,8 @@ class ProblemList extends Component {
           </div>
         </div>`
         }
-      </ul>`;
+      </ul>
+      `;
   }
 }
 
