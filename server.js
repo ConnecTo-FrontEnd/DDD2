@@ -55,6 +55,16 @@ app.post('/signin', (req, res) => {
   res.json(user.getInfo(id));
 });
 
+app.post('/add', (req, res) => {
+  const { id } = req.body;
+  const {
+    setting: { number },
+  } = user.getInfo(id);
+
+  user.addProblem(id, number);
+  res.json(user.getInfo(id));
+});
+
 app.listen(port, () => {
   console.log(`app listening on http://localhost:${port}`);
 });
