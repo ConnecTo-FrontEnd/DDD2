@@ -18,19 +18,9 @@ app.listen(port, () => {
 
 app.post('/signin', (req, res) => {
   const { id, password } = req.body;
-
   if (!id || !password) return res.status(401).send({ error: '사용자 아이디 또는 패스워드가 전달되지 않았습니다.' });
 
   if (!auth.isValid(id, password)) return res.status(401).send({ error: '등록되지 않은 사용자입니다.' });
-
-  // const accessToken = jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
-  //   expiresIn: '1d',
-  // });
-
-  // res.cookie('accessToken', accessToken, {
-  //   maxAge: 1000 * 60 * 60 * 24 * 7, // 7d
-  //   httpOnly: true,
-  // });
 
   res.json(user.getInfo(id));
 });
