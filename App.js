@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   domStr() {
-    // ${new MainBeforeSignIn(this.state).domStr()}
     const currentPath = window.location.pathname.replace('/index.html', '');
     const route = routes.find(({ path }) => path === currentPath);
     const Page = route?.page ?? NotFound;

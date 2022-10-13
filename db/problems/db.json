@@ -1,0 +1,3502 @@
+[
+  {
+    "link": "https://www.acmicpc.net/problem/2557",
+    "title": "Hello World",
+    "id": "boj2557",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1000",
+    "title": "A+B",
+    "id": "boj1000",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1001",
+    "title": "A-B",
+    "id": "boj1001",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10718",
+    "title": "We love kriii",
+    "id": "boj10718",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10998",
+    "title": "A×B",
+    "id": "boj10998",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10869",
+    "title": "사칙연산",
+    "id": "boj10869",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1008",
+    "title": "A/B",
+    "id": "boj1008",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9498",
+    "title": "시험 성적",
+    "id": "boj9498",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2739",
+    "title": "구구단",
+    "id": "boj2739",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10430",
+    "title": "나머지",
+    "id": "boj10430",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2438",
+    "title": "별 찍기 - 1",
+    "id": "boj2438",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10171",
+    "title": "고양이",
+    "id": "boj10171",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1330",
+    "title": "두 수 비교하기",
+    "id": "boj1330",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10172",
+    "title": "개",
+    "id": "boj10172",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2741",
+    "title": "N 찍기",
+    "id": "boj2741",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2439",
+    "title": "별 찍기 - 2",
+    "id": "boj2439",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8393",
+    "title": "합",
+    "id": "boj8393",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2753",
+    "title": "윤년",
+    "id": "boj2753",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2742",
+    "title": "기찍 N",
+    "id": "boj2742",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10950",
+    "title": "A+B - 3",
+    "id": "boj10950",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10871",
+    "title": "X보다 작은 수",
+    "id": "boj10871",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14681",
+    "title": "사분면 고르기",
+    "id": "boj14681",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10952",
+    "title": "A+B - 5",
+    "id": "boj10952",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1110",
+    "title": "더하기 사이클",
+    "id": "boj1110",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10818",
+    "title": "최소, 최대",
+    "id": "boj10818",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11021",
+    "title": "A+B - 7",
+    "id": "boj11021",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11022",
+    "title": "A+B - 8",
+    "id": "boj11022",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10951",
+    "title": "A+B - 4",
+    "id": "boj10951",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2577",
+    "title": "숫자의 개수",
+    "id": "boj2577",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2562",
+    "title": "최댓값",
+    "id": "boj2562",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15552",
+    "title": "빠른 A+B",
+    "id": "boj15552",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11720",
+    "title": "숫자의 합",
+    "id": "boj11720",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8958",
+    "title": "OX퀴즈",
+    "id": "boj8958",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11654",
+    "title": "아스키 코드",
+    "id": "boj11654",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10809",
+    "title": "알파벳 찾기",
+    "id": "boj10809",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1152",
+    "title": "단어의 개수",
+    "id": "boj1152",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2675",
+    "title": "문자열 반복",
+    "id": "boj2675",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1157",
+    "title": "단어 공부",
+    "id": "boj1157",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4673",
+    "title": "셀프 넘버",
+    "id": "boj4673",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2908",
+    "title": "상수",
+    "id": "boj2908",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2750",
+    "title": "수 정렬하기",
+    "id": "boj2750",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10872",
+    "title": "팩토리얼",
+    "id": "boj10872",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15596",
+    "title": "정수 N개의 합",
+    "id": "boj15596",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2558",
+    "title": "A+B - 2",
+    "id": "boj2558",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10926",
+    "title": "??!",
+    "id": "boj10926",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10817",
+    "title": "세 수",
+    "id": "boj10817",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1316",
+    "title": "그룹 단어 체커",
+    "id": "boj1316",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2440",
+    "title": "별 찍기 - 3",
+    "id": "boj2440",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5622",
+    "title": "다이얼",
+    "id": "boj5622",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2941",
+    "title": "크로아티아 알파벳",
+    "id": "boj2941",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10870",
+    "title": "피보나치 수 5",
+    "id": "boj10870",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7287",
+    "title": "등록",
+    "id": "boj7287",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2441",
+    "title": "별 찍기 - 4",
+    "id": "boj2441",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10250",
+    "title": "ACM 호텔",
+    "id": "boj10250",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1193",
+    "title": "분수찾기",
+    "id": "boj1193",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2775",
+    "title": "부녀회장이 될테야",
+    "id": "boj2775",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2920",
+    "title": "음계",
+    "id": "boj2920",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7568",
+    "title": "덩치",
+    "id": "boj7568",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11718",
+    "title": "그대로 출력하기",
+    "id": "boj11718",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1924",
+    "title": "2007년",
+    "id": "boj1924",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10773",
+    "title": "제로",
+    "id": "boj10773",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11721",
+    "title": "열 개씩 끊어 출력하기",
+    "id": "boj11721",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10757",
+    "title": "큰 수 A+B",
+    "id": "boj10757",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2475",
+    "title": "검증수",
+    "id": "boj2475",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11719",
+    "title": "그대로 출력하기 2",
+    "id": "boj11719",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2442",
+    "title": "별 찍기 - 5",
+    "id": "boj2442",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/25083",
+    "title": "새싹",
+    "id": "boj25083",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3009",
+    "title": "네 번째 점",
+    "id": "boj3009",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2446",
+    "title": "별 찍기 - 9",
+    "id": "boj2446",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1966",
+    "title": "프린터 큐",
+    "id": "boj1966",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11050",
+    "title": "이항 계수 1",
+    "id": "boj11050",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2747",
+    "title": "피보나치 수",
+    "id": "boj2747",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3003",
+    "title": "킹, 퀸, 룩, 비숍, 나이트, 폰",
+    "id": "boj3003",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14502",
+    "title": "연구소",
+    "id": "boj14502",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11866",
+    "title": "요세푸스 문제 0",
+    "id": "boj11866",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3046",
+    "title": "R2",
+    "id": "boj3046",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2108",
+    "title": "통계학",
+    "id": "boj2108",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2445",
+    "title": "별 찍기 - 8",
+    "id": "boj2445",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2743",
+    "title": "단어 길이 재기",
+    "id": "boj2743",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2443",
+    "title": "별 찍기 - 6",
+    "id": "boj2443",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2444",
+    "title": "별 찍기 - 7",
+    "id": "boj2444",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10808",
+    "title": "알파벳 개수",
+    "id": "boj10808",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2523",
+    "title": "별 찍기 - 13",
+    "id": "boj2523",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15686",
+    "title": "치킨 배달",
+    "id": "boj15686",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1259",
+    "title": "팰린드롬수",
+    "id": "boj1259",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1475",
+    "title": "방 번호",
+    "id": "boj1475",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2490",
+    "title": "윷놀이",
+    "id": "boj2490",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14503",
+    "title": "로봇 청소기",
+    "id": "boj14503",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14500",
+    "title": "테트로미노",
+    "id": "boj14500",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10699",
+    "title": "오늘 날짜",
+    "id": "boj10699",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2455",
+    "title": "지능형 기차",
+    "id": "boj2455",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3190",
+    "title": "뱀",
+    "id": "boj3190",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1009",
+    "title": "분산처리",
+    "id": "boj1009",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5430",
+    "title": "AC",
+    "id": "boj5430",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11723",
+    "title": "집합",
+    "id": "boj11723",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2914",
+    "title": "저작권",
+    "id": "boj2914",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16236",
+    "title": "아기 상어",
+    "id": "boj16236",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5338",
+    "title": "마이크로소프트 로고",
+    "id": "boj5338",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2522",
+    "title": "별 찍기 - 12",
+    "id": "boj2522",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1550",
+    "title": "16진수",
+    "id": "boj1550",
+    "platform": "boj",
+    "category": "구현"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2839",
+    "title": "설탕 배달",
+    "id": "boj2839",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11399",
+    "title": "ATM",
+    "id": "boj11399",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11047",
+    "title": "동전 0",
+    "id": "boj11047",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1931",
+    "title": "회의실 배정",
+    "id": "boj1931",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1026",
+    "title": "보물",
+    "id": "boj1026",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1541",
+    "title": "잃어버린 괄호",
+    "id": "boj1541",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5585",
+    "title": "거스름돈",
+    "id": "boj5585",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2217",
+    "title": "로프",
+    "id": "boj2217",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10162",
+    "title": "전자레인지",
+    "id": "boj10162",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1789",
+    "title": "수들의 합",
+    "id": "boj1789",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13305",
+    "title": "주유소",
+    "id": "boj13305",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10610",
+    "title": "30",
+    "id": "boj10610",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1946",
+    "title": "신입 사원",
+    "id": "boj1946",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1715",
+    "title": "카드 정렬하기",
+    "id": "boj1715",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1439",
+    "title": "뒤집기",
+    "id": "boj1439",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16953",
+    "title": "A → B",
+    "id": "boj16953",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1339",
+    "title": "단어 수학",
+    "id": "boj1339",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4796",
+    "title": "캠핑",
+    "id": "boj4796",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1202",
+    "title": "보석 도둑",
+    "id": "boj1202",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1049",
+    "title": "기타줄",
+    "id": "boj1049",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1744",
+    "title": "수 묶기",
+    "id": "boj1744",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2864",
+    "title": "5와 6의 차이",
+    "id": "boj2864",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1543",
+    "title": "문서 검색",
+    "id": "boj1543",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1449",
+    "title": "수리공 항승",
+    "id": "boj1449",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1080",
+    "title": "행렬",
+    "id": "boj1080",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2437",
+    "title": "저울",
+    "id": "boj2437",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11000",
+    "title": "강의실 배정",
+    "id": "boj11000",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2720",
+    "title": "세탁소 사장 동혁",
+    "id": "boj2720",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1213",
+    "title": "팰린드롬 만들기",
+    "id": "boj1213",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1783",
+    "title": "병든 나이트",
+    "id": "boj1783",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1700",
+    "title": "멀티탭 스케줄링",
+    "id": "boj1700",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2847",
+    "title": "게임을 만든 동준이",
+    "id": "boj2847",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3109",
+    "title": "빵집",
+    "id": "boj3109",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14916",
+    "title": "거스름돈",
+    "id": "boj14916",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2812",
+    "title": "크게 만들기",
+    "id": "boj2812",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10775",
+    "title": "공항",
+    "id": "boj10775",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15903",
+    "title": "카드 합체 놀이",
+    "id": "boj15903",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2212",
+    "title": "센서",
+    "id": "boj2212",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2810",
+    "title": "컵홀더",
+    "id": "boj2810",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1343",
+    "title": "폴리오미노",
+    "id": "boj1343",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1969",
+    "title": "DNA",
+    "id": "boj1969",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12904",
+    "title": "A와 B",
+    "id": "boj12904",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11497",
+    "title": "통나무 건너뛰기",
+    "id": "boj11497",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15904",
+    "title": "UCPC는 무엇의 약자일까?",
+    "id": "boj15904",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1092",
+    "title": "배",
+    "id": "boj1092",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1041",
+    "title": "주사위",
+    "id": "boj1041",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/18310",
+    "title": "안테나",
+    "id": "boj18310",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9237",
+    "title": "이장님 초대",
+    "id": "boj9237",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13904",
+    "title": "과제",
+    "id": "boj13904",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14659",
+    "title": "한조서열정리하고옴ㅋㅋ",
+    "id": "boj14659",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2012",
+    "title": "등수 매기기",
+    "id": "boj2012",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11501",
+    "title": "주식",
+    "id": "boj11501",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14720",
+    "title": "우유 축제",
+    "id": "boj14720",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1461",
+    "title": "도서관",
+    "id": "boj1461",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16435",
+    "title": "스네이크버드",
+    "id": "boj16435",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2109",
+    "title": "순회강연",
+    "id": "boj2109",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1758",
+    "title": "알바생 강호",
+    "id": "boj1758",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2828",
+    "title": "사과 담기 게임",
+    "id": "boj2828",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1052",
+    "title": "물병",
+    "id": "boj1052",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1417",
+    "title": "국회의원 선거",
+    "id": "boj1417",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11508",
+    "title": "2+1 세일",
+    "id": "boj11508",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/19941",
+    "title": "햄버거 분배",
+    "id": "boj19941",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9576",
+    "title": "책 나눠주기",
+    "id": "boj9576",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/19939",
+    "title": "박 터뜨리기",
+    "id": "boj19939",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8980",
+    "title": "택배",
+    "id": "boj8980",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1781",
+    "title": "컵라면",
+    "id": "boj1781",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2138",
+    "title": "전구와 스위치",
+    "id": "boj2138",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2457",
+    "title": "공주님의 정원",
+    "id": "boj2457",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13164",
+    "title": "행복 유치원",
+    "id": "boj13164",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9009",
+    "title": "피보나치",
+    "id": "boj9009",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14487",
+    "title": "욱제는 효도쟁이야!!",
+    "id": "boj14487",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1105",
+    "title": "팔",
+    "id": "boj1105",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7570",
+    "title": "줄 세우기",
+    "id": "boj7570",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1448",
+    "title": "삼각형 만들기",
+    "id": "boj1448",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4889",
+    "title": "안정적인 문자열",
+    "id": "boj4889",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14469",
+    "title": "소가 길을 건너간 이유 3",
+    "id": "boj14469",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1246",
+    "title": "온라인 판매",
+    "id": "boj1246",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13413",
+    "title": "오셀로 재배치",
+    "id": "boj13413",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16120",
+    "title": "PPAP",
+    "id": "boj16120",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2873",
+    "title": "롤러코스터",
+    "id": "boj2873",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1826",
+    "title": "연료 채우기",
+    "id": "boj1826",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/21758",
+    "title": "꿀 따기",
+    "id": "boj21758",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13975",
+    "title": "파일 합치기 3",
+    "id": "boj13975",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13417",
+    "title": "카드 문자열",
+    "id": "boj13417",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20044",
+    "title": "Project Teams",
+    "id": "boj20044",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11034",
+    "title": "캥거루 세마리2",
+    "id": "boj11034",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17224",
+    "title": "APC는 왜 서브태스크 대회가 되었을까?",
+    "id": "boj17224",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12018",
+    "title": "Yonsei TOTO",
+    "id": "boj12018",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1201",
+    "title": "NMK",
+    "id": "boj1201",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3135",
+    "title": "라디오",
+    "id": "boj3135",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17615",
+    "title": "볼 모으기",
+    "id": "boj17615",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/22864",
+    "title": "피로도",
+    "id": "boj22864",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1285",
+    "title": "동전 뒤집기",
+    "id": "boj1285",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14939",
+    "title": "불 끄기",
+    "id": "boj14939",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1083",
+    "title": "소트",
+    "id": "boj1083",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/19539",
+    "title": "사과나무",
+    "id": "boj19539",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3687",
+    "title": "성냥개비",
+    "id": "boj3687",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5545",
+    "title": "최고의 피자",
+    "id": "boj5545",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1374",
+    "title": "강의실",
+    "id": "boj1374",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11509",
+    "title": "풍선 맞추기",
+    "id": "boj11509",
+    "platform": "boj",
+    "category": "그리디 알고리즘"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2750",
+    "title": "수 정렬하기",
+    "id": "boj2750",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10817",
+    "title": "세 수",
+    "id": "boj10817",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2751",
+    "title": "수 정렬하기 2",
+    "id": "boj2751",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11399",
+    "title": "ATM",
+    "id": "boj11399",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1181",
+    "title": "단어 정렬",
+    "id": "boj1181",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10989",
+    "title": "수 정렬하기 3",
+    "id": "boj10989",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1427",
+    "title": "소트인사이드",
+    "id": "boj1427",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11650",
+    "title": "좌표 정렬하기",
+    "id": "boj11650",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1920",
+    "title": "수 찾기",
+    "id": "boj1920",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1931",
+    "title": "회의실 배정",
+    "id": "boj1931",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10814",
+    "title": "나이순 정렬",
+    "id": "boj10814",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2309",
+    "title": "일곱 난쟁이",
+    "id": "boj2309",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11651",
+    "title": "좌표 정렬하기 2",
+    "id": "boj11651",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1026",
+    "title": "보물",
+    "id": "boj1026",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10816",
+    "title": "숫자 카드 2",
+    "id": "boj10816",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10815",
+    "title": "숫자 카드",
+    "id": "boj10815",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2108",
+    "title": "통계학",
+    "id": "boj2108",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1764",
+    "title": "듣보잡",
+    "id": "boj1764",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2217",
+    "title": "로프",
+    "id": "boj2217",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/18870",
+    "title": "좌표 압축",
+    "id": "boj18870",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2752",
+    "title": "세수정렬",
+    "id": "boj2752",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10610",
+    "title": "30",
+    "id": "boj10610",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10825",
+    "title": "국영수",
+    "id": "boj10825",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11656",
+    "title": "접미사 배열",
+    "id": "boj11656",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1946",
+    "title": "신입 사원",
+    "id": "boj1946",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11004",
+    "title": "K번째 수",
+    "id": "boj11004",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11728",
+    "title": "배열 합치기",
+    "id": "boj11728",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2470",
+    "title": "두 용액",
+    "id": "boj2470",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3273",
+    "title": "두 수의 합",
+    "id": "boj3273",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10867",
+    "title": "중복 빼고 정렬하기",
+    "id": "boj10867",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11652",
+    "title": "카드",
+    "id": "boj11652",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1202",
+    "title": "보석 도둑",
+    "id": "boj1202",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1302",
+    "title": "베스트셀러",
+    "id": "boj1302",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5052",
+    "title": "전화번호 목록",
+    "id": "boj5052",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2693",
+    "title": "N번째 큰 수",
+    "id": "boj2693",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1744",
+    "title": "수 묶기",
+    "id": "boj1744",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2822",
+    "title": "점수 계산",
+    "id": "boj2822",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1449",
+    "title": "수리공 항승",
+    "id": "boj1449",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2437",
+    "title": "저울",
+    "id": "boj2437",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11000",
+    "title": "강의실 배정",
+    "id": "boj11000",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2075",
+    "title": "N번째 큰 수",
+    "id": "boj2075",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17140",
+    "title": "이차원 배열과 연산",
+    "id": "boj17140",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8979",
+    "title": "올림픽",
+    "id": "boj8979",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/25305",
+    "title": "커트라인",
+    "id": "boj25305",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1431",
+    "title": "시리얼 번호",
+    "id": "boj1431",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11931",
+    "title": "수 정렬하기 4",
+    "id": "boj11931",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2887",
+    "title": "행성 터널",
+    "id": "boj2887",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1015",
+    "title": "수열 정렬",
+    "id": "boj1015",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11557",
+    "title": "Yangjojang of The Year",
+    "id": "boj11557",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7453",
+    "title": "합이 0인 네 정수",
+    "id": "boj7453",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5635",
+    "title": "생일",
+    "id": "boj5635",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5576",
+    "title": "콘테스트",
+    "id": "boj5576",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2776",
+    "title": "암기왕",
+    "id": "boj2776",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1517",
+    "title": "버블 소트",
+    "id": "boj1517",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2473",
+    "title": "세 용액",
+    "id": "boj2473",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1940",
+    "title": "주몽",
+    "id": "boj1940",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2212",
+    "title": "센서",
+    "id": "boj2212",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2170",
+    "title": "선 긋기",
+    "id": "boj2170",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5800",
+    "title": "성적 통계",
+    "id": "boj5800",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2628",
+    "title": "종이자르기",
+    "id": "boj2628",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11497",
+    "title": "통나무 건너뛰기",
+    "id": "boj11497",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9076",
+    "title": "점수 집계",
+    "id": "boj9076",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1059",
+    "title": "좋은 구간",
+    "id": "boj1059",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1092",
+    "title": "배",
+    "id": "boj1092",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/18310",
+    "title": "안테나",
+    "id": "boj18310",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7795",
+    "title": "먹을 것인가 먹힐 것인가",
+    "id": "boj7795",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9237",
+    "title": "이장님 초대",
+    "id": "boj9237",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13904",
+    "title": "과제",
+    "id": "boj13904",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2012",
+    "title": "등수 매기기",
+    "id": "boj2012",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2230",
+    "title": "수 고르기",
+    "id": "boj2230",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/6996",
+    "title": "애너그램",
+    "id": "boj6996",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1461",
+    "title": "도서관",
+    "id": "boj1461",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16435",
+    "title": "스네이크버드",
+    "id": "boj16435",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1253",
+    "title": "좋다",
+    "id": "boj1253",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8983",
+    "title": "사냥꾼",
+    "id": "boj8983",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2109",
+    "title": "순회강연",
+    "id": "boj2109",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1377",
+    "title": "버블 소트",
+    "id": "boj1377",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1758",
+    "title": "알바생 강호",
+    "id": "boj1758",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15688",
+    "title": "수 정렬하기 5",
+    "id": "boj15688",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1251",
+    "title": "단어 나누기",
+    "id": "boj1251",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11508",
+    "title": "2+1 세일",
+    "id": "boj11508",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24479",
+    "title": "알고리즘 수업 - 깊이 우선 탐색 1",
+    "id": "boj24479",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1755",
+    "title": "숫자놀이",
+    "id": "boj1755",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8980",
+    "title": "택배",
+    "id": "boj8980",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10800",
+    "title": "컬러볼",
+    "id": "boj10800",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1822",
+    "title": "차집합",
+    "id": "boj1822",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15970",
+    "title": "화살표 그리기",
+    "id": "boj15970",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2457",
+    "title": "공주님의 정원",
+    "id": "boj2457",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2910",
+    "title": "빈도 정렬",
+    "id": "boj2910",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13164",
+    "title": "행복 유치원",
+    "id": "boj13164",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24444",
+    "title": "알고리즘 수업 - 너비 우선 탐색 1",
+    "id": "boj24444",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20291",
+    "title": "파일 정리",
+    "id": "boj20291",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2535",
+    "title": "아시아 정보올림피아드",
+    "id": "boj2535",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24480",
+    "title": "알고리즘 수업 - 깊이 우선 탐색 2",
+    "id": "boj24480",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2548",
+    "title": "대표 자연수",
+    "id": "boj2548",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13334",
+    "title": "철로",
+    "id": "boj13334",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1448",
+    "title": "삼각형 만들기",
+    "id": "boj1448",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24445",
+    "title": "알고리즘 수업 - 너비 우선 탐색 2",
+    "id": "boj24445",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16212",
+    "title": "정열적인 정렬",
+    "id": "boj16212",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3649",
+    "title": "로봇 프로젝트",
+    "id": "boj3649",
+    "platform": "boj",
+    "category": "정렬"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1260",
+    "title": "DFS와 BFS",
+    "id": "boj1260",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2178",
+    "title": "미로 탐색",
+    "id": "boj2178",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2606",
+    "title": "바이러스",
+    "id": "boj2606",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2667",
+    "title": "단지번호붙이기",
+    "id": "boj2667",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1012",
+    "title": "유기농 배추",
+    "id": "boj1012",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7576",
+    "title": "토마토",
+    "id": "boj7576",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1697",
+    "title": "숨바꼭질",
+    "id": "boj1697",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11724",
+    "title": "연결 요소의 개수",
+    "id": "boj11724",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14502",
+    "title": "연구소",
+    "id": "boj14502",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4963",
+    "title": "섬의 개수",
+    "id": "boj4963",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10026",
+    "title": "적록색약",
+    "id": "boj10026",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7569",
+    "title": "토마토",
+    "id": "boj7569",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2468",
+    "title": "안전 영역",
+    "id": "boj2468",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7562",
+    "title": "나이트의 이동",
+    "id": "boj7562",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2206",
+    "title": "벽 부수고 이동하기",
+    "id": "boj2206",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11725",
+    "title": "트리의 부모 찾기",
+    "id": "boj11725",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2583",
+    "title": "영역 구하기",
+    "id": "boj2583",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16236",
+    "title": "아기 상어",
+    "id": "boj16236",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2644",
+    "title": "촌수계산",
+    "id": "boj2644",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13460",
+    "title": "구슬 탈출 2",
+    "id": "boj13460",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1389",
+    "title": "케빈 베이컨의 6단계 법칙",
+    "id": "boj1389",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1707",
+    "title": "이분 그래프",
+    "id": "boj1707",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16234",
+    "title": "인구 이동",
+    "id": "boj16234",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13549",
+    "title": "숨바꼭질 3",
+    "id": "boj13549",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2573",
+    "title": "빙산",
+    "id": "boj2573",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3055",
+    "title": "탈출",
+    "id": "boj3055",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16953",
+    "title": "A → B",
+    "id": "boj16953",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5014",
+    "title": "스타트링크",
+    "id": "boj5014",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9019",
+    "title": "DSLR",
+    "id": "boj9019",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2589",
+    "title": "보물섬",
+    "id": "boj2589",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2636",
+    "title": "치즈",
+    "id": "boj2636",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2146",
+    "title": "다리 만들기",
+    "id": "boj2146",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13913",
+    "title": "숨바꼭질 4",
+    "id": "boj13913",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9205",
+    "title": "맥주 마시면서 걸어가기",
+    "id": "boj9205",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1325",
+    "title": "효율적인 해킹",
+    "id": "boj1325",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12851",
+    "title": "숨바꼭질 2",
+    "id": "boj12851",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1600",
+    "title": "말이 되고픈 원숭이",
+    "id": "boj1600",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1926",
+    "title": "그림",
+    "id": "boj1926",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2638",
+    "title": "치즈",
+    "id": "boj2638",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17142",
+    "title": "연구소 3",
+    "id": "boj17142",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/18352",
+    "title": "특정 거리의 도시 찾기",
+    "id": "boj18352",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16928",
+    "title": "뱀과 사다리 게임",
+    "id": "boj16928",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1963",
+    "title": "소수 경로",
+    "id": "boj1963",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11559",
+    "title": "Puyo Puyo",
+    "id": "boj11559",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14226",
+    "title": "이모티콘",
+    "id": "boj14226",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5427",
+    "title": "불",
+    "id": "boj5427",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17471",
+    "title": "게리맨더링",
+    "id": "boj17471",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1743",
+    "title": "음식물 피하기",
+    "id": "boj1743",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1939",
+    "title": "중량제한",
+    "id": "boj1939",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4179",
+    "title": "불!",
+    "id": "boj4179",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2251",
+    "title": "물통",
+    "id": "boj2251",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/6593",
+    "title": "상범 빌딩",
+    "id": "boj6593",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17472",
+    "title": "다리 만들기 2",
+    "id": "boj17472",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2665",
+    "title": "미로만들기",
+    "id": "boj2665",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1525",
+    "title": "퍼즐",
+    "id": "boj1525",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3184",
+    "title": "양",
+    "id": "boj3184",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1194",
+    "title": "달이 차오른다, 가자.",
+    "id": "boj1194",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14442",
+    "title": "벽 부수고 이동하기 2",
+    "id": "boj14442",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/19238",
+    "title": "스타트 택시",
+    "id": "boj19238",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/18405",
+    "title": "경쟁적 전염",
+    "id": "boj18405",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2660",
+    "title": "회장뽑기",
+    "id": "boj2660",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2234",
+    "title": "성곽",
+    "id": "boj2234",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1303",
+    "title": "전쟁 - 전투",
+    "id": "boj1303",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3197",
+    "title": "백조의 호수",
+    "id": "boj3197",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1726",
+    "title": "로봇",
+    "id": "boj1726",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9328",
+    "title": "열쇠",
+    "id": "boj9328",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16948",
+    "title": "데스 나이트",
+    "id": "boj16948",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16946",
+    "title": "벽 부수고 이동하기 4",
+    "id": "boj16946",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1941",
+    "title": "소문난 칠공주",
+    "id": "boj1941",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/6087",
+    "title": "레이저 통신",
+    "id": "boj6087",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20058",
+    "title": "마법사 상어와 파이어스톰",
+    "id": "boj20058",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16197",
+    "title": "두 동전",
+    "id": "boj16197",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17086",
+    "title": "아기 상어 2",
+    "id": "boj17086",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17141",
+    "title": "연구소 2",
+    "id": "boj17141",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/6118",
+    "title": "숨바꼭질",
+    "id": "boj6118",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1039",
+    "title": "교환",
+    "id": "boj1039",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16954",
+    "title": "움직이는 미로 탈출",
+    "id": "boj16954",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13459",
+    "title": "구슬 탈출",
+    "id": "boj13459",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2933",
+    "title": "미네랄",
+    "id": "boj2933",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13565",
+    "title": "침투",
+    "id": "boj13565",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17836",
+    "title": "공주님을 구해라!",
+    "id": "boj17836",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/21609",
+    "title": "상어 중학교",
+    "id": "boj21609",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4991",
+    "title": "로봇 청소기",
+    "id": "boj4991",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12886",
+    "title": "돌 그룹",
+    "id": "boj12886",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1938",
+    "title": "통나무 옮기기",
+    "id": "boj1938",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24444",
+    "title": "알고리즘 수업 - 너비 우선 탐색 1",
+    "id": "boj24444",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14716",
+    "title": "현수막",
+    "id": "boj14716",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3187",
+    "title": "양치기 꿍",
+    "id": "boj3187",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12869",
+    "title": "뮤탈리스크",
+    "id": "boj12869",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1388",
+    "title": "바닥 장식",
+    "id": "boj1388",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1240",
+    "title": "노드사이의 거리",
+    "id": "boj1240",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16947",
+    "title": "서울 지하철 2호선",
+    "id": "boj16947",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24445",
+    "title": "알고리즘 수업 - 너비 우선 탐색 2",
+    "id": "boj24445",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/23288",
+    "title": "주사위 굴리기 2",
+    "id": "boj23288",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16933",
+    "title": "벽 부수고 이동하기 3",
+    "id": "boj16933",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5214",
+    "title": "환승",
+    "id": "boj5214",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16985",
+    "title": "Maaaaaaaaaze",
+    "id": "boj16985",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15591",
+    "title": "MooTube (Silver)",
+    "id": "boj15591",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15971",
+    "title": "두 로봇",
+    "id": "boj15971",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12761",
+    "title": "돌다리",
+    "id": "boj12761",
+    "platform": "boj",
+    "category": "너비 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1260",
+    "title": "DFS와 BFS",
+    "id": "boj1260",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2606",
+    "title": "바이러스",
+    "id": "boj2606",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2667",
+    "title": "단지번호붙이기",
+    "id": "boj2667",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1012",
+    "title": "유기농 배추",
+    "id": "boj1012",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11724",
+    "title": "연결 요소의 개수",
+    "id": "boj11724",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4963",
+    "title": "섬의 개수",
+    "id": "boj4963",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10026",
+    "title": "적록색약",
+    "id": "boj10026",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2468",
+    "title": "안전 영역",
+    "id": "boj2468",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1987",
+    "title": "알파벳",
+    "id": "boj1987",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11725",
+    "title": "트리의 부모 찾기",
+    "id": "boj11725",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2583",
+    "title": "영역 구하기",
+    "id": "boj2583",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2644",
+    "title": "촌수계산",
+    "id": "boj2644",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1520",
+    "title": "내리막 길",
+    "id": "boj1520",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1707",
+    "title": "이분 그래프",
+    "id": "boj1707",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2573",
+    "title": "빙산",
+    "id": "boj2573",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1967",
+    "title": "트리의 지름",
+    "id": "boj1967",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1167",
+    "title": "트리의 지름",
+    "id": "boj1167",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1068",
+    "title": "트리",
+    "id": "boj1068",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9466",
+    "title": "텀 프로젝트",
+    "id": "boj9466",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1937",
+    "title": "욕심쟁이 판다",
+    "id": "boj1937",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1325",
+    "title": "효율적인 해킹",
+    "id": "boj1325",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1926",
+    "title": "그림",
+    "id": "boj1926",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2638",
+    "title": "치즈",
+    "id": "boj2638",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13023",
+    "title": "ABCDE",
+    "id": "boj13023",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17471",
+    "title": "게리맨더링",
+    "id": "boj17471",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1743",
+    "title": "음식물 피하기",
+    "id": "boj1743",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2251",
+    "title": "물통",
+    "id": "boj2251",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3109",
+    "title": "빵집",
+    "id": "boj3109",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2668",
+    "title": "숫자고르기",
+    "id": "boj2668",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17472",
+    "title": "다리 만들기 2",
+    "id": "boj17472",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2210",
+    "title": "숫자판 점프",
+    "id": "boj2210",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3184",
+    "title": "양",
+    "id": "boj3184",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2250",
+    "title": "트리의 높이와 너비",
+    "id": "boj2250",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1303",
+    "title": "전쟁 - 전투",
+    "id": "boj1303",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1405",
+    "title": "미친 로봇",
+    "id": "boj1405",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16946",
+    "title": "벽 부수고 이동하기 4",
+    "id": "boj16946",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1941",
+    "title": "소문난 칠공주",
+    "id": "boj1941",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3584",
+    "title": "가장 가까운 공통 조상",
+    "id": "boj3584",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15681",
+    "title": "트리와 쿼리",
+    "id": "boj15681",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20058",
+    "title": "마법사 상어와 파이어스톰",
+    "id": "boj20058",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1103",
+    "title": "게임",
+    "id": "boj1103",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4803",
+    "title": "트리",
+    "id": "boj4803",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24479",
+    "title": "알고리즘 수업 - 깊이 우선 탐색 1",
+    "id": "boj24479",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16929",
+    "title": "Two Dots",
+    "id": "boj16929",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13565",
+    "title": "침투",
+    "id": "boj13565",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/21609",
+    "title": "상어 중학교",
+    "id": "boj21609",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11400",
+    "title": "단절선",
+    "id": "boj11400",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14716",
+    "title": "현수막",
+    "id": "boj14716",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/3187",
+    "title": "양치기 꿍",
+    "id": "boj3187",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/24480",
+    "title": "알고리즘 수업 - 깊이 우선 탐색 2",
+    "id": "boj24480",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1388",
+    "title": "바닥 장식",
+    "id": "boj1388",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1240",
+    "title": "노드사이의 거리",
+    "id": "boj1240",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2617",
+    "title": "구슬 찾기",
+    "id": "boj2617",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16947",
+    "title": "서울 지하철 2호선",
+    "id": "boj16947",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15900",
+    "title": "나무 탈출",
+    "id": "boj15900",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16724",
+    "title": "피리 부는 사나이",
+    "id": "boj16724",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/2842",
+    "title": "집배원 한상덕",
+    "id": "boj2842",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14267",
+    "title": "회사 문화 1",
+    "id": "boj14267",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16173",
+    "title": "점프왕 쩰리 (Small)",
+    "id": "boj16173",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16988",
+    "title": "Baaaaaaaaaduk2 (Easy)",
+    "id": "boj16988",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16437",
+    "title": "양 구출 작전",
+    "id": "boj16437",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16964",
+    "title": "DFS 스페셜 저지",
+    "id": "boj16964",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/9202",
+    "title": "Boggle",
+    "id": "boj9202",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17090",
+    "title": "미로 탈출하기",
+    "id": "boj17090",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/11123",
+    "title": "양 한마리... 양 두마리...",
+    "id": "boj11123",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16932",
+    "title": "모양 만들기",
+    "id": "boj16932",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16174",
+    "title": "점프왕 쩰리 (Large)",
+    "id": "boj16174",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14466",
+    "title": "소가 길을 건너간 이유 6",
+    "id": "boj14466",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17616",
+    "title": "등수 찾기",
+    "id": "boj17616",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/22352",
+    "title": "항체 인식",
+    "id": "boj22352",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/21736",
+    "title": "헌내기는 친구가 필요해",
+    "id": "boj21736",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14942",
+    "title": "개미",
+    "id": "boj14942",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1245",
+    "title": "농장 관리",
+    "id": "boj1245",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16768",
+    "title": "Mooyo Mooyo",
+    "id": "boj16768",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14248",
+    "title": "점프 점프",
+    "id": "boj14248",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14268",
+    "title": "회사 문화 2",
+    "id": "boj14268",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17265",
+    "title": "나의 인생에는 수학과 함께",
+    "id": "boj17265",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/19542",
+    "title": "전단지 돌리기",
+    "id": "boj19542",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/12784",
+    "title": "인하니카 공화국",
+    "id": "boj12784",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17370",
+    "title": "육각형 우리 속의 개미",
+    "id": "boj17370",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1953",
+    "title": "팀배분",
+    "id": "boj1953",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10265",
+    "title": "MT",
+    "id": "boj10265",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/15559",
+    "title": "내 선물을 받아줘",
+    "id": "boj15559",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20166",
+    "title": "문자열 지옥에 빠진 호석",
+    "id": "boj20166",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/13265",
+    "title": "색칠하기",
+    "id": "boj13265",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/16432",
+    "title": "떡장수와 호랑이",
+    "id": "boj16432",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/7812",
+    "title": "중앙 트리",
+    "id": "boj7812",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/1199",
+    "title": "오일러 회로",
+    "id": "boj1199",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/5547",
+    "title": "일루미네이션",
+    "id": "boj5547",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20188",
+    "title": "등산 마니아",
+    "id": "boj20188",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/21938",
+    "title": "영상처리",
+    "id": "boj21938",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/20924",
+    "title": "트리의 기둥과 가지",
+    "id": "boj20924",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/25195",
+    "title": "Yes or yes",
+    "id": "boj25195",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/10552",
+    "title": "DOM",
+    "id": "boj10552",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17025",
+    "title": "Icy Perimeter",
+    "id": "boj17025",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/14570",
+    "title": "나무 위의 구슬",
+    "id": "boj14570",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/8872",
+    "title": "빌라봉",
+    "id": "boj8872",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/4677",
+    "title": "Oil Deposits",
+    "id": "boj4677",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/21937",
+    "title": "작업",
+    "id": "boj21937",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  },
+  {
+    "link": "https://www.acmicpc.net/problem/17199",
+    "title": "Milk Factory",
+    "id": "boj17199",
+    "platform": "boj",
+    "category": "깊이 우선 탐색"
+  }
+]

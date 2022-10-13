@@ -10,9 +10,7 @@ module.exports = {
     return { data };
   },
   isValid(id, password) {
-    return data.find(({ _id, _password }) => _id === id && _password === password);
+    return data.find(({ id: _id, password: _password }) => _id === id && _password === password);
   },
-  findById(id) {
-    return data.find(({ _id }) => _id === id);
-  },
+
 };
