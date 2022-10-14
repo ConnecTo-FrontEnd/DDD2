@@ -1,7 +1,8 @@
 import Component from '../library/Component.js';
 import ProblemItem from './ProblemItem.js';
 import Button from './Button.js';
-import { getCategorizedProblems } from '../store/userInfo.js';
+import { getCategorizedProblems, requestDeleteProblem, requestAddProblem } from '../store/userInfo.js';
+import Loading from './Loading.js';
 
 const styledList = {
   display: 'flex',
@@ -31,16 +32,29 @@ const styledLoginPopUp = {
 };
 
 class ProblemList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoading: getCategorizedProblems().unexpired.length === 0 };
+  }
+
   domStr() {
     const isLogIn = true;
     const { unexpired } = getCategorizedProblems();
-    console.log(unexpired);
+
+    if (this.state.isLoading)
+      return `
+        <div>
+          ${new Loading().render()}
+        </div>
+      `;
+
     return `
-      <ul style="${this.converter(styledList)}">
-        ${unexpired.map(problem => new ProblemItem(problem).render()).join('')}
+      <div>
+        <ul style="${this.converter(styledList)}">
+        ${unexpired.map(problem => new ProblemItem({ problem }).render()).join('')}
         ${
           isLogIn
-            ? ``
+            ? ''
             : `
         <div style="${this.converter(styledLoginPopUpContainer)}">
           <div style="${this.converter(styledLoginPopUp)}">
@@ -49,8 +63,37 @@ class ProblemList extends Component {
           </div>
         </div>`
         }
-      </ul>
+        </ul>
+      </div>
       `;
+  }
+
+  addEventListener() {
+    return [
+      {
+        type: 'DOMContentLoaded',
+        selector: 'window',
+        handler: async () => {
+          if (!this.state.isLoading) return;
+
+          await requestAddProblem();
+
+          setTimeout(() => {
+            this.setState.call(this, { isLoading: false });
+          }, 1000);
+        },
+      },
+      {
+        type: 'click',
+        selector: 'button',
+        handler: async e => {
+          await requestDeleteProblem(e.target.dataset.problemId);
+          setTimeout(() => {
+            this.setState.call(this, { isLoading: false });
+          }, 500);
+        },
+      },
+    ];
   }
 }
 

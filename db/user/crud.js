@@ -50,6 +50,12 @@ module.exports = {
       data.map(user => (user.id === id ? { ...user, problemList: [...user.problemList, ...newProblems] } : user))
     );
   },
+  deleteProblem(userId, problemId) {
+    const { problemList } = this.getInfo(userId);
+    const filteredProblems = problemList.filter(({ id }) => id !== problemId);
+
+    setData(data.map(user => (user.id === userId ? { ...user, problemList: filteredProblems } : user)));
+  },
   getInfo(id) {
     return data.find(user => user.id === id);
   },

@@ -62,7 +62,7 @@ const getDeadline = (givenDate, day) => {
 
 class ProblemItem extends Component {
   domStr() {
-    const { solved, link, title, platform, category, givenDate } = this.props;
+    const { solved, link, title, platform, category, givenDate, id } = this.props.problem;
     return solved
       ? ''
       : `
@@ -77,11 +77,12 @@ class ProblemItem extends Component {
             <img style="${styledImg}" src="${LOGO[platform]}" class="platform-logo"></img>
             <div>${category}</div>
             <div style="${styledTemp}">
-              <span>${getDeadline('2022-10-10T04:28:49.103Z', 7)}</span>
+              <span>${getDeadline(givenDate, 7)}</span>
               <span>10 min</span>
             </div>
           </div>
         </a>
+        <button data-problem-id="${id}">X</button>
       </li>`;
   }
 }

@@ -42,4 +42,18 @@ const requestAddProblem = async () => {
   }
 };
 
-export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem };
+const requestDeleteProblem = async id => {
+  try {
+    const res = await axios({
+      method: 'delete',
+      url: `delete/${userInfo.id}/${id}`,
+    });
+
+    setUserInfo(res.data);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem, requestDeleteProblem };

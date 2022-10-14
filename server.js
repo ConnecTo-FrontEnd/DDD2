@@ -64,6 +64,12 @@ app.post('/add', (req, res) => {
   user.addProblem(id, number);
   res.json(user.getInfo(id));
 });
+app.delete('/delete/:userId/:problemId', (req, res) => {
+  const { userId, problemId } = req.params;
+
+  user.deleteProblem(userId, problemId);
+  res.json(user.getInfo(userId));
+});
 
 app.listen(port, () => {
   console.log(`app listening on http://localhost:${port}`);
