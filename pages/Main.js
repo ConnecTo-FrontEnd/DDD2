@@ -3,24 +3,20 @@ import ProblemList from '../components/ProblemList.js';
 import Header from '../components/Header.js';
 import Loading from '../components/Loading.js';
 import HistoryList from '../components/HistoryList.js';
+import { getCategorizedProblems, requestAddProblem } from '../store/userInfo.js';
 
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-    this.problems = this.getCategorizedProblems(this.userInfo);
-    this.state = { isLoading: this.problems.unexpired.length === 0 };
+    this.state = { isLoading: getCategorizedProblems().unexpired.length === 0 };
   }
 
   domStr() {
-    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-    const { unexpired, expired } = this.getCategorizedProblems(userInfo);
-
     return `
       <div>
         ${new Header().render()}
-        ${this.state.isLoading ? new Loading().render() : new ProblemList({ problems: unexpired }).render()}
-        ${new HistoryList({ problems: expired }).render()}
+        ${this.state.isLoading ? new Loading().render() : new ProblemList().render()}
+        ${new HistoryList().render()}
       </div>`;
   }
 
@@ -29,18 +25,10 @@ class Main extends Component {
       {
         type: 'DOMContentLoaded',
         selector: 'window',
-        handler: async e => {
+        handler: async () => {
           if (!this.state.isLoading) return;
 
-          const res = await axios({
-            method: 'post',
-            url: 'add',
-            data: {
-              id: this.userInfo.id,
-            },
-          });
-
-          sessionStorage.setItem('userInfo', JSON.stringify(res.data));
+          await requestAddProblem();
 
           setTimeout(() => {
             this.setState.call(this, { isLoading: false });
@@ -48,26 +36,6 @@ class Main extends Component {
         },
       },
     ];
-  }
-
-  getCategorizedProblems(userInfo) {
-    const {
-      setting: { day },
-      problemList,
-    } = userInfo;
-
-    const today = new Date(new Date().toISOString().slice(0, 10));
-
-    return problemList.reduce(
-      (acc, problem) => {
-        const { givenDate } = problem;
-        const givenDateObj = new Date(givenDate.slice(0, 10));
-        const duedate = new Date(+givenDateObj + day * 86400000);
-        acc[duedate > today ? 'unexpired' : 'expired'].push(problem);
-        return acc;
-      },
-      { unexpired: [], expired: [] }
-    );
   }
 }
 

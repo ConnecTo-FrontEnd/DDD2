@@ -1,6 +1,7 @@
 import Component from '../library/Component.js';
 import ProblemItem from './ProblemItem.js';
 import Button from './Button.js';
+import { getCategorizedProblems } from '../store/userInfo.js';
 
 const styledList = {
   display: 'flex',
@@ -32,10 +33,11 @@ const styledLoginPopUp = {
 class ProblemList extends Component {
   domStr() {
     const isLogIn = true;
-    const { problems } = this.props;
+    const { unexpired } = getCategorizedProblems();
+    console.log(unexpired);
     return `
       <ul style="${this.converter(styledList)}">
-        ${problems.map(problem => new ProblemItem(problem).render()).join('')}
+        ${unexpired.map(problem => new ProblemItem(problem).render()).join('')}
         ${
           isLogIn
             ? ``
