@@ -37,9 +37,12 @@ const render = (RootInstance, $container) => {
   let $real;
 
   if (init || !RootInstance) {
-    init = false;
-    initInstance = RootInstance;
-    $initContainer = $container;
+    if (init) {
+      initInstance = RootInstance;
+      $initContainer = $container;
+      init = false;
+    }
+
     $real = $initContainer;
     $virtual = $initContainer.cloneNode();
     $virtual.innerHTML = initInstance.render();
