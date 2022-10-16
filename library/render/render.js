@@ -41,17 +41,19 @@ const render = (RootInstance, $container) => {
       initInstance = RootInstance;
       $initContainer = $container;
       init = false;
+    } else {
+      unbindEventHandler();
     }
 
     $real = $initContainer;
     $virtual = $initContainer.cloneNode();
     $virtual.innerHTML = initInstance.render();
   } else {
+    unbindEventHandler();
     $real = $container;
     $virtual = domStrToNode(RootInstance.render());
   }
 
-  unbindEventHandler();
   applyDiff($real, $virtual);
   bindEventHandler();
 };
