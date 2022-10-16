@@ -20,7 +20,7 @@ const unbindEventHandler = () => {
   eventHolder.push(...eventHolder.filter(holder => !removeHolders.includes(holder)));
 };
 
-let init = false;
+let init = true;
 let initInstance = null;
 let $initContainer = null;
 
@@ -33,21 +33,23 @@ const domStrToNode = domStr => {
 };
 
 const render = (RootInstance, $container) => {
-  if (!init) {
-    init = true;
+  let $virtual;
+  let $real;
+
+  if (init || !RootInstance) {
+    init = false;
     initInstance = RootInstance;
     $initContainer = $container;
+    $real = $initContainer;
+    $virtual = $initContainer.cloneNode();
+    $virtual.innerHTML = initInstance.render();
+  } else {
+    $real = $container;
+    $virtual = domStrToNode(RootInstance.render());
   }
 
-  const _RootInstance = RootInstance ?? initInstance;
-  const $real = $container ?? $initContainer;
-
   unbindEventHandler();
-
-  const $virtual = domStrToNode(_RootInstance.render());
-
   applyDiff($real, $virtual);
-
   bindEventHandler();
 };
 
