@@ -1,4 +1,5 @@
 import Component from '../library/Component.js';
+import { router } from '../router/index.js';
 
 const styledProfile = {
   position: 'absolute',
@@ -15,6 +16,18 @@ class Profile extends Component {
     return `
         <button style="${this.converter(styledProfile)}">사람</button>
       `;
+  }
+
+  addEventListener() {
+    return [
+      {
+        type: 'click',
+        selector: 'button',
+        handler: () => {
+          router.go('/setting');
+        },
+      },
+    ];
   }
 }
 

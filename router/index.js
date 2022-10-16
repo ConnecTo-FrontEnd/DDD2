@@ -1,4 +1,4 @@
-import { SignIn, Main, SignUp, Setting } from '../pages/index.js';
+import { SignIn, Main, SignUp, Setting, NotFound } from '../pages/index.js';
 import { render } from '../library/render/index.js';
 
 const routes = [
@@ -9,19 +9,23 @@ const routes = [
   { path: '/setting', page: Setting },
 ];
 
-const navigator = {
+const router = {
+  find(_path) {
+    return routes.find(({ path }) => path === _path)?.page ?? NotFound;
+  },
   go(_path) {
-    const currentPath = window.location.pathname.replace('/index.html', '');
-    if (currentPath === _path) return;
+    if (window.location.pathname === _path) return;
 
-    const route = routes.find(({ path }) => path === _path);
-
-    window.history.pushState(null, null, route?.path ?? '/');
+    window.history.pushState(null, null, _path);
     render();
   },
   back() {
-    render();
+    history.back();
   },
 };
 
-export { routes, navigator };
+window.addEventListener('popstate', () => {
+  render();
+});
+
+export { routes, router };
