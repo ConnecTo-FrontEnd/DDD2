@@ -1,5 +1,7 @@
 import Component from '../library/Component.js';
 import { Header, Form } from '../components/index.js';
+import { router } from '../router/index.js';
+import { setUserInfo } from '../store/userInfo.js';
 
 class SignIn extends Component {
   addEventListener() {
@@ -17,7 +19,8 @@ class SignIn extends Component {
               password: e.target[1].value,
             },
           });
-          sessionStorage.setItem('userInfo', JSON.stringify(res.data));
+          setUserInfo(res.data);
+          router.go('/');
         },
       },
     ];
