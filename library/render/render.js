@@ -35,11 +35,11 @@ const domStrToNode = domStr => {
 const render = (RootInstance, $container) => {
   if (!init) {
     init = true;
-    initInstance = typeof RootInstance === 'function' ? new RootInstance() : RootInstance;
+    initInstance = RootInstance;
     $initContainer = $container;
   }
 
-  const _RootInstance = typeof RootInstance === 'function' ? new RootInstance() : RootInstance ?? initInstance;
+  const _RootInstance = RootInstance ?? initInstance;
   const $real = $container ?? $initContainer;
 
   unbindEventHandler();

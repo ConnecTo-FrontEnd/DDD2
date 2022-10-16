@@ -4,7 +4,6 @@ import { router } from './router/index.js';
 
 class App extends Component {
   domStr() {
-    console.log(window.location.pathname);
     const Page = router.find(window.location.pathname);
 
     return `
