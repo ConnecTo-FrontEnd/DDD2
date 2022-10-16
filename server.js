@@ -30,6 +30,19 @@ app.get('/', verify, (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 
+app.get('/auth', (req, res) => {
+  const { accessToken } = req.cookies;
+
+  try {
+    const decoded = jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
+    console.log(`Authorized!!`);
+    res.status(200).json(user.getInfo(decoded.id));
+  } catch (e) {
+    console.error('Unauthorized...');
+    res.sendStatus(401);
+  }
+});
+
 app.use(express.static(path.join(__dirname, '/')));
 app.use(express.json());
 

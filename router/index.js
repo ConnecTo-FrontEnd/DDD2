@@ -7,9 +7,9 @@ const routes = [
     path: '/',
     page: Main,
     get shouldRedirect() {
-      return userInfo === null;
+      return false;
     },
-    redirectTo: '/signin',
+    redirectTo: '/',
   },
   {
     path: '/signin',

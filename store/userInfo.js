@@ -25,6 +25,20 @@ const getCategorizedProblems = () => {
   );
 };
 
+const requestVerify = async () => {
+  try {
+    const res = await axios({
+      method: 'get',
+      url: '/auth',
+    });
+
+    setUserInfo(res.data);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 const requestAddProblem = async () => {
   try {
     const res = await axios({
@@ -56,4 +70,4 @@ const requestDeleteProblem = async id => {
   }
 };
 
-export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem, requestDeleteProblem };
+export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem, requestDeleteProblem, requestVerify };
