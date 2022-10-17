@@ -64,11 +64,19 @@ app.post('/add', (req, res) => {
   user.addProblem(id, number);
   res.json(user.getInfo(id));
 });
-app.delete('/delete/:userId/:problemId', (req, res) => {
-  const { userId, problemId } = req.params;
 
-  user.deleteProblem(userId, problemId);
+app.delete('/delete', (req, res) => {
+  const { userId, problemIds } = req.body;
+
+  user.deleteProblem(userId, problemIds);
   res.json(user.getInfo(userId));
+});
+
+app.patch('/setting', (req, res) => {
+  const { id, day, number, platform } = req.body;
+  const who = user.getInfo(id);
+  user.setData({ ...who, day, number, platform });
+  res.json(who);
 });
 
 app.listen(port, () => {
