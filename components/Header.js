@@ -19,17 +19,10 @@ const button = styled({
 
 class Header extends Component {
   domStr() {
-    const currentPath = window.location.pathname;
-
     return `
       <header style="${header}">
-        ${
-          routes.map(route => route.path).includes(currentPath)
-            ? `
         <button style="${button}" class="logo-button"></button>
-        ${new Profile({ userInfo }).render()}`
-            : ''
-        }
+        ${new Profile({ userInfo }).render()}
       </header>`;
   }
 }
