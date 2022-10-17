@@ -2,6 +2,7 @@ import Component from '../library/Component.js';
 import Profile from './Profile.js';
 import styled from '../library/styled.js';
 import { userInfo } from '../store/userInfo.js';
+import { routes } from '../router/index.js';
 
 const header = styled({
   display: 'flex',
@@ -16,18 +17,19 @@ const button = styled({
   background: 'url(../assets/logo.svg)',
 });
 
-const backButton = styled({
-  width: '29px',
-  height: '29px',
-  background: 'url(../assets/backButton.svg)',
-});
-
 class Header extends Component {
   domStr() {
+    const currentPath = window.location.pathname;
+
     return `
       <header style="${header}">
-        <button style="${userInfo ? button : backButton}" class="logo-button"></button>
-        ${new Profile({ userInfo }).render()}
+        ${
+          routes.map(route => route.path).includes(currentPath)
+            ? `
+        <button style="${button}" class="logo-button"></button>
+        ${new Profile({ userInfo }).render()}`
+            : ''
+        }
       </header>`;
   }
 }
