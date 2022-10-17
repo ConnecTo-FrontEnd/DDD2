@@ -56,4 +56,61 @@ const requestDeleteProblem = async id => {
   }
 };
 
-export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem, requestDeleteProblem };
+const requestAuthUser = async (id, password, setState) => {
+  try {
+    const res = await axios({
+      method: 'post',
+      url: '/signin',
+      data: {
+        id,
+        password,
+      },
+    });
+    setUserInfo(res.data);
+    return true;
+  } catch (err) {
+    const newState = { userid: '', password: '', errorMessage: err.response.data.error };
+    setState(newState);
+    return false;
+  }
+};
+
+const requestCreateUser = async (id, password) => {
+  try {
+    const res = await axios({
+      method: 'post',
+      url: '/signup',
+      data: {
+        id,
+        password,
+      },
+    });
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+
+const requestCheckExistUser = async (userid, setState) => {
+  try {
+    const res = await axios({
+      method: 'get',
+      url: `signup/${userid}`,
+    });
+    setState({ existId: res.data, idChanged: false });
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+
+export {
+  userInfo,
+  setUserInfo,
+  getCategorizedProblems,
+  requestAddProblem,
+  requestDeleteProblem,
+  requestAuthUser,
+  requestCreateUser,
+  requestCheckExistUser,
+};

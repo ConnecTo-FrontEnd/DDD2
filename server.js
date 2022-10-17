@@ -33,15 +33,11 @@ app.get('/', verify, (req, res) => {
 app.use(express.static(path.join(__dirname, '/')));
 app.use(express.json());
 
-app.get('*', verify, (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
-});
-
 app.post('/signin', (req, res) => {
   const { id, password } = req.body;
   if (!id || !password) return res.status(401).send({ error: '사용자 아이디 또는 패스워드가 전달되지 않았습니다.' });
 
-  if (!auth.isValid(id, password)) return res.status(401).send({ error: '등록되지 않은 사용자입니다.' });
+  if (!auth.isValid(id, password)) return res.status(401).send({ error: '일치하는 회원 정보가 없습니다.' });
 
   const accessToken = jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
     expiresIn: '1d',
@@ -55,6 +51,18 @@ app.post('/signin', (req, res) => {
   res.json(user.getInfo(id));
 });
 
+app.post('/signup', (req, res) => {
+  const { id, password } = req.body;
+  auth.create(id, password);
+  user.create(id);
+  res.json(user.getInfo(id));
+});
+
+app.get('/signup/:id', (req, res) => {
+  const { id } = req.params;
+  res.json(auth.exist(id));
+});
+
 app.post('/add', (req, res) => {
   const { id } = req.body;
   const {
@@ -64,11 +72,16 @@ app.post('/add', (req, res) => {
   user.addProblem(id, number);
   res.json(user.getInfo(id));
 });
+
 app.delete('/delete/:userId/:problemId', (req, res) => {
   const { userId, problemId } = req.params;
 
   user.deleteProblem(userId, problemId);
   res.json(user.getInfo(userId));
+});
+
+app.get('*', verify, (req, res) => {
+  res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.listen(port, () => {
