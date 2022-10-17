@@ -10,17 +10,14 @@ const button = styled({
   'font-size': '1rem',
   'background-color': '#f7f7f7',
 });
-
 class StyledButton extends Component {
-  // {style, text, onClick} = this.props
   domStr() {
     const { style, text } = this.props;
     return `<button style="${button}; ${style}">${text}</button>`;
   }
 
   addEventListener() {
-    const { onClick } = this.props;
-    return [{ type: 'click', selector: 'button', handler: onClick ?? (() => {}) }];
+    return [{ type: 'click', selector: 'button', handler: this.props?.onClick ?? (() => {}) }];
   }
 }
 

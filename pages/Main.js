@@ -1,5 +1,5 @@
 import Component from '../library/Component.js';
-import { ProblemList, Header, HistoryList } from '../components/index.js';
+import { ProblemList, Header, HistoryList, Profile } from '../components/index.js';
 import { userInfo } from '../store/userInfo.js';
 
 class Main extends Component {
@@ -9,7 +9,7 @@ class Main extends Component {
     }
     return `
       <div>
-        ${new Header().render()}
+        ${new Header({ item: new Profile().render() }).render()}
         ${new ProblemList().render()}
         ${new HistoryList().render()}
       </div>`;

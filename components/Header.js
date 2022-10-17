@@ -22,7 +22,7 @@ class Header extends Component {
     return `
       <header style="${header}">
         <button style="${button}" class="logo-button"></button>
-        ${new Profile({ userInfo }).render()}
+        ${this.props?.item ?? ''}
       </header>`;
   }
 

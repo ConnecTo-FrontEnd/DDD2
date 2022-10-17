@@ -4,6 +4,7 @@ import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
 
 import { router } from '../router/index.js';
+import { userInfo } from '../store/userInfo.js';
 
 const profile = styled({
   position: 'absolute',
@@ -24,7 +25,6 @@ const beforeLogIn = styled({
 
 class Profile extends Component {
   domStr() {
-    const { userInfo } = this.props;
     const currentPath = window.location.pathname;
 
     if (['/setting', '/signin', '/signup'].includes(currentPath)) return ``;
