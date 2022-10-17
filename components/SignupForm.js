@@ -3,6 +3,7 @@ import Input from './Input.js';
 import { SignupScheme } from '../schema/schema.js';
 import styled from '../library/styled.js';
 import { requestCreateUser, requestCheckExistUser } from '../store/userInfo.js';
+import { router } from '../router/index.js';
 
 const activebutton = styled({
   'background-color': 'orange',
@@ -20,32 +21,6 @@ class SignupForm extends Component {
     super();
     this.signupScheme = new SignupScheme();
     this.state = { userid: '', password: '', 'confirm-password': '', existId: null, idChanged: null };
-  }
-
-  addEventListener() {
-    return [
-      {
-        type: 'submit',
-        selector: '.signup-form',
-        handler: async e => {
-          e.preventDefault();
-          await requestCreateUser(e.target[0].value, e.target[1].value);
-        },
-      },
-      {
-        type: 'click',
-        selector: '.check-userid-button',
-        handler: async e => {
-          e.preventDefault();
-          const { userid } = this.state;
-          await requestCheckExistUser(userid, this.setState.bind(this));
-        },
-      },
-    ];
-  }
-
-  setInputValue(newState) {
-    this.setState(newState);
   }
 
   domStr() {
@@ -68,8 +43,40 @@ class SignupForm extends Component {
           `<button type="button">확인됨</button>`}
           <div> ${existId ? '중복된 아이디입니다.':'' }</div>
         </div>
-        <button style="${!isEmpty && valid && existId!==null && !existId ?  activebutton : disabledbutton}" ${!isEmpty && valid && existId!==null && !existId ? '': 'disabled' }>Sign up</button>
+        <button style="${!isEmpty && valid && existId!==null && !existId ?  activebutton : disabledbutton}" ${!isEmpty && valid && existId!==null && !existId ? '': 'disabled' } class="from-signup-signup-button">Sign up</button>
       </form>`;
+  }
+
+  setInputValue(newState) {
+    this.setState(newState);
+  }
+
+  addEventListener() {
+    return [
+      {
+        type: 'submit',
+        selector: '.signup-form',
+        handler: e => {
+          e.preventDefault();
+          requestCreateUser(e.target[0].value, e.target[1].value)
+            .then(() => {
+              router.go('/signin');
+            })
+            .catch(e => {
+              console.log(e);
+            });
+        },
+      },
+      {
+        type: 'click',
+        selector: '.check-userid-button',
+        handler: async e => {
+          e.preventDefault();
+          const { userid } = this.state;
+          await requestCheckExistUser(userid, this.setState.bind(this));
+        },
+      },
+    ];
   }
 }
 

@@ -1,5 +1,6 @@
 import Component from '../library/Component.js';
 import { Header, SignupForm } from '../components/index.js';
+import { router } from '../router/index.js';
 
 class SignUp extends Component {
   domStr() {
@@ -10,7 +11,7 @@ class SignUp extends Component {
       ${new SignupForm().render()}
       <div>
         Already have an account?
-        <button>Sign in</button>
+        <button class="from-signup-signin-button">Sign in</button>
       </div>
     </div>`;
   }
@@ -31,6 +32,13 @@ class SignUp extends Component {
             },
           });
           console.log(res);
+        },
+      },
+      {
+        type: 'click',
+        selector: '.from-signup-signin-button',
+        handler: e => {
+          router.go('/signin');
         },
       },
     ];
