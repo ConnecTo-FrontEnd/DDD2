@@ -86,6 +86,11 @@ app.post('/add', (req, res) => {
   res.json(user.getInfo(id));
 });
 
+app.delete('/logout', (req, res) => {
+  res.clearCookie('accessToken');
+  res.sendStatus(200);
+});
+
 app.delete('/delete', (req, res) => {
   const { userId, problemIds } = req.body;
 

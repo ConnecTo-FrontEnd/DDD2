@@ -25,6 +25,20 @@ const getCategorizedProblems = () => {
   );
 };
 
+const requestLogout = async () => {
+  try {
+    const res = await axios({
+      method: 'delete',
+      url: '/logout',
+    });
+    userInfo = null;
+    delete sessionStorage.userInfo;
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 const requestVerify = async () => {
   try {
     const res = await axios({
@@ -151,4 +165,5 @@ export {
   requestCreateUser,
   requestCheckExistUser,
   requestVerify,
+  requestLogout,
 };
