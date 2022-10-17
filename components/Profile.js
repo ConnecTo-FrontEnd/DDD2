@@ -25,15 +25,15 @@ const beforeLogIn = styled({
 class Profile extends Component {
   domStr() {
     const { userInfo } = this.props;
-    if (userInfo)
-      return `
-        <button style="${profile}" class="profile-button"></button>`;
+    const currentPath = window.location.pathname;
+    console.log(window.location.pathname, window.location.pathname === '/');
 
-    if ('현재 페이지가 메인페이지 - 로그아웃 상태이면')
-      return `
-        <button style="${beforeLogIn}" class="profile-login-button">Log In</button>`;
+    if (['/setting', '/signin', '/signup'].includes(currentPath)) return ``;
 
-    return ``;
+    if (currentPath === '/' && !userInfo)
+      return `<button style="${beforeLogIn}" class="profile-login-button">Log In</button>`;
+
+    return `<button style="${profile}" class="profile-button"></button>`;
   }
 
   addEventListener() {
@@ -42,7 +42,6 @@ class Profile extends Component {
         type: 'click',
         selector: '.profile-button',
         handler: e => {
-          console.log('프로필 버튼 누름');
           router.go('/setting');
         },
       },
@@ -50,7 +49,6 @@ class Profile extends Component {
         type: 'click',
         selector: '.profile-login-button',
         handler: e => {
-          console.log('프로필 위치에 있는 Log In 버튼 누름');
           router.go('/signin');
         },
       },
