@@ -36,7 +36,6 @@ class ProblemList extends Component {
 
   domStr() {
     const { unexpired } = getCategorizedProblems();
-
     if (this.state.isLoading)
       return `
         <div style="${ProblmContainer}">
@@ -62,7 +61,6 @@ class ProblemList extends Component {
           if (!this.state.isLoading) return;
 
           await requestAddProblem();
-
           setTimeout(() => {
             this.setState.call(this, { isLoading: false });
           }, 1000);
@@ -73,6 +71,8 @@ class ProblemList extends Component {
         selector: '.delete-unexpired-button',
         handler: async e => {
           await requestDeleteProblem([e.target.dataset.problemId]);
+          await requestAddProblem(1);
+
           setTimeout(() => {
             this.setState.call(this, { isLoading: false });
           }, 500);
