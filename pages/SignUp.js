@@ -1,16 +1,18 @@
 import Component from '../library/Component.js';
-import { Header, Form } from '../components/index.js';
-import { userInfo } from '../store/userInfo.js';
+import { Header, SignupForm } from '../components/index.js';
 
 class SignUp extends Component {
   domStr() {
     return `
+    <div>
+      ${new Header().render()}
+      <h1>AllSol</h1>
+      ${new SignupForm().render()}
       <div>
-        ${new Header({ userInfo }).render()}
-        <h1>회원가입</h1>
-        ${new Form(this.props).render()}
+        Already have an account?
+        <button>Sign in</button>
       </div>
-    `;
+    </div>`;
   }
 
   addEventListener() {

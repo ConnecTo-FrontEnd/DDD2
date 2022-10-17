@@ -1,15 +1,19 @@
 import Component from '../library/Component.js';
-import { Header, Form } from '../components/index.js';
-import { userInfo } from '../store/userInfo.js';
+import { setUserInfo } from '../store/userInfo.js';
+import { Header, SigninForm } from '../components/index.js';
+import { router } from '../router/index.js';
 
 class SignIn extends Component {
   domStr() {
-    console.log(userInfo);
     return `
       <div>
-        ${new Header({ userInfo }).render()}
-        <h1>로그인</h1>
-        ${new Form(this.props).render()}
+        ${new Header().render()}
+        <h1>AllSol</h1>
+        ${new SigninForm().render()}
+        <div>
+          Don't have an account?
+          <button>Sign up</button>
+        </div>
       </div>
     `;
   }
@@ -29,7 +33,8 @@ class SignIn extends Component {
               password: e.target[1].value,
             },
           });
-          sessionStorage.setItem('userInfo', JSON.stringify(res.data));
+          setUserInfo(res.data);
+          router.go('/');
         },
       },
     ];
@@ -37,20 +42,3 @@ class SignIn extends Component {
 }
 
 export default SignIn;
-
-/* <header class="nav">
-      <button class="back">뒤로가기</button>
-    </header>
-    <h1>로그인</h1>
-    <form action="" class="form-signin">
-      <div class="input-container">
-        <label for="siginin-userid">아이디</label>
-        <input type="text" id="siginin-userid" name="userid" required />
-      </div>
-      <div class="input-container">
-        <label for="signin-password">비밀번호</label>
-        <input type="password" id="signin-password" name="password" required />
-      </div>
-    </form>
-    <button class="button signin-button" disabled>로그인</button>
-    <button class="button">회원가입</button> */

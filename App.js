@@ -1,30 +1,33 @@
 // 루트 컴포넌트
 import Component from './library/Component.js';
-import { NotFound } from './pages/index.js';
-import { navigator, routes } from './router/index.js';
+import { router } from './router/index.js';
+import { requestVerify, userInfo } from './store/userInfo.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  domStr() {
+    const Page = router.find(window.location.pathname);
 
-    window.addEventListener('click', e => {
-      if (!e.target.matches('a')) return;
-      e.preventDefault();
-      navigator.go(e.target.pathname);
-    });
+    return `
+      <div>
+          ${new Page({
+            state: this.state,
+          }).render()}
+      </div>
+    `;
   }
 
-  domStr() {
-    const currentPath = window.location.pathname.replace('/index.html', '');
-    const route = routes.find(({ path }) => path === currentPath);
-    const Page = route?.page ?? NotFound;
-    return `
-    <div>
-        ${new Page({
-          state: this.state,
-        }).render()}
-    </div>
-    `;
+  addEventListener() {
+    return [
+      {
+        type: 'DOMContentLoaded',
+        handler: () => {
+          if (!userInfo)
+            requestVerify().then(res => {
+              if (res) this.setState.call(this, {});
+            });
+        },
+      },
+    ];
   }
 }
 

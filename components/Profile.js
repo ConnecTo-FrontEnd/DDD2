@@ -1,6 +1,9 @@
 import Component from '../library/Component.js';
+
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
+
+import { router } from '../router/index.js';
 
 const profile = styled({
   position: 'absolute',
@@ -40,7 +43,7 @@ class Profile extends Component {
         selector: '.profile-button',
         handler: e => {
           console.log('프로필 버튼 누름');
-          // navigator.go('/setting');
+          router.go('/setting');
         },
       },
       {
@@ -48,7 +51,7 @@ class Profile extends Component {
         selector: '.profile-login-button',
         handler: e => {
           console.log('프로필 위치에 있는 Log In 버튼 누름');
-          // navigator.go('/signin');
+          router.go('/signin');
         },
       },
     ];

@@ -30,18 +30,27 @@ app.get('/', verify, (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 
+app.get('/auth', (req, res) => {
+  const { accessToken } = req.cookies;
+
+  try {
+    const decoded = jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
+    console.log(`Authorized!!`);
+    res.status(200).json(user.getInfo(decoded.id));
+  } catch (e) {
+    console.error('Unauthorized...');
+    res.sendStatus(401);
+  }
+});
+
 app.use(express.static(path.join(__dirname, '/')));
 app.use(express.json());
-
-app.get('*', verify, (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
-});
 
 app.post('/signin', (req, res) => {
   const { id, password } = req.body;
   if (!id || !password) return res.status(401).send({ error: '사용자 아이디 또는 패스워드가 전달되지 않았습니다.' });
 
-  if (!auth.isValid(id, password)) return res.status(401).send({ error: '등록되지 않은 사용자입니다.' });
+  if (!auth.isValid(id, password)) return res.status(401).send({ error: '일치하는 회원 정보가 없습니다.' });
 
   const accessToken = jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
     expiresIn: '1d',
@@ -53,6 +62,18 @@ app.post('/signin', (req, res) => {
   });
 
   res.json(user.getInfo(id));
+});
+
+app.post('/signup', (req, res) => {
+  const { id, password } = req.body;
+  auth.create(id, password);
+  user.create(id);
+  res.json(user.getInfo(id));
+});
+
+app.get('/signup/:id', (req, res) => {
+  const { id } = req.params;
+  res.json(auth.exist(id));
 });
 
 app.post('/add', (req, res) => {
@@ -77,6 +98,10 @@ app.patch('/setting', (req, res) => {
   const who = user.getInfo(id);
   user.setData({ ...who, day, number, platform });
   res.json(who);
+});
+
+app.get('*', verify, (req, res) => {
+  res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.listen(port, () => {
