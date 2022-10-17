@@ -107,7 +107,7 @@ const requestSaveSetting = async data => {
   }
 };
 
-const requestAuthUser = async (id, password, setState) => {
+const requestSignIn = async ({ id, password, setState }) => {
   try {
     const res = await axios({
       method: 'post',
@@ -121,12 +121,13 @@ const requestAuthUser = async (id, password, setState) => {
 
     return true;
   } catch (e) {
-    const newState = { userid: '', password: '', errorMessage: err.response.data.error };
+    const newState = { userid: '', password: '', errorMessage: e.response.data.error };
     setState(newState);
+    return false;
   }
 };
 
-const requestCreateUser = async (id, password) => {
+const requestSignUp = async ({ id, password }) => {
   try {
     const res = await axios({
       method: 'post',
@@ -162,8 +163,8 @@ export {
   requestAddProblem,
   requestDeleteProblem,
   requestSaveSetting,
-  requestAuthUser,
-  requestCreateUser,
+  requestSignIn,
+  requestSignUp,
   requestCheckExistUser,
   requestVerify,
   requestLogout,

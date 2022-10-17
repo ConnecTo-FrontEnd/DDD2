@@ -2,7 +2,7 @@ import Component from '../library/Component.js';
 import Input from './Input.js';
 import { SignupScheme } from '../schema/schema.js';
 import styled from '../library/styled.js';
-import { requestCreateUser, requestCheckExistUser } from '../store/userInfo.js';
+import { requestSignUp, requestCheckExistUser } from '../store/userInfo.js';
 import { router } from '../router/index.js';
 
 const activebutton = styled({
@@ -29,6 +29,7 @@ class SignupForm extends Component {
     this.signupScheme.password.value = password;
     this.signupScheme['confirm-password'].value = confirmPassword;
     const { userid: _userid, isEmpty, valid } = this.signupScheme;
+    const canSubmit = !isEmpty && valid && existId !== null && !existId;
     // prettier-ignore
     return `
       <form class="signup-form">
@@ -43,7 +44,11 @@ class SignupForm extends Component {
           `<button type="button">확인됨</button>`}
           <div> ${existId ? '중복된 아이디입니다.':'' }</div>
         </div>
-        <button style="${!isEmpty && valid && existId!==null && !existId ?  activebutton : disabledbutton}" ${!isEmpty && valid && existId!==null && !existId ? '': 'disabled' } class="from-signup-signup-button">Sign up</button>
+        <button 
+          style="${canSubmit ?  activebutton : disabledbutton}" ${canSubmit ? '': 'disabled' } 
+        >
+          Sign up
+        </button>
       </form>`;
   }
 
@@ -58,13 +63,12 @@ class SignupForm extends Component {
         selector: '.signup-form',
         handler: e => {
           e.preventDefault();
-          requestCreateUser(e.target[0].value, e.target[1].value)
-            .then(() => {
-              router.go('/signin');
-            })
-            .catch(e => {
-              console.log(e);
-            });
+          requestSignUp({
+            id: e.target[0].value,
+            password: e.target[1].value,
+          }).then(() => {
+            router.go('/signin');
+          });
         },
       },
       {

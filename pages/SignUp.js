@@ -11,7 +11,7 @@ class SignUp extends Component {
       ${new SignupForm().render()}
       <div>
         Already have an account?
-        <button class="from-signup-signin-button">Sign in</button>
+        <button class="signin-link">Sign in</button>
       </div>
     </div>`;
   }
@@ -19,25 +19,9 @@ class SignUp extends Component {
   addEventListener() {
     return [
       {
-        type: 'submit',
-        selector: '.signup-form',
-        handler: async e => {
-          e.preventDefault();
-          const res = await axios({
-            method: 'post',
-            url: '/signup',
-            data: {
-              id: e.target[0].value,
-              password: e.target[1].value,
-            },
-          });
-          console.log(res);
-        },
-      },
-      {
         type: 'click',
-        selector: '.from-signup-signin-button',
-        handler: e => {
+        selector: '.signin-link',
+        handler: () => {
           router.go('/signin');
         },
       },
