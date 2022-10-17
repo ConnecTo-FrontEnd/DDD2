@@ -83,11 +83,10 @@ const requestSaveSetting = async data => {
       url: 'setting',
       data: {
         id: userInfo.id,
-        day: data[0],
-        number: data[1],
-        platform: data[2],
+        ...data,
       },
     });
+    setUserInfo(res.data);
   } catch (err) {
     return false;
   }

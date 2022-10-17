@@ -94,10 +94,9 @@ app.delete('/delete', (req, res) => {
 });
 
 app.patch('/setting', (req, res) => {
-  const { id, day, number, platform } = req.body;
-  const who = user.getInfo(id);
-  user.setData({ ...who, day, number, platform });
-  res.json(who);
+  const { id, nickname, day, number, platform } = req.body;
+  user.updateSetting(id, { nickname, day: +day, number: +number, platform });
+  res.json(user.getInfo(id));
 });
 
 app.get('*', verify, (req, res) => {
