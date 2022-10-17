@@ -53,13 +53,14 @@ const requestVerify = async () => {
   }
 };
 
-const requestAddProblem = async () => {
+const requestAddProblem = async problemNumber => {
   try {
     const res = await axios({
       method: 'post',
       url: 'add',
       data: {
         id: userInfo.id,
+        problemNumber,
       },
     });
     setUserInfo(res.data);

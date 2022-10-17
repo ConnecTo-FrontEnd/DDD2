@@ -77,12 +77,12 @@ app.get('/signup/:id', (req, res) => {
 });
 
 app.post('/add', (req, res) => {
-  const { id } = req.body;
+  const { id, problemNumber } = req.body;
   const {
     setting: { number },
   } = user.getInfo(id);
 
-  user.addProblem(id, number);
+  user.addProblem(id, problemNumber ?? number);
   res.json(user.getInfo(id));
 });
 
