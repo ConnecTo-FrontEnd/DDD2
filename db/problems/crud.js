@@ -63,11 +63,12 @@ module.exports = {
     const boj = await fetchBOJ();
     fs.writeFileSync(path.join(__dirname, './db.json'), JSON.stringify(boj));
   },
-  getRandom(amount, option = { exceptIds: [] }) {
+  getRandom(amount, option = { exceptIds: [], removedIds: [] }) {
     const result = [];
     while (result.length < amount) {
       const i = Math.floor(Math.random() * data.length);
-      if (!result.includes(i) && !option.exceptIds?.includes(data[i].id)) result.push(data[i]);
+      if (!result.includes(i) && !option.exceptIds?.includes(data[i].id) && !option.removedIds?.includes(data[i].id))
+        result.push(data[i]);
     }
     return result;
   },

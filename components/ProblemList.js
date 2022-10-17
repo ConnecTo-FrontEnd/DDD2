@@ -1,35 +1,31 @@
 import Component from '../library/Component.js';
 import ProblemItem from './ProblemItem.js';
-import Button from './Button.js';
-import { getCategorizedProblems, requestDeleteProblem, requestAddProblem } from '../store/userInfo.js';
+import { getCategorizedProblems, requestDeleteProblem, requestAddProblem, userInfo } from '../store/userInfo.js';
 import Loading from './Loading.js';
+import styled from '../library/styled.js';
+import theme from '../styles/theme.js';
 
-const styledList = {
+const loadingContainer = styled({
   display: 'flex',
-  margin: '2rem',
+  'flex-direction': 'column',
+  'align-items': 'center',
+});
+
+const h1 = styled({
+  'margin-left': '28px',
+  'text-align': 'left',
+  font: theme['font-en-bold'],
+  'font-size': '28px',
+});
+
+const ul = styled({
+  display: 'flex',
+  margin: '23px 0 57px 26px',
   'white-space': 'nowrap',
   'overflow-x': 'scroll',
-  gap: '3rem',
-};
-
-const styledLoginPopUpContainer = {
-  position: 'absolute',
-  top: '17rem',
-  width: '100%',
-  height: '100%',
-  'backdrop-filter': 'blur(6px)',
-};
-
-const styledLoginPopUp = {
-  display: 'grid',
-  margin: '10rem auto',
-  padding: '2rem 0',
-  gap: '1.5rem',
-  width: '80%',
-  border: '3px solid black',
-  'border-radius': '6px',
-  'font-size': '1.2rem',
-};
+  'scrollbar-width': 'none',
+  gap: '41px',
+});
 
 class ProblemList extends Component {
   constructor(props) {
@@ -38,34 +34,22 @@ class ProblemList extends Component {
   }
 
   domStr() {
-    const isLogIn = true;
     const { unexpired } = getCategorizedProblems();
 
     if (this.state.isLoading)
       return `
-        <div>
+        <div style="${loadingContainer}">
           ${new Loading().render()}
-        </div>
-      `;
+        </div>`;
 
+    // prettier-ignore
     return `
       <div>
-        <ul style="${this.converter(styledList)}">
-        ${unexpired.map(problem => new ProblemItem({ problem }).render()).join('')}
-        ${
-          isLogIn
-            ? ''
-            : `
-        <div style="${this.converter(styledLoginPopUpContainer)}">
-          <div style="${this.converter(styledLoginPopUp)}">
-            <p>더 많은 문제를 추천 받고 싶다면?</p>
-            ${new Button('로그인/회원가입').render()}
-          </div>
-        </div>`
-        }
+        <h1 style="${h1}">Allsols</h1>
+        <ul style="${ul}">
+        ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
         </ul>
-      </div>
-      `;
+      </div>`;
   }
 
   addEventListener() {
@@ -85,7 +69,7 @@ class ProblemList extends Component {
       },
       {
         type: 'click',
-        selector: 'button',
+        selector: '.delete-unexpired-button',
         handler: async e => {
           await requestDeleteProblem(e.target.dataset.problemId);
           setTimeout(() => {

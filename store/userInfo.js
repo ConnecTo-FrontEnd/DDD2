@@ -42,11 +42,15 @@ const requestAddProblem = async () => {
   }
 };
 
-const requestDeleteProblem = async id => {
+const requestDeleteProblem = async problemIds => {
   try {
     const res = await axios({
       method: 'delete',
-      url: `delete/${userInfo.id}/${id}`,
+      url: `delete`,
+      data: {
+        userId: userInfo.id,
+        problemIds,
+      },
     });
 
     setUserInfo(res.data);
@@ -56,4 +60,23 @@ const requestDeleteProblem = async id => {
   }
 };
 
-export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem, requestDeleteProblem };
+const requestSaveSetting = async data => {
+  try {
+    const res = await axios({
+      method: 'patch',
+      url: 'setting',
+      data: {
+        id: userInfo.id,
+        day: data[0],
+        number: data[1],
+        platform: data[2],
+      },
+    });
+    setUserInfo(res.data);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+export { userInfo, setUserInfo, getCategorizedProblems, requestAddProblem, requestDeleteProblem, requestSaveSetting };

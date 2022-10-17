@@ -5,7 +5,7 @@ const problems = require('../problems/crud.js');
 let data = JSON.parse(fs.readFileSync(path.join(__dirname, './db.json')));
 
 const DEFAULT_DAY = 1;
-const DEFAULT_NUMBER = 2;
+const DEFAULT_NUMBER = 3;
 const DEFAULT_PLATFORM = ['boj'];
 
 const setData = newData => {
@@ -28,6 +28,7 @@ module.exports = {
           lastUpdate: date,
         },
         problemList: [],
+        removedIds: [],
       },
     ]);
   },
@@ -37,12 +38,13 @@ module.exports = {
 
   addProblem(id, amount) {
     // 새삥 추가
-    const { problemList } = this.getInfo(id);
+    const { problemList, removedIds } = this.getInfo(id);
     const date = new Date();
 
     const newProblems = problems
       .getRandom(amount, {
         exceptIds: problemList.flatMap(({ id }) => id),
+        removedIds,
       })
       .map(problem => ({ ...problem, solved: false, givenDate: date }));
 
@@ -50,10 +52,11 @@ module.exports = {
       data.map(user => (user.id === id ? { ...user, problemList: [...user.problemList, ...newProblems] } : user))
     );
   },
-  deleteProblem(userId, problemId) {
-    const { problemList } = this.getInfo(userId);
-    const filteredProblems = problemList.filter(({ id }) => id !== problemId);
+  deleteProblem(userId, problemIds) {
+    const { problemList, removedIds } = this.getInfo(userId);
+    const filteredProblems = problemList.filter(({ id }) => !problemIds.includes(id));
 
+    removedIds.push(...problemIds);
     setData(data.map(user => (user.id === userId ? { ...user, problemList: filteredProblems } : user)));
   },
   getInfo(id) {

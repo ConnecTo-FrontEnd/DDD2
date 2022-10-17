@@ -1,7 +1,19 @@
 import Component from '../library/Component.js';
 import { Header, Form } from '../components/index.js';
+import { userInfo } from '../store/userInfo.js';
 
 class SignIn extends Component {
+  domStr() {
+    console.log(userInfo);
+    return `
+      <div>
+        ${new Header({ userInfo }).render()}
+        <h1>로그인</h1>
+        ${new Form(this.props).render()}
+      </div>
+    `;
+  }
+
   addEventListener() {
     return [
       {
@@ -21,16 +33,6 @@ class SignIn extends Component {
         },
       },
     ];
-  }
-
-  domStr() {
-    return `
-      <div>
-        ${new Header().render()}
-        <h1>로그인</h1>
-        ${new Form(this.props).render()}
-      </div>
-    `;
   }
 }
 
