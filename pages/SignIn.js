@@ -12,7 +12,7 @@ class SignIn extends Component {
         ${new SigninForm().render()}
         <div>
           Don't have an account?
-          <button>Sign up</button>
+          <button class="from-signin-signup-button">Sign up</button>
         </div>
       </div>
     `;
@@ -35,6 +35,13 @@ class SignIn extends Component {
           });
           setUserInfo(res.data);
           router.go('/');
+        },
+      },
+      {
+        type: 'click',
+        selector: '.from-signin-signup-button',
+        handler: e => {
+          router.go('/signup');
         },
       },
     ];
