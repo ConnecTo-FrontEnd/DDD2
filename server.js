@@ -86,6 +86,11 @@ app.post('/add', (req, res) => {
   res.json(user.getInfo(id));
 });
 
+app.delete('/logout', (req, res) => {
+  res.clearCookie('accessToken');
+  res.sendStatus(200);
+});
+
 app.delete('/delete', (req, res) => {
   const { userId, problemIds } = req.body;
 
@@ -94,10 +99,9 @@ app.delete('/delete', (req, res) => {
 });
 
 app.patch('/setting', (req, res) => {
-  const { id, day, number, platform } = req.body;
-  const who = user.getInfo(id);
-  user.setData({ ...who, day, number, platform });
-  res.json(who);
+  const { id, nickname, day, number, platform } = req.body;
+  user.updateSetting(id, { nickname, day: +day, number: +number, platform });
+  res.json(user.getInfo(id));
 });
 
 app.get('*', verify, (req, res) => {

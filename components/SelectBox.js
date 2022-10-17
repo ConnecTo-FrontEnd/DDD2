@@ -11,14 +11,15 @@ const inputContainer = styled({
 
 class SelectBox extends Component {
   domStr() {
-    const { id, content, name, num } = this.props.scheme;
-
+    const { id, content, name, num, checkedId } = this.props.scheme;
     return `
       <div style="${inputContainer}">
         <label for="${id}">${content}</label>
         <select name="${name}" id="${id}">
           ${Array.from({ length: num })
-            .map((_, idx) => `<option value="${idx + 1}">${idx + 1}</option>`)
+            .map(
+              (_, idx) => `<option value="${idx + 1}" ${idx + 1 === checkedId ? 'selected' : ''}>${idx + 1}</option>`
+            )
             .join('')}  
         </select>
       </div>`;

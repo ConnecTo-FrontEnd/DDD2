@@ -25,6 +25,20 @@ const getCategorizedProblems = () => {
   );
 };
 
+const requestLogout = async () => {
+  try {
+    const res = await axios({
+      method: 'delete',
+      url: '/logout',
+    });
+    userInfo = null;
+    delete sessionStorage.userInfo;
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 const requestVerify = async () => {
   try {
     const res = await axios({
@@ -83,11 +97,10 @@ const requestSaveSetting = async data => {
       url: 'setting',
       data: {
         id: userInfo.id,
-        day: data[0],
-        number: data[1],
-        platform: data[2],
+        ...data,
       },
     });
+    setUserInfo(res.data);
   } catch (err) {
     return false;
   }
@@ -152,4 +165,5 @@ export {
   requestCreateUser,
   requestCheckExistUser,
   requestVerify,
+  requestLogout,
 };
