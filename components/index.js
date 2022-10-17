@@ -4,7 +4,6 @@ import ProblemItem from './ProblemItem.js';
 import ProblemList from './ProblemList.js';
 import Profile from './Profile.js';
 import Input from './Input.js';
-import SelectBox from './SelectBox.js';
 import Header from './Header.js';
 import Form from './Form.js';
 import UserSetting from './UserSetting.js';
@@ -20,7 +19,6 @@ export {
   ProblemList,
   Profile,
   Input,
-  SelectBox,
   Header,
   Form,
   UserSetting,
