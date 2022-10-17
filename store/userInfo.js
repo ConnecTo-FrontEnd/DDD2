@@ -58,6 +58,7 @@ const requestAddProblem = async () => {
 
 const requestDeleteProblem = async problemIds => {
   try {
+    if (!(problemIds instanceof Array)) throw new TypeError('problemIds 는 배열이어야합니다.');
     const res = await axios({
       method: 'delete',
       url: `delete`,

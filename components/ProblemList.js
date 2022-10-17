@@ -71,7 +71,7 @@ class ProblemList extends Component {
         type: 'click',
         selector: '.delete-unexpired-button',
         handler: async e => {
-          await requestDeleteProblem(e.target.dataset.problemId);
+          await requestDeleteProblem([e.target.dataset.problemId]);
           setTimeout(() => {
             this.setState.call(this, { isLoading: false });
           }, 500);
