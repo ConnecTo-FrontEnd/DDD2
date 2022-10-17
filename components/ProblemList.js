@@ -5,7 +5,7 @@ import Loading from './Loading.js';
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
 
-const loadingContainer = styled({
+const ProblmContainer = styled({
   display: 'flex',
   'flex-direction': 'column',
   'align-items': 'center',
@@ -25,6 +25,7 @@ const ul = styled({
   'overflow-x': 'scroll',
   'scrollbar-width': 'none',
   gap: '41px',
+  width: '100%',
 });
 
 class ProblemList extends Component {
@@ -38,13 +39,13 @@ class ProblemList extends Component {
 
     if (this.state.isLoading)
       return `
-        <div style="${loadingContainer}">
+        <div style="${ProblmContainer}">
           ${new Loading().render()}
         </div>`;
 
     // prettier-ignore
     return `
-      <div>
+      <div style="${ProblmContainer}">
         <h1 style="${h1}">Allsols</h1>
         <ul style="${ul}">
         ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
