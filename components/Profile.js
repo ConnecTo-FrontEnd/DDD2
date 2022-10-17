@@ -26,7 +26,6 @@ class Profile extends Component {
   domStr() {
     const { userInfo } = this.props;
     const currentPath = window.location.pathname;
-    console.log(window.location.pathname, window.location.pathname === '/');
 
     if (['/setting', '/signin', '/signup'].includes(currentPath)) return ``;
 
