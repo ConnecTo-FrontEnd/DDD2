@@ -20,7 +20,7 @@ const unbindEventHandler = () => {
   eventHolder.push(...eventHolder.filter(holder => !removeHolders.includes(holder)));
 };
 
-let init = false;
+let init = true;
 let initInstance = null;
 let $initContainer = null;
 
@@ -33,21 +33,28 @@ const domStrToNode = domStr => {
 };
 
 const render = (RootInstance, $container) => {
-  if (!init) {
-    init = true;
-    initInstance = typeof RootInstance === 'function' ? new RootInstance() : RootInstance;
-    $initContainer = $container;
+  let $virtual;
+  let $real;
+
+  if (init || !RootInstance) {
+    if (init) {
+      initInstance = RootInstance;
+      $initContainer = $container;
+      init = false;
+    } else {
+      unbindEventHandler();
+    }
+
+    $real = $initContainer;
+    $virtual = $initContainer.cloneNode();
+    $virtual.innerHTML = initInstance.render();
+  } else {
+    unbindEventHandler();
+    $real = $container;
+    $virtual = domStrToNode(RootInstance.render());
   }
 
-  const _RootInstance = typeof RootInstance === 'function' ? new RootInstance() : RootInstance ?? initInstance;
-  const $real = $container ?? $initContainer;
-
-  unbindEventHandler();
-
-  const $virtual = domStrToNode(_RootInstance.render());
-
   applyDiff($real, $virtual);
-
   bindEventHandler();
 };
 

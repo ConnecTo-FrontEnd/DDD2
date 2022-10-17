@@ -29,7 +29,7 @@ class Component {
     if (!events) return;
 
     for (const event of events) {
-      if (event.selector === 'window' || event.selector === null) {
+      if (event.selector === 'window' || !event.selector) {
         eventHolder.push({ ...event, uuid: this.uuid });
         continue;
       }
