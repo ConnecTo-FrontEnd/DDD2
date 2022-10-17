@@ -1,4 +1,4 @@
-import Button from '../components/Button.js';
+import StyledButton from '../components/StyledButton.js';
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
 import { router } from '../router/index.js';
@@ -39,7 +39,7 @@ class NotFound extends Component {
       <div style="${container}">
         <div style="${NotFoundImage}"/></div>
         <p style="${Comment}">아무것도 없솔!</p>
-        ${new Button({ text: '홈으로', style: homeButton, onClick: this.goHome.bind(this) }).render()}
+        ${new StyledButton({ text: '홈으로', style: homeButton, onClick: this.goHome.bind(this) }).render()}
       </div>
     `;
   }

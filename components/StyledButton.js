@@ -11,7 +11,7 @@ const button = styled({
   'background-color': '#f7f7f7',
 });
 
-class Button extends Component {
+class StyledButton extends Component {
   // {style, text, onClick} = this.props
   domStr() {
     const { style, text } = this.props;
@@ -20,8 +20,8 @@ class Button extends Component {
 
   addEventListener() {
     const { onClick } = this.props;
-    return [{ type: 'click', selector: 'button', handler: onClick }];
+    return [{ type: 'click', selector: 'button', handler: onClick ?? (() => {}) }];
   }
 }
 
-export default Button;
+export default StyledButton;
