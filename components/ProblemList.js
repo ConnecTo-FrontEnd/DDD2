@@ -5,15 +5,19 @@ import Loading from './Loading.js';
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
 
-const ProblmContainer = styled({
+const ProblemContainer = styled({
   display: 'flex',
   'flex-direction': 'column',
   'align-items': 'center',
 });
 
-const h1 = styled({
-  'margin-left': '28px',
+const allsols = styled({
+  display: 'flex',
+  'justify-content': 'space-between',
   'text-align': 'left',
+  width: '100%',
+  'padding-left': '26px',
+  'padding-right': '26px',
   font: theme['font-en-bold'],
   'font-size': '28px',
 });
@@ -28,6 +32,14 @@ const ul = styled({
   width: '100%',
 });
 
+const shuffle = styled({
+  background: 'url(../assets/shuffle.png)',
+  'background-size': 'contain',
+  'background-repeat': 'no-repeat',
+  width: '30px',
+  height: '30px',
+});
+
 class ProblemList extends Component {
   constructor(props) {
     super(props);
@@ -38,16 +50,19 @@ class ProblemList extends Component {
     const { unexpired } = getCategorizedProblems();
     if (this.state.isLoading)
       return `
-        <div style="${ProblmContainer}">
+        <div style="${ProblemContainer}">
           ${new Loading().render()}
         </div>`;
 
     // prettier-ignore
     return `
-      <div style="${ProblmContainer}">
-        <h1 style="${h1}">Allsols</h1>
+      <div style="${ProblemContainer}">
+        <div style="${allsols}">
+          <span>Allsols</span>
+          <div class="shuffle" style="${shuffle}"></div>
+        </div>
         <ul style="${ul}">
-        ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
+          ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
         </ul>
       </div>`;
   }
@@ -73,6 +88,19 @@ class ProblemList extends Component {
           await requestDeleteProblem([e.target.dataset.problemId]);
           await requestAddProblem(1);
 
+          setTimeout(() => {
+            this.setState.call(this, { isLoading: false });
+          }, 500);
+        },
+      },
+      {
+        type: 'click',
+        selector: '.shuffle',
+        handler: async () => {
+          console.log('hi');
+          const { unexpired } = getCategorizedProblems();
+          await requestDeleteProblem(unexpired.flatMap(({ id }) => id));
+          await requestAddProblem();
           setTimeout(() => {
             this.setState.call(this, { isLoading: false });
           }, 500);
