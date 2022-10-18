@@ -10,22 +10,13 @@ import {
 import theme from '../../../shared/styles/theme.js';
 import { ProblemItem, Loading } from './index.js';
 
-const mobiles = window.matchMedia('(max-width:  768px)'); // for tablet devices
-const desktops = window.matchMedia('(min-width: 768px)'); // for desktop devices
-
-console.log(
-  `
-    mobiles:${mobiles.matches}
-    desktops:${desktops.matches}
-  `
-);
 const styles = {
   container: styled({
     display: 'flex',
     'flex-direction': 'column',
     'align-items': 'center',
   }),
-  
+
   allsols: styled({
     display: 'flex',
     'justify-content': 'space-between',
