@@ -1,7 +1,7 @@
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
-import { requestLogout, requestSaveSetting, userInfo } from '../store/userInfo.js';
 import PLATFORMS from '../constants/platforms.js';
+import { requestLogout, requestSaveSetting, userInfo } from '../store/userInfo.js';
 
 class UserSetting extends Component {
   domStr() {
@@ -93,7 +93,7 @@ class UserSetting extends Component {
         <select name="${name}" id="${id}">
           ${Array.from({ length: range })
             .map((_, i) => `<option value="${i + 1}" ${i + 1 === selectedValue ? 'selected' : ''}>${i + 1}</option>`)
-            .join('')}  
+            .join('')}
         </select>
       </div>`;
   }

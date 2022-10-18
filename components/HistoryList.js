@@ -3,6 +3,7 @@ import { getCategorizedProblems, requestDeleteProblem, userInfo } from '../store
 import HistoryItem from './HistoryItem.js';
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
+import { router } from '../router/index.js';
 
 const historyListContainer = styled({
   display: 'flex',
@@ -110,7 +111,7 @@ class HistoryList extends Component {
       {
         type: 'click',
         selector: '.delete-all-expired-button',
-        handler: async e => {
+        handler: async () => {
           const { expired } = getCategorizedProblems();
           await requestDeleteProblem(expired.map(({ id }) => id));
           setTimeout(() => {
@@ -121,9 +122,8 @@ class HistoryList extends Component {
       {
         type: 'click',
         selector: '.rocket-button',
-        handler: e => {
-          console.log('HistoryList에서 로그아웃 상태에서 로켓 버튼 클릭함');
-          // navigator.go('/signin');
+        handler: () => {
+          router.go('/signin');
         },
       },
     ];
