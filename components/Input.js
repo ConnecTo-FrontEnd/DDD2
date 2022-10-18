@@ -10,32 +10,34 @@ const inputContainer = styled({
 });
 
 class Input extends Component {
-  addEventListener() {
-    const { setInputValue } = this.props;
-    return [
-      {
-        type: 'input',
-        selector: 'input',
-        handler: e => {
-          const newstate = {};
-          newstate[e.target.name] = e.target.value;
-          newstate.idChanged = e.target.name === 'userid' ? true : null;
-          setInputValue?.(newstate);
-        },
-      },
-    ];
-  }
-
   domStr() {
-    const { type, id, content, name, value, errorMessage, valid, accept } = this.props.scheme;
+    const { type, id, content, name, value, errorMessage, isValid } = this.props.scheme;
 
     // prettier-ignore
     return `
       <div style="${inputContainer}">
         <label for="${id}">${content}</label>
-        <input style="width: 100%" value="${value}" type="${type}" id="${id}" name="${name}" ${type === 'text' ? 'required' : ''} accept=${accept ?? ''} />
-        <div>${valid ? '' : errorMessage ?? ''}</div>
+        <input 
+          value="${value}" type="${type}" id="${id}" name="${name}" 
+          ${type === 'text' ? 'required' : ''}/>
+        <div>${isValid ? '' : errorMessage ?? ''}</div>
       </div>`;
+  }
+
+  addEventListener() {
+    const { setState } = this.props;
+    return [
+      {
+        type: 'input',
+        selector: 'input',
+        handler: e => {
+          const newState = {};
+          newState[e.target.name] = e.target.value;
+          newState.isIdDirty = e.target.name === 'userid';
+          setState?.(newState);
+        },
+      },
+    ];
   }
 }
 
