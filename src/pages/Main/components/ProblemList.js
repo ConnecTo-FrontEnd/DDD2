@@ -1,5 +1,5 @@
-import Component from '../../../../library/Component.js';
-import styled from '../../../../library/styled.js';
+import Component from '../../../library/Component.js';
+import styled from '../../../library/styled.js';
 import {
   getCategorizedProblems,
   requestDeleteProblem,

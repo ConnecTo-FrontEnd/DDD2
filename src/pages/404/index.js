@@ -1,5 +1,5 @@
-import Component from '../../../library/Component.js';
-import styled from '../../../library/styled.js';
+import Component from '../../library/Component.js';
+import styled from '../../library/styled.js';
 import { router } from '../../shared/router/index.js';
 import theme from '../../shared/styles/theme.js';
 import { StyledButton } from '../../shared/components/index.js';

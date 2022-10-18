@@ -1,5 +1,5 @@
 import { SignIn, Main, SignUp, Setting, NotFound } from '../../pages/index.js';
-import { render } from '../../../library/render/index.js';
+import { render } from '../../library/render/index.js';
 import { userInfo } from '../store/userInfo.js';
 
 const routes = [

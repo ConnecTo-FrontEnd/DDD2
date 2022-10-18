@@ -1,4 +1,4 @@
-import Component from '../../../../library/Component.js';
+import Component from '../../../library/Component.js';
 import PLATFORMS from '../../../shared/constants/platforms.js';
 import { requestLogout, requestSaveSetting, userInfo } from '../../../shared/store/userInfo.js';
 import { SelectBox } from './index.js';

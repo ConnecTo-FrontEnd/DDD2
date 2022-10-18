@@ -1,5 +1,5 @@
 // 루트 컴포넌트
-import Component from '../library/Component.js';
+import Component from './library/Component.js';
 import { router } from './shared/router/index.js';
 import { requestVerify, userInfo } from './shared/store/userInfo.js';
 

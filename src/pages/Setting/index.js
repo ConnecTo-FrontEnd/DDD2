@@ -1,4 +1,4 @@
-import Component from '../../../library/Component.js';
+import Component from '../../library/Component.js';
 import { Header } from '../../shared/components/index.js';
 import { UserSetting } from './components/index.js';
 

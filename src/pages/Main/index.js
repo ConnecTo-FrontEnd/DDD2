@@ -1,4 +1,4 @@
-import Component from '../../../library/Component.js';
+import Component from '../../library/Component.js';
 import { ProblemList, HistoryList } from './components/index.js';
 import { Profile, Header } from '../../shared/components/index.js';
 import { userInfo } from '../../shared/store/userInfo.js';

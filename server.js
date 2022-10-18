@@ -43,7 +43,7 @@ app.get('/auth', (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static(path.join(__dirname, '/src')));
 app.use(express.json());
 
 app.post('/signin', (req, res) => {

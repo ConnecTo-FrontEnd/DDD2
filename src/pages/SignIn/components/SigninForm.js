@@ -1,7 +1,7 @@
-import Component from '../../../../library/Component.js';
+import Component from '../../../library/Component.js';
 import { SchemeInput } from '../../../shared/components/index.js';
 import { SigninScheme } from '../../../shared/scheme/scheme.js';
-import styled from '../../../../library/styled.js';
+import styled from '../../../library/styled.js';
 import { requestSignIn } from '../../../shared/store/userInfo.js';
 import { router } from '../../../shared/router/index.js';
 

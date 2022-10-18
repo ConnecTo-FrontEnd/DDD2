@@ -1,4 +1,4 @@
-import Component from '../../../library/Component.js';
+import Component from '../../library/Component.js';
 import { Header } from '../../shared/components/index.js';
 import { router } from '../../shared/router/index.js';
 import { SignupForm } from './components/index.js';
