@@ -22,7 +22,7 @@ class App extends Component {
         type: 'DOMContentLoaded',
         handler: () => {
           if (!userInfo)
-            requestVerify().then(res => {
+            requestVerify().then(() => {
               this.setState.call(this, {});
             });
         },
