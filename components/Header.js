@@ -1,7 +1,5 @@
 import Component from '../library/Component.js';
-import Profile from './Profile.js';
 import styled from '../library/styled.js';
-import { userInfo } from '../store/userInfo.js';
 import { router } from '../router/index.js';
 
 const header = styled({
@@ -31,9 +29,8 @@ class Header extends Component {
       {
         type: 'click',
         selector: '.logo-button',
-        handler: e => {
-          if (window.location.pathname === '/') return;
-          router.go('/');
+        handler: () => {
+          if (window.location.pathname !== '/') router.go('/');
         },
       },
     ];
