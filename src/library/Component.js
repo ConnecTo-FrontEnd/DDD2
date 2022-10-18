@@ -18,6 +18,18 @@ class Component {
     return domStr.replace(firstTag, tag => tag.split('>')[0] + ` data-uuid="${uuid}">`);
   }
 
+  styleCombinator(domStr) {
+    const firstTag = /<[^>]*>/;
+
+    return domStr.replace(firstTag, tag => {
+      if (!tag.includes('style')) return tag;
+
+      const styleRegex = /style="([^"])*"/g;
+      const styles = [...tag.match(styleRegex)].map(style => style.split('"')[1]).join('');
+      return tag.replaceAll(styleRegex, '').split('>')[0] + ` style="${styles}">`;
+    });
+  }
+
   converter(selector) {
     return Object.entries(selector)
       .map(([property, value]) => `${property}: ${value}`)
@@ -46,7 +58,7 @@ class Component {
   }
 
   render() {
-    return this.uuidAdder(this.domStr(), this.uuid);
+    return this.styleCombinator(this.uuidAdder(this.domStr(), this.uuid));
   }
 }
 
