@@ -1,6 +1,8 @@
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
+import { userInfo } from '../store/userInfo.js';
+import { router } from '../router/index.js';
 
 const container = styled({
   display: 'inline-block',
@@ -96,25 +98,24 @@ const deleteUnexpiredButton = styled({
   background: 'url(../assets/trashbox-unexpired.svg)',
 });
 
+const getDeadline = (givenDate, day) => {
+  const expiryDate = new Date(Date.parse(givenDate) + 86400000 * day);
+  return 'D-' + Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
+};
+
 const LOGO = {
   programmers: '../assets/programmers.svg',
   boj: '../assets/boj.svg',
   leetcode: '../assets/leetcode.svg',
 };
 
-const getDeadline = (givenDate, day) => {
-  const expiryDate = new Date(Date.parse(givenDate) + 86400000 * day);
-  return 'D-' + Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
-};
-
 class ProblemItem extends Component {
   domStr() {
     const { solved, link, title, platform, category, givenDate, id } = this.props.problem;
     const { idx } = this.props;
-    const userInfo = false;
 
     // prettier-ignore
-    return solved ? '' : `
+    return `
       <li style="${container}">
         ${!userInfo && idx ? `
         <div style="${blurContainer}" class="blur-problem">
@@ -145,9 +146,8 @@ class ProblemItem extends Component {
       {
         type: 'click',
         selector: '.blur-problem',
-        handler: e => {
-          console.log('ProblemItem에서 블러 문제 클릭함');
-          // navigator.go('/signin');
+        handler: () => {
+          router.go('/signin');
         },
       },
     ];

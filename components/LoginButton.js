@@ -1,18 +1,20 @@
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
+import theme from '../styles/theme.js';
 import { router } from '../router/index.js';
 
-const profile = styled({
+const loginButton = styled({
   position: 'absolute',
   right: '16px',
-  width: '40px',
   height: '40px',
-  background: 'url(../assets/profile.svg)',
+  font: theme['font-kr-bold'],
+  'font-size': '20px',
+  color: theme['orange-color'],
 });
 
-class Profile extends Component {
+class LoginButton extends Component {
   domStr() {
-    return `<button style="${profile}"></button>`;
+    return `<button style="${loginButton}">Log In</button>`;
   }
 
   addEventListener() {
@@ -21,11 +23,11 @@ class Profile extends Component {
         type: 'click',
         selector: 'button',
         handler: () => {
-          router.go('/setting');
+          router.go('/signin');
         },
       },
     ];
   }
 }
 
-export default Profile;
+export default LoginButton;
