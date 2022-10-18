@@ -119,11 +119,9 @@ const requestSignIn = async ({ id, password, setState }) => {
     });
     setUserInfo(res.data);
 
-    return true;
-  } catch (e) {
-    const newState = { userid: '', password: '', errorMessage: e.response.data.error };
-    setState(newState);
-    return false;
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, err };
   }
 };
 
@@ -143,16 +141,16 @@ const requestSignUp = async ({ id, password }) => {
   }
 };
 
-const requestCheckExistUser = async (userid, setState) => {
+const requestCheckExistUser = async userid => {
   try {
     const res = await axios({
       method: 'get',
       url: `signup/${userid}`,
     });
-    setState({ existId: res.data, idChanged: false });
-    return true;
+
+    return { ok: true, isDuplicated: res.data.isDuplicated };
   } catch (err) {
-    return false;
+    return { ok: false };
   }
 };
 

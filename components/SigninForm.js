@@ -46,15 +46,15 @@ class SigninForm extends Component {
       {
         type: 'submit',
         selector: '.signin-form',
-        handler: e => {
+        handler: async e => {
           e.preventDefault();
-          requestSignIn({
+          const res = await requestSignIn({
             id: e.target[0].value,
             password: e.target[1].value,
-            setState: this.setState.bind(this),
-          }).then(res => {
-            if (res) router.go('/');
           });
+          if (res.ok) return router.go('/');
+
+          this.setState.call(this, { userid: '', password: '', errorMessage: res.err.response.data.error });
         },
       },
     ];

@@ -76,7 +76,7 @@ app.post('/signup', (req, res) => {
 
 app.get('/signup/:id', (req, res) => {
   const { id } = req.params;
-  res.json(auth.exist(id));
+  res.json({ isDuplicated: auth.exist(id) });
 });
 
 app.post('/add', (req, res) => {

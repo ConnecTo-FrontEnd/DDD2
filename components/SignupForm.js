@@ -20,16 +20,17 @@ class SignupForm extends Component {
   constructor() {
     super();
     this.signupScheme = new SignupScheme();
-    this.state = { userid: '', password: '', 'confirm-password': '', existId: null, idChanged: null };
+    this.state = { userid: '', password: '', 'confirm-password': '', isDuplicated: null, idChanged: null };
   }
 
   domStr() {
-    const { userid, password, 'confirm-password': confirmPassword, existId, idChanged } = this.state;
+    const { userid, password, 'confirm-password': confirmPassword, isDuplicated, idChanged } = this.state;
     this.signupScheme.userid.value = userid;
     this.signupScheme.password.value = password;
     this.signupScheme['confirm-password'].value = confirmPassword;
     const { userid: _userid, isEmpty, valid } = this.signupScheme;
-    const canSubmit = !isEmpty && valid && existId !== null && !existId;
+    const canSubmit = !isEmpty && valid && isDuplicated !== null && !isDuplicated;
+    
     // prettier-ignore
     return `
       <form class="signup-form">
@@ -39,10 +40,10 @@ class SignupForm extends Component {
           )
           .join('')}
         <div>
-        ${ existId===null || existId || idChanged ? 
+        ${ isDuplicated === null || isDuplicated || idChanged ? 
           `<button type="button" class="check-userid-button" ${_userid.valid ? '':'disabled'}>중복확인</button>`:
           `<button type="button">확인됨</button>`}
-          <div> ${existId ? '중복된 아이디입니다.':'' }</div>
+          <div> ${isDuplicated ? '중복된 아이디입니다.':'' }</div>
         </div>
         <button 
           style="${canSubmit ?  activebutton : disabledbutton}" ${canSubmit ? '': 'disabled' } 
@@ -77,7 +78,9 @@ class SignupForm extends Component {
         handler: async e => {
           e.preventDefault();
           const { userid } = this.state;
-          await requestCheckExistUser(userid, this.setState.bind(this));
+          const res = await requestCheckExistUser(userid);
+
+          if (res.ok) this.setState.call(this, { isDuplicated: res.isDuplicated, idChanged: false });
         },
       },
     ];
