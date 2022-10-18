@@ -1,6 +1,5 @@
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
-import { requestDeleteProblem } from '../store/userInfo.js';
 import theme from '../styles/theme.js';
 
 const styles = {
@@ -71,22 +70,19 @@ class HistoryItem extends Component {
           </div>
         </a>
         <div ${styles.deleteContainer}">
-          <button ${styles.deleteBtn}" class="delete-btn" data-problem-id="${id}"></button>
+          <button ${styles.deleteBtn}" data-problem-id="${id}"></button>
         </div>
       </li>`;
   }
 
   addEventListener() {
+    const { onClickDeleteBtn } = this.props;
+
     return [
       {
         type: 'click',
-        selector: '.delete-btn',
-        handler: async e => {
-          await requestDeleteProblem([e.target.dataset.problemId]);
-          setTimeout(() => {
-            this.setState.call(this);
-          }, 300);
-        },
+        selector: 'button',
+        handler: onClickDeleteBtn,
       },
     ];
   }

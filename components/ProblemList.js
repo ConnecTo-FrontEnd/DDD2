@@ -50,6 +50,15 @@ class ProblemList extends Component {
 
   domStr() {
     const { unexpired } = getCategorizedProblems();
+    const onClickDeleteBtn = async e => {
+      await requestDeleteProblem([e.target.dataset.problemId]);
+      await requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length);
+
+      setTimeout(() => {
+        this.setState.call(this, { isLoading: false });
+      }, 500);
+    };
+
     if (this.state.isLoading)
       return `
         <div ${styles.container}>
@@ -64,7 +73,7 @@ class ProblemList extends Component {
           <div class="shuffle" ${styles.shuffle}></div>
         </div>
         <ul ${styles.problems}>
-          ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
+          ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, onClickDeleteBtn }).render()).join('')}
         </ul>
       </div>`;
   }
@@ -76,6 +85,7 @@ class ProblemList extends Component {
         selector: 'window',
         handler: async () => {
           // 로딩 문제 여기임
+          console.log(123);
           if (!this.state.isLoading) return;
 
           await requestAddProblem();

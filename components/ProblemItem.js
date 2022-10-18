@@ -1,6 +1,6 @@
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
-import { getCategorizedProblems, requestAddProblem, requestDeleteProblem, userInfo } from '../store/userInfo.js';
+import { userInfo } from '../store/userInfo.js';
 import theme from '../styles/theme.js';
 import { router } from '../router/index.js';
 
@@ -138,11 +138,13 @@ class ProblemItem extends Component {
             </div>
           </div>
           </a>
-        <button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>
+        <button ${styles.deleteBtn} data-problem-id="${id}"></button>
       </li>`;
   }
 
   addEventListener() {
+    const { onClickDeleteBtn } = this.props;
+
     return [
       {
         type: 'click',
@@ -153,15 +155,8 @@ class ProblemItem extends Component {
       },
       {
         type: 'click',
-        selector: '.delete-btn',
-        handler: async e => {
-          await requestDeleteProblem([e.target.dataset.problemId]);
-          await requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length);
-
-          setTimeout(() => {
-            this.setState.call(this, { isLoading: false });
-          }, 500);
-        },
+        selector: 'button',
+        handler: onClickDeleteBtn,
       },
     ];
   }

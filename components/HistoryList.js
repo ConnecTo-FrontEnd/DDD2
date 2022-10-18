@@ -73,13 +73,20 @@ class HistoryList extends Component {
   domStr() {
     const { expired } = getCategorizedProblems();
 
+    const onClickDeleteBtn = async e => {
+      await requestDeleteProblem([e.target.dataset.problemId]);
+      setTimeout(() => {
+        this.setState.call(this);
+      }, 300);
+    };
+
     if (userInfo)
       // prettier-ignore
       return `
         <div ${styles.container.login}>
           <h2 ${styles.title.login}>Last</h2>
           <ul>
-            ${expired.map(problem => new HistoryItem({problem}).render()).join('')}
+            ${expired.map(problem => new HistoryItem({problem, onClickDeleteBtn}).render()).join('')}
           </ul>
           <button ${styles.deleteAllBtn} class="delete-all-btn">Delete All</button>
         </div>
