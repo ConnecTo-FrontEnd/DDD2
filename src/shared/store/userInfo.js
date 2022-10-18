@@ -1,3 +1,5 @@
+import { initGuestInfo } from './guestInfo.js';
+
 let userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
 
 const setUserInfo = newInfo => {
@@ -49,6 +51,8 @@ const requestVerify = async () => {
     setUserInfo(res.data);
     return true;
   } catch (e) {
+    const res = await axios({ method: 'get', url: '/guest' });
+    initGuestInfo(res.data);
     return false;
   }
 };
@@ -107,7 +111,7 @@ const requestSaveSetting = async data => {
   }
 };
 
-const requestSignIn = async ({ id, password, setState }) => {
+const requestSignIn = async ({ id, password }) => {
   try {
     const res = await axios({
       method: 'post',

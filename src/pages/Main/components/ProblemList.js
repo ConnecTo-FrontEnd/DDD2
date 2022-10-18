@@ -1,5 +1,6 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
+import { getGuestCategorizedProblems } from '../../../shared/store/guestInfo.js';
 import {
   getCategorizedProblems,
   requestDeleteProblem,
@@ -49,11 +50,19 @@ const styles = {
 class ProblemList extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: getCategorizedProblems().unexpired.length === 0 };
+    this.state = { isLoading: userInfo ? getCategorizedProblems().unexpired.length < userInfo.setting.number : false };
+    if (!this.state.isLoading) return;
+
+    requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length).then(() => {
+      setTimeout(() => {
+        this.setState.call(this, { isLoading: false });
+      }, 1000);
+    });
   }
 
   domStr() {
-    const { unexpired } = getCategorizedProblems();
+    const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
+
     if (this.state.isLoading)
       return `
         <div ${styles.container}>
@@ -65,29 +74,16 @@ class ProblemList extends Component {
       <div ${styles.container}>
         <div ${styles.allsols}>
           <span>Allsols</span>
-          <div class="shuffle" ${styles.shuffle}></div>
+          ${userInfo ? `<div class="shuffle" ${styles.shuffle}></div>` : ''}
         </div>
         <ul ${styles.problems}>
-          ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
+          ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this) }).render()).join('')}
         </ul>
       </div>`;
   }
 
   addEventListener() {
     return [
-      {
-        type: 'DOMContentLoaded',
-        selector: 'window',
-        handler: async () => {
-          // 로딩 문제 여기임
-          if (!this.state.isLoading) return;
-
-          await requestAddProblem();
-          setTimeout(() => {
-            this.setState.call(this, { isLoading: false });
-          }, 1000);
-        },
-      },
       {
         type: 'click',
         selector: '.shuffle',
@@ -101,6 +97,15 @@ class ProblemList extends Component {
         },
       },
     ];
+  }
+
+  async deleteItem(e) {
+    await requestDeleteProblem([e.target.dataset.problemId]);
+    await requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length);
+
+    setTimeout(() => {
+      this.setState.call(this, { isLoading: false });
+    }, 500);
   }
 }
 

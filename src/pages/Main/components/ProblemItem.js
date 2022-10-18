@@ -1,11 +1,7 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
-import {
-  getCategorizedProblems,
-  requestAddProblem,
-  requestDeleteProblem,
-  userInfo,
-} from '../../../shared/store/userInfo.js';
+import { router } from '../../../shared/router/index.js';
+
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
@@ -118,12 +114,12 @@ const LOGO = {
 class ProblemItem extends Component {
   domStr() {
     const { solved, link, title, platform, category, givenDate, id } = this.props.problem;
-    const { idx } = this.props;
+    const { blocked } = this.props;
 
     // prettier-ignore
     return `
       <li ${styles.container}>
-        ${!userInfo && idx ? `
+        ${blocked ? `
         <div ${styles.blurModal} class="blur-problem">
           <img src="../assets/lock.svg" ${styles.lockImg} />
           <p ${styles.lockMsg}>Sign in & Unlock</p>
@@ -147,25 +143,19 @@ class ProblemItem extends Component {
   }
 
   addEventListener() {
+    const { onDeleteClick } = this.props;
     return [
       {
         type: 'click',
         selector: '.blur-problem',
         handler: () => {
-          navigator.go('/signin');
+          router.go('/signin');
         },
       },
       {
         type: 'click',
         selector: '.delete-btn',
-        handler: async e => {
-          await requestDeleteProblem([e.target.dataset.problemId]);
-          await requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length);
-
-          setTimeout(() => {
-            this.setState.call(this, { isLoading: false });
-          }, 500);
-        },
+        handler: onDeleteClick,
       },
     ];
   }
