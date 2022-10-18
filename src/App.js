@@ -23,7 +23,7 @@ class App extends Component {
         handler: () => {
           if (!userInfo)
             requestVerify().then(res => {
-              if (res) this.setState.call(this, {});
+              this.setState.call(this, {});
             });
         },
       },
