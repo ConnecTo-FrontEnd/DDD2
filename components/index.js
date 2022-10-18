@@ -11,6 +11,7 @@ import HistoryItem from './HistoryItem.js';
 import HistoryList from './HistoryList.js';
 import SigninForm from './SigninForm.js';
 import SignupForm from './SignupForm.js';
+import LoginButton from './LoginButton.js';
 
 export {
   StyledButton,
@@ -25,4 +26,5 @@ export {
   HistoryList,
   SigninForm,
   SignupForm,
+  LoginButton,
 };

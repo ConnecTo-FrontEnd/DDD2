@@ -2,6 +2,7 @@ import Component from '../library/Component.js';
 import styled from '../library/styled.js';
 import { getCategorizedProblems, requestAddProblem, requestDeleteProblem, userInfo } from '../store/userInfo.js';
 import theme from '../styles/theme.js';
+import { router } from '../router/index.js';
 
 const styles = {
   container: styled({
@@ -99,25 +100,24 @@ const styles = {
   }),
 };
 
+const getDeadline = (givenDate, day) => {
+  const expiryDate = new Date(Date.parse(givenDate) + 86400000 * day);
+  return 'D-' + Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
+};
+
 const LOGO = {
   programmers: '../assets/programmers.svg',
   boj: '../assets/boj.svg',
   leetcode: '../assets/leetcode.svg',
 };
 
-const getDeadline = (givenDate, day) => {
-  const expiryDate = new Date(Date.parse(givenDate) + 86400000 * day);
-  return 'D-' + Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
-};
-
 class ProblemItem extends Component {
   domStr() {
     const { solved, link, title, platform, category, givenDate, id } = this.props.problem;
     const { idx } = this.props;
-    const userInfo = false;
 
     // prettier-ignore
-    return solved ? '' : `
+    return `
       <li ${styles.container}>
         ${!userInfo && idx ? `
         <div ${styles.blurModal} class="blur-problem">

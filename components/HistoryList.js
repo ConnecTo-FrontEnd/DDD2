@@ -3,6 +3,7 @@ import { getCategorizedProblems, requestDeleteProblem, userInfo } from '../store
 import HistoryItem from './HistoryItem.js';
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
+import { router } from '../router/index.js';
 
 const styles = {
   container: {

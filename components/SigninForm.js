@@ -28,10 +28,11 @@ class SigninForm extends Component {
 
   domStr() {
     const { userid, password, errorMsg } = this.state;
+    const { isValid } = this.signinScheme;
+
     this.signinScheme.userid.value = userid;
     this.signinScheme.password.value = password;
-    const { valid } = this.signinScheme;
-    // prettier-ignore
+
     return `
       <form class="signin-form">
         ${Object.values(this.signinScheme)
@@ -40,7 +41,7 @@ class SigninForm extends Component {
           )
           .join('')}
         <div>${errorMsg ?? ''}</div>  
-        <button ${styles.submitBtn[valid ? 'active':'disabled']}  ${valid ? '':'disabled'}>Sign in</button>
+        <button ${styles.submitBtn[isValid ? 'active':'disabled']}  ${isValid ? '':'disabled'}>Sign in</button>
       </form>`;
   }
 
@@ -68,6 +69,10 @@ class SigninForm extends Component {
         },
       },
     ];
+  }
+
+  setInputValue(newState) {
+    this.setState(newState);
   }
 }
 

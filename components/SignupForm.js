@@ -23,16 +23,16 @@ class SignupForm extends Component {
   constructor() {
     super();
     this.signupScheme = new SignupScheme();
-    this.state = { userid: '', password: '', 'confirm-password': '', isDuplicated: null, idChanged: null };
+    this.state = { userid: '', password: '', 'confirm-password': '', isDuplicated: null, isIdDirty: null };
   }
 
   domStr() {
-    const { userid, password, 'confirm-password': confirmPassword, isDuplicated, idChanged } = this.state;
+    const { userid, password, 'confirm-password': confirmPassword, isDuplicated, isIdDirty } = this.state;
     this.signupScheme.userid.value = userid;
     this.signupScheme.password.value = password;
     this.signupScheme['confirm-password'].value = confirmPassword;
-    const { userid: _userid, isEmpty, valid } = this.signupScheme;
-    const canSubmit = !isEmpty && valid && isDuplicated !== null && !isDuplicated;
+    const { userid: _userid, isEmpty, isValid } = this.signupScheme;
+    const canSubmit = !isEmpty && isValid && isDuplicated === false;
 
     // prettier-ignore
     return `
@@ -43,8 +43,8 @@ class SignupForm extends Component {
           )
           .join('')}
         <div>
-        ${ isDuplicated === null || isDuplicated || idChanged ? 
-          `<button type="button" class="check-userid-button" ${_userid.valid ? '':'disabled'}>중복확인</button>`:
+        ${ isDuplicated === null || isDuplicated || isIdDirty ? 
+          `<button type="button" class="check-userid-button" ${_userid.isValid ? '':'disabled'}>중복확인</button>`:
           `<button type="button">확인됨</button>`}
           <div> ${isDuplicated ? '중복된 아이디입니다.':'' }</div>
         </div>
@@ -86,7 +86,7 @@ class SignupForm extends Component {
           const { userid } = this.state;
           const res = await requestCheckExistUser(userid);
 
-          if (res.ok) this.setState.call(this, { isDuplicated: res.isDuplicated, idChanged: false });
+          if (res.ok) this.setState.call(this, { isDuplicated: res.isDuplicated, isIdDirty: false });
         },
       },
     ];

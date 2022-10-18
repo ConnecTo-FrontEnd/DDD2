@@ -75,7 +75,7 @@ class ProblemList extends Component {
         type: 'DOMContentLoaded',
         selector: 'window',
         handler: async () => {
-          //로딩 문제 여기임
+          // 로딩 문제 여기임
           if (!this.state.isLoading) return;
 
           await requestAddProblem();

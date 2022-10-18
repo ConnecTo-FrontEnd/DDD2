@@ -1,10 +1,7 @@
 import Component from '../library/Component.js';
-
 import styled from '../library/styled.js';
-import theme from '../styles/theme.js';
-
 import { router } from '../router/index.js';
-import { userInfo } from '../store/userInfo.js';
+import theme from '../styles/theme.js';
 
 const styles = {
   profileBtn: styled({
@@ -27,9 +24,6 @@ const styles = {
 
 class Profile extends Component {
   domStr() {
-    if (window.location.pathname === '/' && !userInfo)
-      return `<button ${styles.loginBtn} class="login-btn">Log In</button>`;
-
     return `<button ${styles.profileBtn} class="profile-btn"></button>`;
   }
 
@@ -40,13 +34,6 @@ class Profile extends Component {
         selector: '.profile-btn',
         handler: () => {
           router.go('/setting');
-        },
-      },
-      {
-        type: 'click',
-        selector: '.login-btn',
-        handler: () => {
-          router.go('/signin');
         },
       },
     ];
