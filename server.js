@@ -27,7 +27,7 @@ const verify = (req, res, next) => {
 };
 
 app.get('/', verify, (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.sendFile(path.join(__dirname, './src/index.html'));
 });
 
 app.get('/auth', (req, res) => {
@@ -43,7 +43,7 @@ app.get('/auth', (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static(path.join(__dirname, '/src')));
 app.use(express.json());
 
 app.post('/signin', (req, res) => {
@@ -108,7 +108,7 @@ app.patch('/setting', (req, res) => {
 });
 
 app.get('*', verify, (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.sendFile(path.join(__dirname, './src/index.html'));
 });
 
 app.listen(port, () => {
