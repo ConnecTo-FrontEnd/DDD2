@@ -1,5 +1,6 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
+import { getGuestCategorizedProblems } from '../../../shared/store/guestInfo.js';
 import {
   getCategorizedProblems,
   requestDeleteProblem,
@@ -49,11 +50,12 @@ const styles = {
 class ProblemList extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: getCategorizedProblems().unexpired.length === 0 };
+    this.state = { isLoading: userInfo ? getCategorizedProblems().unexpired.length === 0 : false };
   }
 
   domStr() {
-    const { unexpired } = getCategorizedProblems();
+    const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
+
     if (this.state.isLoading)
       return `
         <div ${styles.container}>
@@ -65,10 +67,10 @@ class ProblemList extends Component {
       <div ${styles.container}>
         <div ${styles.allsols}>
           <span>Allsols</span>
-          <div class="shuffle" ${styles.shuffle}></div>
+          ${userInfo ? `<div class="shuffle" ${styles.shuffle}></div>` : ''}
         </div>
         <ul ${styles.problems}>
-          ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
+          ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, userInfo }).render()).join('')}
         </ul>
       </div>`;
   }
