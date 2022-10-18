@@ -52,7 +52,6 @@ class SigninForm extends Component {
   onInput(e) {
     const newState = {};
     newState[e.target.name] = e.target.value;
-    newState.idChanged = e.target.name === 'userid' ? true : null;
     this.setState.call(this, newState);
   }
 

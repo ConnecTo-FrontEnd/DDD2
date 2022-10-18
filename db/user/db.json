@@ -1,1 +1,157 @@
-[{"lastVisit":"2022-10-10T05:25:19.506Z","id":"aaa","setting":{"day":3,"number":2,"platform":["boj","programmers","leetcode"],"nickname":"undefined"},"removedIds":["boj17140","boj2750","boj1092","boj3184","boj1707","boj2747","boj1202","boj1167","boj16954","boj2210","boj11400","boj10825","boj2108","boj1939","boj10808","boj1374","boj16435","boj10872","boj2523","boj1449","boj2693","boj10989","boj20924","boj3187","boj1012","boj1251","boj16953","boj2557","boj22864","boj10816","boj2636","boj2812","boj11651","boj11654","boj11501","boj1052","boj13459"],"problemList":[{"link":"https://www.acmicpc.net/problem/2490","title":"윷놀이","id":"boj2490","platform":"boj","category":"구현","solved":false,"givenDate":"2022-10-17T13:33:48.370Z"},{"link":"https://www.acmicpc.net/problem/2438","title":"별 찍기 - 1","id":"boj2438","platform":"boj","category":"구현","solved":false,"givenDate":"2022-10-17T13:33:48.370Z"},{"link":"https://www.acmicpc.net/problem/9237","title":"이장님 초대","id":"boj9237","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T13:33:48.370Z"},{"link":"https://www.acmicpc.net/problem/17471","title":"게리맨더링","id":"boj17471","platform":"boj","category":"너비 우선 탐색","solved":false,"givenDate":"2022-10-17T13:33:51.754Z"}]},{"lastVisit":"2022-10-19T05:36:19.717Z","id":"guest@guest.com","setting":{"day":3,"number":3,"platform":["boj"],"lastUpdate":"2022-10-17T05:36:19.717Z"},"problemList":[{"link":"https://www.acmicpc.net/problem/22864","title":"피로도","id":"boj22864","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T05:36:45.921Z"},{"link":"https://www.acmicpc.net/problem/9237","title":"이장님 초대","id":"boj9237","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T13:33:48.370Z"},{"link":"https://www.acmicpc.net/problem/17471","title":"게리맨더링","id":"boj17471","platform":"boj","category":"너비 우선 탐색","solved":false,"givenDate":"2022-10-17T13:33:51.754Z"}],"removedIds":["boj4677","boj1931"]},{"lastVisit":"2022-10-17T05:36:19.717Z","id":"asasas@gmail.com","setting":{"day":1,"number":3,"platform":["boj"],"lastUpdate":"2022-10-17T05:36:19.717Z"},"problemList":[{"link":"https://www.acmicpc.net/problem/22864","title":"피로도","id":"boj22864","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T05:36:45.921Z"}],"removedIds":["boj4677","boj1931"]},{"lastVisit":"2022-10-17T05:36:19.719Z","id":"asasas@gmail.com","setting":{"day":1,"number":3,"platform":["boj"],"lastUpdate":"2022-10-17T05:36:19.719Z"},"problemList":[{"link":"https://www.acmicpc.net/problem/22864","title":"피로도","id":"boj22864","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T05:36:45.921Z"}],"removedIds":[]},{"lastVisit":"2022-10-17T13:07:58.950Z","id":"qwerqw@gmail.com","setting":{"day":1,"number":3,"platform":["boj"],"lastUpdate":"2022-10-17T13:07:58.950Z"},"problemList":[],"removedIds":[]},{"lastVisit":"2022-10-17T13:13:23.137Z","id":"12313123@gmail.com","setting":{"day":1,"number":3,"platform":["boj"],"lastUpdate":"2022-10-17T13:13:23.137Z"},"problemList":[],"removedIds":[]},{"lastVisit":"2022-10-17T13:13:40.016Z","id":"aaaa@gmail.com","setting":{"day":4,"number":6,"platform":["boj","programmers"],"lastUpdate":"2022-10-17T13:13:40.016Z","nickname":"한조"},"problemList":[{"link":"https://www.acmicpc.net/problem/2583","title":"영역 구하기","id":"boj2583","platform":"boj","category":"깊이 우선 탐색","solved":false,"givenDate":"2022-10-17T13:26:53.808Z"},{"link":"https://www.acmicpc.net/problem/1246","title":"온라인 판매","id":"boj1246","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T13:26:55.459Z"},{"link":"https://www.acmicpc.net/problem/1052","title":"물병","id":"boj1052","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-17T13:26:56.975Z"}],"removedIds":["boj1920","boj14659","boj1059","boj5214"]},{"lastVisit":"2022-10-18T05:36:23.868Z","id":"codeisneverodd@gmail.com","setting":{"day":2,"number":6,"platform":["boj"],"lastUpdate":"2022-10-18T05:36:23.868Z"},"problemList":[{"link":"https://www.acmicpc.net/problem/1707","title":"이분 그래프","id":"boj1707","platform":"boj","category":"깊이 우선 탐색","solved":false,"givenDate":"2022-10-18T13:37:40.143Z"},{"link":"https://www.acmicpc.net/problem/2573","title":"빙산","id":"boj2573","platform":"boj","category":"깊이 우선 탐색","solved":false,"givenDate":"2022-10-18T13:37:40.143Z"},{"link":"https://www.acmicpc.net/problem/5430","title":"AC","id":"boj5430","platform":"boj","category":"구현","solved":false,"givenDate":"2022-10-18T13:37:40.143Z"},{"link":"https://www.acmicpc.net/problem/24445","title":"알고리즘 수업 - 너비 우선 탐색 2","id":"boj24445","platform":"boj","category":"너비 우선 탐색","solved":false,"givenDate":"2022-10-18T13:38:20.691Z"},{"link":"https://www.acmicpc.net/problem/3135","title":"라디오","id":"boj3135","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-18T13:38:49.169Z"},{"link":"https://www.acmicpc.net/problem/1213","title":"팰린드롬 만들기","id":"boj1213","platform":"boj","category":"그리디 알고리즘","solved":false,"givenDate":"2022-10-18T13:38:49.169Z"}],"removedIds":["boj2617","boj2617","boj13565","boj13565","boj2908","boj20044","boj1431","boj2638","boj2490","boj2490","boj2250"]}]
+[
+  {
+    "lastVisit": "2022-10-10T05:25:19.506Z",
+    "id": "aaa",
+    "nickname": "트리플A",
+    "setting": { "day": 3, "number": 2, "platform": ["boj", "programmers", "leetcode"], "nickname": "undefined" },
+    "removedIds": [
+      "boj17140",
+      "boj2750",
+      "boj1092",
+      "boj3184",
+      "boj1707",
+      "boj2747",
+      "boj1202",
+      "boj1167",
+      "boj16954",
+      "boj2210",
+      "boj11400",
+      "boj10825",
+      "boj2108",
+      "boj1939",
+      "boj10808",
+      "boj1374",
+      "boj16435",
+      "boj10872",
+      "boj2523",
+      "boj1449",
+      "boj2693",
+      "boj10989",
+      "boj20924",
+      "boj3187",
+      "boj1012",
+      "boj1251",
+      "boj16953",
+      "boj2557",
+      "boj22864",
+      "boj10816",
+      "boj2636",
+      "boj2812",
+      "boj11651",
+      "boj11654",
+      "boj11501",
+      "boj1052",
+      "boj13459"
+    ],
+    "problemList": [
+      {
+        "link": "https://www.acmicpc.net/problem/2490",
+        "title": "윷놀이",
+        "id": "boj2490",
+        "platform": "boj",
+        "category": "구현",
+        "solved": false,
+        "givenDate": "2022-10-17T13:33:48.370Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/2438",
+        "title": "별 찍기 - 1",
+        "id": "boj2438",
+        "platform": "boj",
+        "category": "구현",
+        "solved": false,
+        "givenDate": "2022-10-17T13:33:48.370Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/9237",
+        "title": "이장님 초대",
+        "id": "boj9237",
+        "platform": "boj",
+        "category": "그리디 알고리즘",
+        "solved": false,
+        "givenDate": "2022-10-17T13:33:48.370Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/17471",
+        "title": "게리맨더링",
+        "id": "boj17471",
+        "platform": "boj",
+        "category": "너비 우선 탐색",
+        "solved": false,
+        "givenDate": "2022-10-17T13:33:51.754Z"
+      }
+    ]
+  },
+  {
+    "lastVisit": "2022-10-19T05:36:19.717Z",
+    "id": "guest@guest.com",
+    "nickname": "게스트",
+    "setting": { "day": 3, "number": 3, "platform": ["boj"], "lastUpdate": "2022-10-17T05:36:19.717Z" },
+    "problemList": [
+      {
+        "link": "https://www.acmicpc.net/problem/22864",
+        "title": "피로도",
+        "id": "boj22864",
+        "platform": "boj",
+        "category": "그리디 알고리즘",
+        "solved": false,
+        "givenDate": "2022-10-17T05:36:45.921Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/9237",
+        "title": "이장님 초대",
+        "id": "boj9237",
+        "platform": "boj",
+        "category": "그리디 알고리즘",
+        "solved": false,
+        "givenDate": "2022-10-17T13:33:48.370Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/17471",
+        "title": "게리맨더링",
+        "id": "boj17471",
+        "platform": "boj",
+        "category": "너비 우선 탐색",
+        "solved": false,
+        "givenDate": "2022-10-17T13:33:51.754Z"
+      }
+    ],
+    "removedIds": ["boj4677", "boj1931"]
+  },
+  {
+    "lastVisit": "2022-10-18T18:36:13.715Z",
+    "id": "qkrdbsgk00@gmail.com",
+    "nickname": "방구나",
+    "setting": { "day": 1, "number": 3, "platform": ["boj"], "lastUpdate": "2022-10-18T18:36:13.715Z" },
+    "problemList": [
+      {
+        "link": "https://www.acmicpc.net/problem/5052",
+        "title": "전화번호 목록",
+        "id": "boj5052",
+        "platform": "boj",
+        "category": "정렬",
+        "solved": false,
+        "givenDate": "2022-10-18T18:41:43.892Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/10825",
+        "title": "국영수",
+        "id": "boj10825",
+        "platform": "boj",
+        "category": "정렬",
+        "solved": false,
+        "givenDate": "2022-10-18T18:41:43.892Z"
+      },
+      {
+        "link": "https://www.acmicpc.net/problem/1758",
+        "title": "알바생 강호",
+        "id": "boj1758",
+        "platform": "boj",
+        "category": "그리디 알고리즘",
+        "solved": false,
+        "givenDate": "2022-10-18T18:41:43.892Z"
+      }
+    ],
+    "removedIds": []
+  }
+]

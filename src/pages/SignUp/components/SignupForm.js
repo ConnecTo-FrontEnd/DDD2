@@ -23,17 +23,24 @@ class SignupForm extends Component {
   constructor() {
     super();
     this.signupScheme = new SignupScheme();
-    this.state = { userid: '', password: '', 'confirm-password': '', isDuplicated: null, isIdDirty: null };
+    this.state = {
+      userid: '',
+      nickname: '',
+      password: '',
+      'confirm-password': '',
+      isDuplicated: null,
+      isIdDirty: null,
+    };
   }
 
   domStr() {
-    const { userid, password, 'confirm-password': confirmPassword, isDuplicated, isIdDirty } = this.state;
+    const { userid, nickname, password, 'confirm-password': confirmPassword, isDuplicated, isIdDirty } = this.state;
     this.signupScheme.userid.value = userid;
+    this.signupScheme.nickname.value = nickname;
     this.signupScheme.password.value = password;
     this.signupScheme['confirm-password'].value = confirmPassword;
     const { userid: _userid, isValid } = this.signupScheme;
     const canSubmit = isValid && isDuplicated === false;
-
     // prettier-ignore
     return `
       <form class="signup-form">
@@ -59,7 +66,6 @@ class SignupForm extends Component {
   onInput(e) {
     const newState = {};
     newState[e.target.name] = e.target.value;
-    newState.idChanged = e.target.name === 'userid' ? true : null;
     if (e.target.name === 'userid') newState.isDuplicated = null;
     this.setState.call(this, newState);
   }
@@ -71,9 +77,11 @@ class SignupForm extends Component {
         selector: '.signup-form',
         handler: e => {
           e.preventDefault();
+
           requestSignUp({
             id: e.target[0].value,
             password: e.target[1].value,
+            nickname: e.target[2].value,
           }).then(() => {
             router.go('/signin');
           });

@@ -69,10 +69,10 @@ app.post('/signin', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-  const { id, password } = req.body;
+  const { id, password, nickname } = req.body;
   if (!auth.exist(id)) {
     auth.create(id, password);
-    user.create(id);
+    user.create(id, nickname);
   }
 
   res.json(user.getInfo(id));
