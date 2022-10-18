@@ -3,14 +3,15 @@ class SigninScheme {
     this.userid = {
       type: 'text',
       value: '',
-      content: 'Email',
+      label: 'Email',
       id: 'signin-userid',
       name: 'userid',
+      required: true,
     };
     this.password = {
       type: 'text',
       value: '',
-      content: 'Password',
+      label: 'Password',
       id: 'signin-password',
       name: 'password',
     };
@@ -28,7 +29,7 @@ class SignupScheme extends SigninScheme {
     this.userid = {
       ...this.userid,
       id: 'signup-userid',
-      errorMessage: '이메일 형식을 맞춰주세요.',
+      errorMsg: '이메일 형식을 맞춰주세요.',
       get valid() {
         return /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/.test(this.value);
       },
@@ -36,7 +37,7 @@ class SignupScheme extends SigninScheme {
     this.password = {
       ...this.password,
       id: 'signup-password',
-      errorMessage: '영문 또는 숫자를 6~12자로 입력해주세요.',
+      errorMsg: '영문 또는 숫자를 6~12자로 입력해주세요.',
       get valid() {
         return /^[0-9a-zA-Z]{6,12}$/.test(this.value);
       },
@@ -44,10 +45,10 @@ class SignupScheme extends SigninScheme {
     this['confirm-password'] = {
       type: 'text',
       value: '',
-      content: 'Confirm Password',
+      label: 'Confirm Password',
       id: 'signup-confirm-password',
       name: 'confirm-password',
-      errorMessage: '비밀번호가 일치하지 않습니다.',
+      errorMsg: '비밀번호가 일치하지 않습니다.',
       get valid() {
         return that.password.value === this.value;
       },

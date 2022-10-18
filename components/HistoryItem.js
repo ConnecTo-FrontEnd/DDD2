@@ -1,56 +1,57 @@
 import Component from '../library/Component.js';
 import styled from '../library/styled.js';
+import { requestDeleteProblem } from '../store/userInfo.js';
 import theme from '../styles/theme.js';
 
-const container = styled({
-  display: 'flex',
-  'justify-content': 'space-between',
-  'margin-bottom': '24px',
-  width: '344px',
-});
+const styles = {
+  container: styled({
+    display: 'flex',
+    'justify-content': 'space-between',
+    'margin-bottom': '24px',
+    idth: '344px',
+  }),
 
-const a = styled({
-  display: 'flex',
-});
+  problemLink: styled({
+    display: 'flex',
+  }),
 
-const container2 = styled({
-  display: 'flex',
-  'flex-direction': 'column',
-  'justify-content': 'space-between',
-  'align-items': 'flex-start',
-});
+  categoryTitleContainer: styled({
+    display: 'flex',
+    'flex-direction': 'column',
+    'justify-content': 'space-between',
+    'align-items': 'flex-start',
+  }),
 
-const problemCategory = styled({
-  'font-size': '12px',
-  color: theme['orange-color'],
-});
+  problemCategory: styled({
+    'font-size': '12px',
+    color: theme['orange-color'],
+  }),
 
-const problemTitle = styled({
-  font: theme['font-kr-bold'],
-  color: 'black',
-});
+  problemTitle: styled({
+    font: theme['font-kr-bold'],
+    color: 'black',
+  }),
 
-const container3 = styled({
-  display: 'flex',
-  'flex-direction': 'column',
-  'align-items': 'flex-end',
-  'margin-right': '10px',
-});
+  deleteContainer: styled({
+    display: 'flex',
+    'flex-direction': 'column',
+    'align-items': 'flex-end',
+    'margin-right': '10px',
+  }),
 
-const deleteExpiredButton = styled({
-  margin: '5px 0',
-  width: '18px',
-  height: '18px',
-  background: 'url(../assets/trashbox.svg)',
-});
+  deleteBtn: styled({
+    margin: '5px 0',
+    width: '18px',
+    height: '18px',
+    background: 'url(../assets/trashbox.svg)',
+  }),
 
-const limitTime = styled({
-  font: theme['font-kr-regular'],
-  'font-size': '12px',
-  color: theme['lightgray-color'],
-});
+  platformImg: styled({
+    'margin-right': '23px',
+  }),
+};
 
-const LOGO = {
+const logoSrc = {
   programmers: '../assets/programmers.svg',
   boj: '../assets/boj.svg',
   leetcode: '../assets/leetcode.svg',
@@ -59,20 +60,35 @@ const LOGO = {
 class HistoryItem extends Component {
   domStr() {
     const { platform, category, title, link, id } = this.props.problem;
+
     return `
-      <li style="${container}">
-        <a style="${a}" href="${link}">
-          <img style="margin-right: 23px" src="${LOGO[platform]}"></img>
-          <div style="${container2}">
-            <p style="${problemCategory}">${category}</p>
-            <p style="${problemTitle}">${title}</p>
+      <li ${styles.container}>
+        <a ${styles.problemLink} href="${link}">
+          <img ${styles.platformImg} src="${logoSrc[platform]}" />
+          <div ${styles.categoryTitleContainer}">
+            <p ${styles.problemCategory}">${category}</p>
+            <p ${styles.problemTitle}">${title}</p>
           </div>
         </a>
-        <div style="${container3}">
-          <button style="${deleteExpiredButton}" class="delete-expired-button" data-problem-id="${id}"></button>
-          <span style="${limitTime}">45min</span>
+        <div ${styles.deleteContainer}">
+          <button ${styles.deleteBtn}" class="delete-btn" data-problem-id="${id}"></button>
         </div>
       </li>`;
+  }
+
+  addEventListener() {
+    return [
+      {
+        type: 'click',
+        selector: '.delete-btn',
+        handler: async e => {
+          await requestDeleteProblem([e.target.dataset.problemId]);
+          setTimeout(() => {
+            this.setState.call(this);
+          }, 300);
+        },
+      },
+    ];
   }
 }
 

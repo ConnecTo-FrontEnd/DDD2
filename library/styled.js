@@ -1,6 +1,6 @@
 const styled = styleObj =>
-  Object.entries(styleObj)
+  ` style="${Object.entries(styleObj)
     .map(([property, value]) => `${property}: ${value}`)
-    .join(';');
+    .join(';')}; "`;
 
 export default styled;
