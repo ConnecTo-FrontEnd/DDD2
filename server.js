@@ -43,6 +43,10 @@ app.get('/auth', (req, res) => {
   }
 });
 
+app.get('/guest', (req, res) => {
+  res.json(user.getInfo('guest@guest.com'));
+});
+
 app.use(express.static(path.join(__dirname, '/src')));
 app.use(express.json());
 
