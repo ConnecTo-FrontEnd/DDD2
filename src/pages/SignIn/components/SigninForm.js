@@ -4,6 +4,7 @@ import { SigninScheme } from '../../../shared/scheme/scheme.js';
 import styled from '../../../library/styled.js';
 import { requestSignIn } from '../../../shared/store/userInfo.js';
 import { router } from '../../../shared/router/index.js';
+import theme from '../../../shared/styles/theme.js';
 
 const styles = {
   submitBtn: {
@@ -17,6 +18,12 @@ const styles = {
       color: 'grey',
     }),
   },
+  errorMsg: styled({
+    height: '20px',
+    font: theme['font-kr-regular'],
+    color: theme['orange-color'],
+    'font-size': '14px',
+  }),
 };
 
 class SigninForm extends Component {
@@ -38,7 +45,7 @@ class SigninForm extends Component {
         ${Object.values(this.signinScheme)
           .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
           .join('')}
-        <div>${errorMsg ?? ''}</div>  
+        <div ${styles.errorMsg}>${errorMsg ?? ''}</div>  
         <button ${styles.submitBtn[isValid ? 'active' : 'disabled']}  ${isValid ? '' : 'disabled'}>Sign in</button>
       </form>`;
   }
