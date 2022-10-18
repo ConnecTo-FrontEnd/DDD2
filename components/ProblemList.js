@@ -5,40 +5,42 @@ import Loading from './Loading.js';
 import styled from '../library/styled.js';
 import theme from '../styles/theme.js';
 
-const ProblemContainer = styled({
-  display: 'flex',
-  'flex-direction': 'column',
-  'align-items': 'center',
-});
+const styles = {
+  container: styled({
+    display: 'flex',
+    'flex-direction': 'column',
+    'align-items': 'center',
+  }),
 
-const allsols = styled({
-  display: 'flex',
-  'justify-content': 'space-between',
-  'text-align': 'left',
-  width: '100%',
-  'padding-left': '26px',
-  'padding-right': '26px',
-  font: theme['font-en-bold'],
-  'font-size': '28px',
-});
+  allsols: styled({
+    display: 'flex',
+    'justify-content': 'space-between',
+    'text-align': 'left',
+    width: '100%',
+    'padding-left': '26px',
+    'padding-right': '26px',
+    font: theme['font-en-bold'],
+    'font-size': '28px',
+  }),
 
-const ul = styled({
-  display: 'flex',
-  margin: '23px 0 57px 26px',
-  'white-space': 'nowrap',
-  'overflow-x': 'scroll',
-  'scrollbar-width': 'none',
-  gap: '41px',
-  width: '100%',
-});
+  problems: styled({
+    display: 'flex',
+    margin: '23px 0 57px 26px',
+    'white-space': 'nowrap',
+    'overflow-x': 'scroll',
+    'scrollbar-width': 'none',
+    gap: '41px',
+    width: '100%',
+  }),
 
-const shuffle = styled({
-  background: 'url(../assets/shuffle.png)',
-  'background-size': 'contain',
-  'background-repeat': 'no-repeat',
-  width: '30px',
-  height: '30px',
-});
+  shuffle: styled({
+    background: 'url(../assets/shuffle.png)',
+    'background-size': 'contain',
+    'background-repeat': 'no-repeat',
+    width: '30px',
+    height: '30px',
+  }),
+};
 
 class ProblemList extends Component {
   constructor(props) {
@@ -50,18 +52,18 @@ class ProblemList extends Component {
     const { unexpired } = getCategorizedProblems();
     if (this.state.isLoading)
       return `
-        <div style="${ProblemContainer}">
+        <div ${styles.container}>
           ${new Loading().render()}
         </div>`;
 
     // prettier-ignore
     return `
-      <div style="${ProblemContainer}">
-        <div style="${allsols}">
+      <div ${styles.container}>
+        <div ${styles.allsols}>
           <span>Allsols</span>
-          <div class="shuffle" style="${shuffle}"></div>
+          <div class="shuffle" ${styles.shuffle}></div>
         </div>
-        <ul style="${ul}">
+        <ul ${styles.problems}>
           ${unexpired.map((problem, idx) => new ProblemItem({ problem, idx, userInfo }).render()).join('')}
         </ul>
       </div>`;
@@ -73,24 +75,13 @@ class ProblemList extends Component {
         type: 'DOMContentLoaded',
         selector: 'window',
         handler: async () => {
+          // 로딩 문제 여기임
           if (!this.state.isLoading) return;
 
           await requestAddProblem();
           setTimeout(() => {
             this.setState.call(this, { isLoading: false });
           }, 1000);
-        },
-      },
-      {
-        type: 'click',
-        selector: '.delete-unexpired-button',
-        handler: async e => {
-          await requestDeleteProblem([e.target.dataset.problemId]);
-          await requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length);
-
-          setTimeout(() => {
-            this.setState.call(this, { isLoading: false });
-          }, 500);
         },
       },
       {

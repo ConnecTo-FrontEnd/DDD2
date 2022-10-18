@@ -1,20 +1,23 @@
 import Component from '../library/Component.js';
-import Input from './Input.js';
+import SchemeInput from './SchemeInput.js';
 import { SignupScheme } from '../schema/schema.js';
 import styled from '../library/styled.js';
 import { requestSignUp, requestCheckExistUser } from '../store/userInfo.js';
 import { router } from '../router/index.js';
 
-const activebutton = styled({
-  'background-color': 'orange',
-  color: 'white',
-});
-
-const disabledbutton = styled({
-  'background-color': 'white',
-  border: '1px solid grey',
-  color: 'grey',
-});
+const styles = {
+  submitBtn: {
+    active: styled({
+      'background-color': 'orange',
+      color: 'white',
+    }),
+    disabled: styled({
+      'background-color': 'white',
+      border: '1px solid grey',
+      color: 'grey',
+    }),
+  },
+};
 
 class SignupForm extends Component {
   constructor() {
@@ -36,7 +39,7 @@ class SignupForm extends Component {
       <form class="signup-form">
         ${Object.values(this.signupScheme)
           .map(scheme =>
-            new Input({ scheme, setState: this.setState.bind(this) }).render()
+            new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render()
           )
           .join('')}
         <div>
@@ -46,11 +49,18 @@ class SignupForm extends Component {
           <div> ${isDuplicated ? '중복된 아이디입니다.':'' }</div>
         </div>
         <button 
-          style="${canSubmit ?  activebutton : disabledbutton}" ${canSubmit ? '': 'disabled' } 
+          ${styles.submitBtn[canSubmit ? 'active' : 'disabled']} ${canSubmit ? '': 'disabled' } 
         >
           Sign up
         </button>
       </form>`;
+  }
+
+  onInput(e) {
+    const newState = {};
+    newState[e.target.name] = e.target.value;
+    newState.idChanged = e.target.name === 'userid' ? true : null;
+    this.setState.call(this, newState);
   }
 
   addEventListener() {

@@ -3,7 +3,7 @@ import StyledButton from './StyledButton.js';
 import ProblemItem from './ProblemItem.js';
 import ProblemList from './ProblemList.js';
 import Profile from './Profile.js';
-import Input from './Input.js';
+import SchemeInput from './SchemeInput.js';
 import Header from './Header.js';
 import UserSetting from './UserSetting.js';
 import Loading from './Loading.js';
@@ -18,7 +18,7 @@ export {
   ProblemItem,
   ProblemList,
   Profile,
-  Input,
+  SchemeInput,
   Header,
   UserSetting,
   Loading,
