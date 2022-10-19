@@ -2,7 +2,7 @@ import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import LoginButton from '../../../shared/components/LoginButton.js';
 import Profile from '../../../shared/components/Profile.js';
-import { getGuestCategorizedProblems } from '../../../shared/store/guestInfo.js';
+import { getGuestCategorizedProblems, requestInitGuestInfo } from '../../../shared/store/guestInfo.js';
 import {
   getCategorizedProblems,
   requestDeleteProblem,
@@ -82,19 +82,42 @@ const styles = {
 class ProblemList extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: userInfo ? getCategorizedProblems().unexpired.length < userInfo.setting.number : false };
+    this.state = { isLoading: true };
     if (!this.state.isLoading) return;
-
-    requestAddProblem(userInfo.setting.number - getCategorizedProblems().unexpired.length).then(() => {
-      setTimeout(() => {
-        this.setState.call(this, { isLoading: false });
-      }, 1000);
-    });
+    if (userInfo) {
+      const diff = getCategorizedProblems().unexpired.length - userInfo.setting.number;
+      if (diff < 0) {
+        requestAddProblem(Math.abs(diff)).then(() => {
+          setTimeout(() => {
+            this.setState.call(this, { isLoading: false });
+          }, 1000);
+        });
+      } else if (diff > 0) {
+        const removeIds = getCategorizedProblems()
+          .unexpired.slice(0, diff)
+          .flatMap(({ id }) => id);
+        requestDeleteProblem(removeIds).then(() => {
+          setTimeout(() => {
+            this.setState.call(this, { isLoading: false });
+          }, 1000);
+        });
+      } else {
+        setTimeout(() => {
+          this.setState.call(this, { isLoading: false });
+        });
+      }
+    } else {
+      requestInitGuestInfo().then(() => {
+        setTimeout(() => {
+          this.setState.call(this, { isLoading: false });
+        }, 1000);
+      });
+    }
   }
 
   domStr() {
     const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
-
+    console.log(getGuestCategorizedProblems());
     if (this.state.isLoading)
       return `
         <div ${styles.container}>

@@ -1,4 +1,4 @@
-import { initGuestInfo } from './guestInfo.js';
+import { requestInitGuestInfo } from './guestInfo.js';
 
 let userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
 
@@ -51,8 +51,7 @@ const requestVerify = async () => {
     setUserInfo(res.data);
     return true;
   } catch (e) {
-    const res = await axios({ method: 'get', url: '/guest' });
-    initGuestInfo(res.data);
+    requestInitGuestInfo();
     return false;
   }
 };
