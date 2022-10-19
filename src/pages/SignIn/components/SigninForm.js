@@ -1,5 +1,5 @@
 import Component from '../../../library/Component.js';
-import { SchemeInput } from '../../../shared/components/index.js';
+import { SchemeInput, StyledButton } from '../../../shared/components/index.js';
 import { SigninScheme } from '../../../shared/scheme/scheme.js';
 import styled from '../../../library/styled.js';
 import { requestSignIn } from '../../../shared/store/userInfo.js';
@@ -9,9 +9,6 @@ import theme from '../../../shared/styles/theme.js';
 const styles = {
   submitBtn: {
     active: styled({
-      margin: '0 auto',
-      width: '70%',
-      height: '3rem',
       'border-radius': '10px',
       font: theme['font-kr-bold'],
       'font-size': '16px',
@@ -19,9 +16,6 @@ const styles = {
       'background-color': theme['orange-color'],
     }),
     disabled: styled({
-      margin: '0 auto',
-      width: '70%',
-      height: '3rem',
       'border-radius': '10px',
       font: theme['font-kr-bold'],
       'font-size': '16px',
@@ -57,7 +51,11 @@ class SigninForm extends Component {
           .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
           .join('')}
         <div ${styles.errorMsg}>${errorMsg ?? ''}</div>  
-        <button ${styles.submitBtn[isValid ? 'active' : 'disabled']}  ${isValid ? '' : 'disabled'}>Sign in</button>
+        ${new StyledButton({
+          style: styles.submitBtn[isValid ? 'active' : 'disabled'],
+          text: 'Sign in',
+          disabled: !isValid,
+        }).render()}
       </form>`;
   }
 

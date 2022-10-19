@@ -1,5 +1,5 @@
 import Component from '../../../library/Component.js';
-import { SchemeInput } from '../../../shared/components/index.js';
+import { SchemeInput, StyledButton } from '../../../shared/components/index.js';
 import { SignupScheme } from '../../../shared/scheme/scheme.js';
 import styled from '../../../library/styled.js';
 import { requestSignUp, requestCheckExistUser } from '../../../shared/store/userInfo.js';
@@ -9,9 +9,6 @@ import theme from '../../../shared/styles/theme.js';
 const styles = {
   submitBtn: {
     active: styled({
-      margin: '0 auto',
-      width: '70%',
-      height: '3rem',
       'border-radius': '10px',
       font: theme['font-kr-bold'],
       'font-size': '16px',
@@ -19,9 +16,6 @@ const styles = {
       'background-color': theme['orange-color'],
     }),
     disabled: styled({
-      margin: '0 auto',
-      width: '70%',
-      height: '3rem',
       'border-radius': '10px',
       font: theme['font-kr-bold'],
       'font-size': '16px',
@@ -33,9 +27,7 @@ const styles = {
     position: 'absolute',
     top: '190px',
     right: '64px',
-    margin: '0 auto',
     width: '65px',
-    height: '3rem',
     'border-radius': '10px',
     font: theme['font-kr-bold'],
     'font-size': '16px',
@@ -46,9 +38,7 @@ const styles = {
     position: 'absolute',
     top: '190px',
     right: '64px',
-    margin: '0 auto',
     width: '65px',
-    height: '3rem',
     'border-radius': '10px',
     font: theme['font-kr-bold'],
     'font-size': '16px',
@@ -72,25 +62,30 @@ class SignupForm extends Component {
     const { userid: _userid, isEmpty, isValid } = this.signupScheme;
     const canSubmit = !isEmpty && isValid && isDuplicated === false;
 
-    // prettier-ignore
     return `
       <form class="signup-form">
         ${Object.values(this.signupScheme)
-          .map(scheme =>
-            new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render()
-          )
+          .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
           .join('')}
         <div>
-        ${ isDuplicated === null || isDuplicated || isIdDirty ? 
-          `<button ${styles.doubleCheckBtn} type="button" class="check-userid-button" ${_userid.isValid ? '':'disabled'}>중복확인</button>`:
-          `<button ${styles.checkedMsg} type="button">확인됨</button>`}
-          <div> ${isDuplicated ? '중복된 아이디입니다.':'' }</div>
+        ${
+          isDuplicated === null || isDuplicated || isIdDirty
+            ? new StyledButton({
+                type: 'button',
+                style: styles.doubleCheckBtn,
+                text: '중복확인',
+                disabled: !_userid.isValid,
+                onClick: this.onClickBtn.bind(this),
+              }).render()
+            : new StyledButton({ type: 'button', style: styles.checkedMsg, text: '확인됨' }).render()
+        }
+          <div> ${isDuplicated ? '중복된 아이디입니다.' : ''}</div>
         </div>
-        <button 
-          ${styles.submitBtn[canSubmit ? 'active' : 'disabled']} ${canSubmit ? '': 'disabled' } 
-        >
-          Sign up
-        </button>
+        ${new StyledButton({
+          style: styles.submitBtn[canSubmit ? 'active' : 'disabled'],
+          disabled: !canSubmit,
+          text: 'Sign up',
+        }).render()}
       </form>`;
   }
 
@@ -99,6 +94,14 @@ class SignupForm extends Component {
     newState[e.target.name] = e.target.value;
     newState.idChanged = e.target.name === 'userid' ? true : null;
     this.setState.call(this, newState);
+  }
+
+  async onClickBtn(e) {
+    e.preventDefault();
+    const { userid } = this.state;
+    const res = await requestCheckExistUser(userid);
+
+    if (res.ok) this.setState.call(this, { isDuplicated: res.isDuplicated, isIdDirty: false });
   }
 
   addEventListener() {
@@ -114,17 +117,6 @@ class SignupForm extends Component {
           }).then(() => {
             router.go('/signin');
           });
-        },
-      },
-      {
-        type: 'click',
-        selector: '.check-userid-button',
-        handler: async e => {
-          e.preventDefault();
-          const { userid } = this.state;
-          const res = await requestCheckExistUser(userid);
-
-          if (res.ok) this.setState.call(this, { isDuplicated: res.isDuplicated, isIdDirty: false });
         },
       },
     ];
