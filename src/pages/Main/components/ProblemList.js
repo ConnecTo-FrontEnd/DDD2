@@ -133,7 +133,6 @@ class ProblemList extends Component {
 
   domStr() {
     const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
-
     // prettier-ignore
     return `
       <div ${styles.container}>
