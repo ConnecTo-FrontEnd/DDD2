@@ -8,7 +8,6 @@ const styles = {
     'flex-direction': 'column',
     width: '100%',
   }),
-
   inputLabel: styled({
     display: 'block',
     margin: '1rem 0',
@@ -21,6 +20,10 @@ const styles = {
     border: `1px solid ${theme['lightgray-color']}`,
     'border-radius': '6px',
     'text-align': 'left',
+    background: 'url(./../../../assets/selectArrow.svg) no-repeat 97% 50%/15px auto',
+    '-webkit-appearance': 'none',
+    '-moz-appearance': 'none',
+    appearance: 'none',
   }),
 };
 
@@ -43,7 +46,7 @@ class SelectBox extends Component {
       {
         type: 'change',
         selector: 'select',
-        handler: this.props.onChange,
+        handler: this.props.onChange ?? (() => {}),
       },
     ];
   }
