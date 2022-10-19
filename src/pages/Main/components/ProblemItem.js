@@ -1,6 +1,7 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import { router } from '../../../shared/router/index.js';
+import { userInfo } from '../../../shared/store/userInfo.js';
 
 import theme from '../../../shared/styles/theme.js';
 
@@ -149,7 +150,7 @@ class ProblemItem extends Component {
             ${solved? `<div ${styles.solIcon}>solved</div>`:''}
           </div>
         </a>
-        <button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>
+        ${userInfo ? `<button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>` : ''}
       </li>`;
   }
 
