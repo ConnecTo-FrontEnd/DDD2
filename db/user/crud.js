@@ -21,12 +21,13 @@ module.exports = {
       {
         lastVisit: date,
         id,
-        nickname,
+
         setting: {
           day: DEFAULT_DAY,
           number: DEFAULT_NUMBER,
           platform: DEFAULT_PLATFORM,
           lastUpdate: date,
+          nickname,
         },
         problemList: [],
         removedIds: [],

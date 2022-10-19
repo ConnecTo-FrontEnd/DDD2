@@ -193,6 +193,7 @@ class UserSetting extends Component {
   }
 
   onChangeNickname(e) {
+    console.log(this.state.nickname);
     this.setState({ nickname: e.target.value, isValid: this.state.nickname.length !== 0 });
   }
 
