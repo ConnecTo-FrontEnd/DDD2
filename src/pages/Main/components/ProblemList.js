@@ -7,6 +7,7 @@ import {
   getCategorizedProblems,
   requestDeleteProblem,
   requestAddProblem,
+  requestCheckSolvedProblem,
   userInfo,
 } from '../../../shared/store/userInfo.js';
 import theme from '../../../shared/styles/theme.js';
@@ -113,7 +114,7 @@ class ProblemList extends Component {
           </div>
         </div>
         <ul ${styles.problemsContainer}>
-          ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this) }).render()).join('')}
+          ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this), onLinkClick: userInfo ? this.checkSolvedItem.bind(this) : ()=>{} }).render()).join('')}
         </ul>
       </div>`;
   }
@@ -142,6 +143,13 @@ class ProblemList extends Component {
     setTimeout(() => {
       this.setState.call(this, { isLoading: false });
     }, 500);
+  }
+
+  async checkSolvedItem(e) {
+    const { id } = userInfo;
+    const { problemId } = e.target.closest('a').dataset;
+    await requestCheckSolvedProblem({ id, problemId });
+    this.setState.call(this);
   }
 }
 

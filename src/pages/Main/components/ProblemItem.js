@@ -5,6 +5,16 @@ import { router } from '../../../shared/router/index.js';
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
+  solIcon: styled({
+    'background-color': 'red',
+    color: 'white',
+    position: 'absolute',
+    top: '10px',
+    right: '20px',
+    width: '40px',
+    height: '40px',
+  }),
+
   container: styled({
     display: 'inline-block',
     position: 'relative',
@@ -124,26 +134,27 @@ class ProblemItem extends Component {
           <img src="../assets/lock.svg" ${styles.lockImg} />
           <p ${styles.lockMsg}>Sign in & Unlock</p>
         </div>` : ''}
-        <a href="${link}" target="_blank' rel="noopener noreferrer">
+        <a href="${link}" target="_blank' rel="noopener noreferrer" class="link-problem" data-problem-id="${id}">
           <div ${styles.problemTitleContainer}>
             <div ${styles.blurBg}>
               <span ${styles.problemTitle}>${title}</span>
             </div>
           </div>
-          <div ${styles.detailContainer}>
+          <div ${styles.detailContainer} >
             <img ${styles.logoImg} src="${LOGO[platform]}" />
             <div>${category}</div>
             <div ${styles.deadlineContainer}>
               <span>${getDeadline(givenDate, 7)}</span>
             </div>
+            ${solved? `<div ${styles.solIcon}>solved</div>`:''}
           </div>
-          </a>
+        </a>
         <button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>
       </li>`;
   }
 
   addEventListener() {
-    const { onDeleteClick } = this.props;
+    const { onDeleteClick, onLinkClick } = this.props;
     return [
       {
         type: 'click',
@@ -156,6 +167,11 @@ class ProblemItem extends Component {
         type: 'click',
         selector: '.delete-btn',
         handler: onDeleteClick,
+      },
+      {
+        type: 'click',
+        selector: '.link-problem',
+        handler: onLinkClick,
       },
     ];
   }

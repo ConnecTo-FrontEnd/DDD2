@@ -83,6 +83,7 @@ class SignupForm extends Component {
         ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
         ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
         ${new SchemeInput({ scheme: this.signupScheme['confirm-password'], onInput: this.onInput.bind(this) }).render()}
+
         <div>
         ${
           isDuplicated === null || isDuplicated || isIdDirty

@@ -21,12 +21,13 @@ module.exports = {
       {
         lastVisit: date,
         id,
-        nickname,
+
         setting: {
           day: DEFAULT_DAY,
           number: DEFAULT_NUMBER,
           platform: DEFAULT_PLATFORM,
           lastUpdate: date,
+          nickname,
         },
         problemList: [],
         removedIds: [],
@@ -59,6 +60,13 @@ module.exports = {
 
     removedIds.push(...problemIds);
     setData(data.map(user => (user.id === userId ? { ...user, problemList: filteredProblems } : user)));
+  },
+  updateSolvedProblem(id, problemId) {
+    const { problemList } = this.getInfo(id);
+    const newProblemList = problemList.map(problem =>
+      problem.id === problemId ? { ...problem, solved: true } : problem
+    );
+    setData(data.map(user => (user.id === id ? { ...user, problemList: newProblemList } : user)));
   },
   getInfo(id) {
     return data.find(user => user.id === id);
