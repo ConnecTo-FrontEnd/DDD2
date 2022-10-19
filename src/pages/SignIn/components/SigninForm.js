@@ -9,13 +9,24 @@ import theme from '../../../shared/styles/theme.js';
 const styles = {
   submitBtn: {
     active: styled({
-      'background-color': 'orange',
+      margin: '0 auto',
+      width: '70%',
+      height: '3rem',
+      'border-radius': '10px',
+      font: theme['font-kr-bold'],
+      'font-size': '16px',
       color: 'white',
+      'background-color': theme['orange-color'],
     }),
     disabled: styled({
-      'background-color': 'white',
-      border: '1px solid grey',
-      color: 'grey',
+      margin: '0 auto',
+      width: '70%',
+      height: '3rem',
+      'border-radius': '10px',
+      font: theme['font-kr-bold'],
+      'font-size': '16px',
+      color: 'white',
+      'background-color': theme['lightgray-color'],
     }),
   },
   errorMsg: styled({

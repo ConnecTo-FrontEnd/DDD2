@@ -13,7 +13,9 @@ const styles = {
     'font-size': '47px',
   }),
   linkContainer: styled({
-    'font-size': '14px',
+    'margin-top': '27px',
+    font: theme['font-kr-regular'],
+    'font-size': '15px',
   }),
   link: styled({
     color: theme['orange-color'],

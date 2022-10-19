@@ -4,19 +4,57 @@ import { SignupScheme } from '../../../shared/scheme/scheme.js';
 import styled from '../../../library/styled.js';
 import { requestSignUp, requestCheckExistUser } from '../../../shared/store/userInfo.js';
 import { router } from '../../../shared/router/index.js';
+import theme from '../../../shared/styles/theme.js';
 
 const styles = {
   submitBtn: {
     active: styled({
-      'background-color': 'orange',
+      margin: '0 auto',
+      width: '70%',
+      height: '3rem',
+      'border-radius': '10px',
+      font: theme['font-kr-bold'],
+      'font-size': '16px',
       color: 'white',
+      'background-color': theme['orange-color'],
     }),
     disabled: styled({
-      'background-color': 'white',
-      border: '1px solid grey',
-      color: 'grey',
+      margin: '0 auto',
+      width: '70%',
+      height: '3rem',
+      'border-radius': '10px',
+      font: theme['font-kr-bold'],
+      'font-size': '16px',
+      color: 'white',
+      'background-color': theme['lightgray-color'],
     }),
   },
+  doubleCheckBtn: styled({
+    position: 'absolute',
+    top: '190px',
+    right: '64px',
+    margin: '0 auto',
+    width: '65px',
+    height: '3rem',
+    'border-radius': '10px',
+    font: theme['font-kr-bold'],
+    'font-size': '16px',
+    color: 'white',
+    'background-color': theme['lightgray-color'],
+  }),
+  checkedMsg: styled({
+    position: 'absolute',
+    top: '190px',
+    right: '64px',
+    margin: '0 auto',
+    width: '65px',
+    height: '3rem',
+    'border-radius': '10px',
+    font: theme['font-kr-bold'],
+    'font-size': '16px',
+    color: 'white',
+    'background-color': theme['orange-color'],
+  }),
 };
 
 class SignupForm extends Component {
@@ -44,8 +82,8 @@ class SignupForm extends Component {
           .join('')}
         <div>
         ${ isDuplicated === null || isDuplicated || isIdDirty ? 
-          `<button type="button" class="check-userid-button" ${_userid.isValid ? '':'disabled'}>중복확인</button>`:
-          `<button type="button">확인됨</button>`}
+          `<button ${styles.doubleCheckBtn} type="button" class="check-userid-button" ${_userid.isValid ? '':'disabled'}>중복확인</button>`:
+          `<button ${styles.checkedMsg} type="button">확인됨</button>`}
           <div> ${isDuplicated ? '중복된 아이디입니다.':'' }</div>
         </div>
         <button 
