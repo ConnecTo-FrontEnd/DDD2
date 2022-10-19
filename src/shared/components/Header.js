@@ -11,14 +11,14 @@ const styles = {
     '@desktop': {
       transform: 'translateX(0)',
     },
-    ':onMouseOver': {
-      zoom: '1.1',
-      'background-color': 'skyblue',
-    },
-    ':onMouseOut': {
-      zoom: '1',
-      'background-color': 'white',
-    },
+    // ':onMouseOver': {
+    //   zoom: '1.1',
+    //   'background-color': 'skyblue',
+    // },
+    // ':onMouseOut': {
+    //   zoom: '1',
+    //   'background-color': 'white',
+    // },
   }),
 
   logoBtn: styled({
