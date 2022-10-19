@@ -112,7 +112,8 @@ const styles = {
 
 const getDeadline = (givenDate, day) => {
   const expiryDate = new Date(Date.parse(givenDate) + 86400000 * day);
-  return 'D-' + Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
+  const dDay = Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
+  return dDay === 0 ? 'D-DAY' : 'D-' + dDay;
 };
 
 const LOGO = {
@@ -124,7 +125,7 @@ const LOGO = {
 class ProblemItem extends Component {
   domStr() {
     const { solved, link, title, platform, category, givenDate, id } = this.props.problem;
-    const { blocked } = this.props;
+    const { day, blocked } = this.props;
 
     // prettier-ignore
     return `
@@ -144,7 +145,7 @@ class ProblemItem extends Component {
             <img ${styles.logoImg} src="${LOGO[platform]}" />
             <div>${category}</div>
             <div ${styles.deadlineContainer}>
-              <span>${getDeadline(givenDate, 7)}</span>
+              <span>${getDeadline(givenDate, day)}</span>
             </div>
             ${solved? `<div ${styles.solIcon}>solved</div>`:''}
           </div>
