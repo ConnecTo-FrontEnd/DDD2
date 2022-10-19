@@ -40,10 +40,9 @@ class SigninForm extends Component {
 
   domStr() {
     const { userid, password, errorMsg } = this.state;
-    const { isValid } = this.signinScheme;
-
     this.signinScheme.userid.value = userid;
     this.signinScheme.password.value = password;
+    const { isValid } = this.signinScheme;
 
     return `
       <form class="signin-form">
@@ -62,7 +61,6 @@ class SigninForm extends Component {
   onInput(e) {
     const newState = {};
     newState[e.target.name] = e.target.value;
-    newState.idChanged = e.target.name === 'userid' ? true : null;
     this.setState.call(this, newState);
   }
 

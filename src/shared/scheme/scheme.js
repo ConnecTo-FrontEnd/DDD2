@@ -42,6 +42,17 @@ class SignupScheme extends SigninScheme {
         return /^[0-9a-zA-Z]{6,12}$/.test(this.value);
       },
     };
+    this.nickname = {
+      type: 'text',
+      value: '',
+      label: 'Nickname',
+      id: 'signup-nickname',
+      name: 'nickname',
+      errorMsg: '8자 이하로 입력해주세요.',
+      get isValid() {
+        return /^.{1,8}$/.test(this.value);
+      },
+    };
     this['confirm-password'] = {
       type: 'text',
       value: '',
@@ -56,7 +67,7 @@ class SignupScheme extends SigninScheme {
   }
 
   get isValid() {
-    return this.userid.isValid && this.password.isValid && this['confirm-password'].isValid;
+    return this.userid.isValid && this.password.isValid && this['confirm-password'].isValid && this.nickname.isValid;
   }
 
   get isEmpty() {

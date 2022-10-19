@@ -129,7 +129,7 @@ const requestSignIn = async ({ id, password }) => {
   }
 };
 
-const requestSignUp = async ({ id, password }) => {
+const requestSignUp = async ({ id, password, nickname }) => {
   try {
     const res = await axios({
       method: 'post',
@@ -137,6 +137,7 @@ const requestSignUp = async ({ id, password }) => {
       data: {
         id,
         password,
+        nickname,
       },
     });
     return true;
