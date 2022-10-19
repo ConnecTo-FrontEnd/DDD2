@@ -2,7 +2,6 @@ import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import { router } from '../../../shared/router/index.js';
 import { userInfo } from '../../../shared/store/userInfo.js';
-
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
@@ -113,7 +112,8 @@ const styles = {
 
 const getDeadline = (givenDate, day) => {
   const expiryDate = new Date(Date.parse(givenDate) + 86400000 * day);
-  return 'D-' + Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
+  const dDay = Math.floor((expiryDate.getTime() - new Date().getTime()) / 86400000);
+  return dDay === 0 ? 'D-DAY' : 'D-' + dDay;
 };
 
 const LOGO = {
@@ -144,9 +144,10 @@ class ProblemItem extends Component {
           <div ${styles.detailContainer} >
             <img ${styles.logoImg} src="${LOGO[platform]}" />
             <div>${category}</div>
+            ${userInfo ? `
             <div ${styles.deadlineContainer}>
-              <span>${getDeadline(givenDate, 7)}</span>
-            </div>
+              <span>${getDeadline(givenDate, userInfo.setting.day)}</span>
+            </div>` : ''}
             ${solved? `<div ${styles.solIcon}>solved</div>`:''}
           </div>
         </a>

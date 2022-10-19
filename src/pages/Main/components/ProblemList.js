@@ -148,6 +148,8 @@ class ProblemList extends Component {
         type: 'click',
         selector: '.shuffle',
         handler: async () => {
+          this.setState.call(this, { isLoading: true });
+
           const { unexpired } = getCategorizedProblems();
           await requestDeleteProblem(unexpired.flatMap(({ id }) => id));
           await requestAddProblem();
