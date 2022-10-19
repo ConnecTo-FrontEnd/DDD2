@@ -19,9 +19,9 @@ class Component {
   }
 
   styleCombinator(domStr) {
-    const firstTag = /<[^>]*>/;
+    const firstTag = /<[^>]*>/g;
 
-    return domStr.replace(firstTag, tag => {
+    return domStr.replaceAll(firstTag, tag => {
       if (!tag.includes('style')) return tag;
 
       const styleRegex = /style="([^"])*"/g;
