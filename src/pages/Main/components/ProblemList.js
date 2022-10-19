@@ -31,7 +31,23 @@ const styles = {
     font: theme['font-en-bold'],
     'font-size': '28px',
   }),
-
+  loadingContainer: styled({
+    display: 'flex',
+    'justify-content': 'center',
+    margin: '23px 0 0 0',
+    padding: '20px',
+    'white-space': 'nowrap',
+    'overflow-x': 'scroll',
+    'scrollbar-width': 'none',
+    gap: '41px',
+    width: '90vw',
+    '@desktop': {
+      width: '650px',
+      'overflow-x': 'hidden',
+      'flex-wrap': 'wrap',
+      'column-gap': '80px',
+    },
+  }),
   problemsContainer: styled({
     display: 'flex',
     margin: '23px 0 57px 0',
@@ -117,12 +133,6 @@ class ProblemList extends Component {
 
   domStr() {
     const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
-    if (this.state.isLoading)
-      return `
-        <div ${styles.container}>
-          ${new Loading().render()}
-        </div>`;
-
     // prettier-ignore
     return `
       <div ${styles.container}>
@@ -135,9 +145,13 @@ class ProblemList extends Component {
             ${userInfo ? new Profile().render() : new LoginButton().render()}
           </div>
         </div>
-        <ul ${styles.problemsContainer}>
+        ${this.state.isLoading ? `
+        <div ${styles.loadingContainer}>
+          ${new Loading().render()}
+        </div>` : 
+        `<ul ${styles.problemsContainer}>
           ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this), onLinkClick: userInfo ? this.checkSolvedItem.bind(this) : ()=>{} }).render()).join('')}
-        </ul>
+        </ul>`}
       </div>`;
   }
 
