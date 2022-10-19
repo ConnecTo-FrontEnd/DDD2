@@ -16,8 +16,14 @@ let guestInfo = {
   removedIds: ['boj4677', 'boj1931'],
 };
 
-const initGuestInfo = newGuestInfo => {
-  guestInfo = newGuestInfo;
+const requestInitGuestInfo = async () => {
+  try {
+    const res = await axios({ method: 'get', url: '/guest' });
+    guestInfo = res.data;
+    return true;
+  } catch (e) {
+    return false;
+  }
 };
 
 const getGuestCategorizedProblems = () => {
@@ -40,4 +46,4 @@ const getGuestCategorizedProblems = () => {
   );
 };
 
-export { initGuestInfo, getGuestCategorizedProblems };
+export { requestInitGuestInfo, getGuestCategorizedProblems };

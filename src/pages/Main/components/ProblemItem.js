@@ -151,7 +151,7 @@ class ProblemItem extends Component {
             ${solved? `<div ${styles.solIcon}>solved</div>`:''}
           </div>
         </a>
-        <button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>
+        ${userInfo ? `<button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>` : ''}
       </li>`;
   }
 
