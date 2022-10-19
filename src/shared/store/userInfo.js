@@ -95,6 +95,19 @@ const requestDeleteProblem = async problemIds => {
   }
 };
 
+const requestCheckSolvedProblem = async ({ id, problemId }) => {
+  try {
+    const res = await axios({
+      method: 'patch',
+      url: `check/${id}/${problemId}`,
+    });
+    setUserInfo(res.data);
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+
 const requestSaveSetting = async data => {
   try {
     const res = await axios({
@@ -165,6 +178,7 @@ export {
   getCategorizedProblems,
   requestAddProblem,
   requestDeleteProblem,
+  requestCheckSolvedProblem,
   requestSaveSetting,
   requestSignIn,
   requestSignUp,

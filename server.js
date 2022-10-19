@@ -83,6 +83,12 @@ app.get('/signup/:id', (req, res) => {
   res.json({ isDuplicated: auth.exist(id) });
 });
 
+app.patch('/check/:id/:problemId', (req, res) => {
+  const { id, problemId } = req.params;
+  user.updateSolvedProblem(id, problemId);
+  res.json(user.getInfo(id));
+});
+
 app.post('/add', (req, res) => {
   const { id, problemNumber } = req.body;
   const {

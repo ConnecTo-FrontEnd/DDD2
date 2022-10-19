@@ -72,6 +72,7 @@ class SignupForm extends Component {
     // prettier-ignore
     return `
       <form class="signup-form">
+      
         ${Object.values(this.signupScheme)
           .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
           .join('')}
