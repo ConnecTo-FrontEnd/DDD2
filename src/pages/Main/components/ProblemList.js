@@ -94,9 +94,7 @@ class ProblemList extends Component {
 
   domStr() {
     const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
-    const {
-      setting: { day },
-    } = userInfo;
+
     if (this.state.isLoading)
       return `
         <div ${styles.container}>
@@ -116,7 +114,7 @@ class ProblemList extends Component {
           </div>
         </div>
         <ul ${styles.problemsContainer}>
-          ${unexpired.map((problem, idx) => new ProblemItem({ problem, day, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this), onLinkClick: userInfo ? this.checkSolvedItem.bind(this) : ()=>{} }).render()).join('')}
+          ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this), onLinkClick: userInfo ? this.checkSolvedItem.bind(this) : ()=>{} }).render()).join('')}
         </ul>
       </div>`;
   }

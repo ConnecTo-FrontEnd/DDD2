@@ -1,7 +1,7 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import { router } from '../../../shared/router/index.js';
-
+import { userInfo } from '../../../shared/store/userInfo.js';
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
@@ -125,7 +125,7 @@ const LOGO = {
 class ProblemItem extends Component {
   domStr() {
     const { solved, link, title, platform, category, givenDate, id } = this.props.problem;
-    const { day, blocked } = this.props;
+    const { blocked } = this.props;
 
     // prettier-ignore
     return `
@@ -144,9 +144,10 @@ class ProblemItem extends Component {
           <div ${styles.detailContainer} >
             <img ${styles.logoImg} src="${LOGO[platform]}" />
             <div>${category}</div>
+            ${userInfo ? `
             <div ${styles.deadlineContainer}>
-              <span>${getDeadline(givenDate, day)}</span>
-            </div>
+              <span>${getDeadline(givenDate, userInfo.setting.day)}</span>
+            </div>` : ''}
             ${solved? `<div ${styles.solIcon}>solved</div>`:''}
           </div>
         </a>
