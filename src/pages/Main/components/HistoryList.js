@@ -40,9 +40,13 @@ class HistoryList extends Component {
     return `
         <div ${styles.container}>
           <h2 ${styles.title}>Last</h2>
-          <ul ${styles.itemContainer}>
-            ${expired.map(problem => new HistoryItem({problem}).render()).join('')}
-          </ul>
+          ${expired.length === 0 ? 
+            `<div>아직 기한이 지난 문제가 없네요!</div>`:  
+            `<ul ${styles.itemContainer}>
+              ${expired.map(problem => new HistoryItem({problem}).render()).join('')}
+            </ul>
+          `}
+          
           <button ${styles.deleteAllBtn} class="delete-all-btn">Delete All</button>
         </div>
       `;
