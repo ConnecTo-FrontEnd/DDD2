@@ -12,12 +12,18 @@ const styles = {
   title: styled({
     font: theme['font-en-bold'],
     'font-size': '25px',
+    '@desktop': {
+      'margin-top': '10px',
+    },
   }),
 
   subtitle: styled({
     margin: '15px 0 25px 0',
     font: theme['font-kr-bold'],
     'font-size': '18px',
+    '@desktop': {
+      'margin-top': '45px',
+    },
   }),
 
   introduction: styled({
@@ -32,6 +38,9 @@ const styles = {
     'flex-direction': 'column',
     'align-items': 'center',
     'margin-top': '20px',
+    '@desktop': {
+      transform: 'translateX(-15px)',
+    },
   }),
 
   rocketBtn: styled({

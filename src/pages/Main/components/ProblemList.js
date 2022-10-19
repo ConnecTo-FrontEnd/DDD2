@@ -1,5 +1,7 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
+import LoginButton from '../../../shared/components/LoginButton.js';
+import Profile from '../../../shared/components/Profile.js';
 import { getGuestCategorizedProblems } from '../../../shared/store/guestInfo.js';
 import {
   getCategorizedProblems,
@@ -38,6 +40,12 @@ const styles = {
     'scrollbar-width': 'none',
     gap: '41px',
     width: '90vw',
+    '@desktop': {
+      width: '650px',
+      'overflow-x': 'hidden',
+      'flex-wrap': 'wrap',
+      'column-gap': '80px',
+    },
   }),
 
   shuffle: styled({
@@ -46,6 +54,27 @@ const styles = {
     'background-repeat': 'no-repeat',
     width: '30px',
     height: '30px',
+  }),
+  titleAndShuffle: styled({
+    display: 'flex',
+    '@mobile': {
+      'justify-content': 'space-between',
+      width: '100%',
+    },
+    '@desktop': {
+      'column-gap': '20px',
+      'align-items': 'center',
+    },
+  }),
+  profileLoginContainer: styled({
+    '@mobile': {
+      position: 'absolute',
+      top: '30px',
+      right: '20px',
+    },
+    '@desktop': {
+      'padding-top': '10px',
+    },
   }),
 };
 
@@ -75,8 +104,13 @@ class ProblemList extends Component {
     return `
       <div ${styles.container}>
         <div ${styles.allsols}>
-          <span>Allsols</span>
-          ${userInfo ? `<div class="shuffle" ${styles.shuffle}></div>` : ''}
+          <div ${styles.titleAndShuffle}>
+            <span>Allsols</span>
+            ${userInfo ? `<div class="shuffle" ${styles.shuffle}></div>` : ''}
+          </div>
+          <div ${styles.profileLoginContainer}>
+            ${userInfo ? new Profile().render() : new LoginButton().render()}
+          </div>
         </div>
         <ul ${styles.problemsContainer}>
           ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this) }).render()).join('')}
