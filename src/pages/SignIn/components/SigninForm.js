@@ -4,6 +4,7 @@ import { SigninScheme } from '../../../shared/scheme/scheme.js';
 import styled from '../../../library/styled.js';
 import { requestSignIn } from '../../../shared/store/userInfo.js';
 import { router } from '../../../shared/router/index.js';
+import theme from '../../../shared/styles/theme.js';
 
 const styles = {
   submitBtn: {
@@ -17,6 +18,12 @@ const styles = {
       color: 'grey',
     }),
   },
+  errorMsg: styled({
+    height: '20px',
+    font: theme['font-kr-regular'],
+    color: theme['orange-color'],
+    'font-size': '14px',
+  }),
 };
 
 class SigninForm extends Component {
@@ -28,17 +35,16 @@ class SigninForm extends Component {
 
   domStr() {
     const { userid, password, errorMsg } = this.state;
-    const { isValid } = this.signinScheme;
-
     this.signinScheme.userid.value = userid;
     this.signinScheme.password.value = password;
+    const { isValid } = this.signinScheme;
 
     return `
       <form class="signin-form">
         ${Object.values(this.signinScheme)
           .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
           .join('')}
-        <div>${errorMsg ?? ''}</div>  
+        <div ${styles.errorMsg}>${errorMsg ?? ''}</div>  
         <button ${styles.submitBtn[isValid ? 'active' : 'disabled']}  ${isValid ? '' : 'disabled'}>Sign in</button>
       </form>`;
   }
@@ -46,7 +52,6 @@ class SigninForm extends Component {
   onInput(e) {
     const newState = {};
     newState[e.target.name] = e.target.value;
-    newState.idChanged = e.target.name === 'userid' ? true : null;
     this.setState.call(this, newState);
   }
 

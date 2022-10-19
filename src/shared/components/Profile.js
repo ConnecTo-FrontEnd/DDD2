@@ -2,6 +2,7 @@ import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
 import { router } from '../router/index.js';
 import theme from '../styles/theme.js';
+import { userInfo } from '../store/userInfo.js';
 
 const styles = {
   profileBtn: styled({
@@ -24,7 +25,13 @@ const styles = {
 
 class Profile extends Component {
   domStr() {
-    return `<button ${styles.profileBtn} class="profile-btn"></button>`;
+    const { nickname } = userInfo;
+    return `
+    <div>
+      <div>${nickname}님 어서옵쇼!</div>
+      <button ${styles.profileBtn} class="profile-btn"></button>
+    </div>
+      `;
   }
 
   addEventListener() {

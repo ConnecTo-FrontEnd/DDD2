@@ -14,13 +14,14 @@ const setData = newData => {
 };
 
 module.exports = {
-  create(id) {
+  create(id, nickname) {
     const date = new Date();
     setData([
       ...data,
       {
         lastVisit: date,
         id,
+        nickname,
         setting: {
           day: DEFAULT_DAY,
           number: DEFAULT_NUMBER,
