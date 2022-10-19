@@ -18,6 +18,6 @@ const styled = styleObj =>
       }
       return `${property}: ${value}`;
     })
-    .join(';')} "`;
+    .join(';')}; "`;
 
 export default styled;
