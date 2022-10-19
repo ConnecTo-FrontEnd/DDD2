@@ -7,42 +7,30 @@ import { router } from '../../../shared/router/index.js';
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
+  btnCommon: styled({
+    'border-radius': '10px',
+    font: theme['font-kr-bold'],
+    'font-size': '16px',
+    color: 'white',
+  }),
+  positionCommon: styled({
+    position: 'absolute',
+    top: '190px',
+    right: '64px',
+    width: '65px',
+  }),
   submitBtn: {
     active: styled({
-      'border-radius': '10px',
-      font: theme['font-kr-bold'],
-      'font-size': '16px',
-      color: 'white',
       'background-color': theme['orange-color'],
     }),
     disabled: styled({
-      'border-radius': '10px',
-      font: theme['font-kr-bold'],
-      'font-size': '16px',
-      color: 'white',
       'background-color': theme['lightgray-color'],
     }),
   },
   doubleCheckBtn: styled({
-    position: 'absolute',
-    top: '190px',
-    right: '64px',
-    width: '65px',
-    'border-radius': '10px',
-    font: theme['font-kr-bold'],
-    'font-size': '16px',
-    color: 'white',
     'background-color': theme['lightgray-color'],
   }),
   checkedMsg: styled({
-    position: 'absolute',
-    top: '190px',
-    right: '64px',
-    width: '65px',
-    'border-radius': '10px',
-    font: theme['font-kr-bold'],
-    'font-size': '16px',
-    color: 'white',
     'background-color': theme['orange-color'],
   }),
   emailInput: styled({
@@ -83,23 +71,26 @@ class SignupForm extends Component {
         ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
         ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
         ${new SchemeInput({ scheme: this.signupScheme['confirm-password'], onInput: this.onInput.bind(this) }).render()}
-
         <div>
         ${
           isDuplicated === null || isDuplicated || isIdDirty
             ? new StyledButton({
                 type: 'button',
-                style: styles.doubleCheckBtn,
+                style: styles.doubleCheckBtn + styles.btnCommon + styles.positionCommon,
                 text: '중복확인',
                 disabled: !_userid.isValid,
                 onClick: this.onClickBtn.bind(this),
               }).render()
-            : new StyledButton({ type: 'button', style: styles.checkedMsg, text: '확인됨' }).render()
+            : new StyledButton({
+                type: 'button',
+                style: styles.checkedMsg + styles.btnCommon + styles.positionCommon,
+                text: '확인됨',
+              }).render()
         }
           <div> ${isDuplicated ? '중복된 아이디입니다.' : ''}</div>
         </div>
         ${new StyledButton({
-          style: styles.submitBtn[canSubmit ? 'active' : 'disabled'],
+          style: styles.submitBtn[canSubmit ? 'active' : 'disabled'] + styles.btnCommon,
           disabled: !canSubmit,
           text: 'Sign up',
         }).render()}
@@ -131,8 +122,8 @@ class SignupForm extends Component {
 
           requestSignUp({
             id: e.target[0].value,
-            password: e.target[1].value,
-            nickname: e.target[2].value,
+            nickname: e.target[1].value,
+            password: e.target[2].value,
           }).then(() => {
             router.go('/signin');
           });

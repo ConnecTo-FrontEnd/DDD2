@@ -45,19 +45,18 @@ const styles = {
 class SchemeInput extends Component {
   domStr() {
     const { type, id, required, label, name, value, errorMsg, isValid, accept } = this.props.scheme;
-
     // prettier-ignore
     return `
       <div ${styles.container}>
         <label ${styles.label} for="${id}">${label}</label>
-        <input ${isValid? styles.input.valid : styles.input.invalid} ${this.props.style ?? ''}
+        <input ${!!value && isValid===false ? styles.input.invalid : styles.input.valid} ${this.props.style ?? ''}
           value="${value}" 
           type="${type}" 
           id="${id}" 
           name="${name}" 
           ${required ? 'required' : ''} 
           accept=${accept ?? ''} />
-        <div ${styles.errorMsg}>${isValid ? '' : errorMsg ?? ''}</div>
+        <div ${styles.errorMsg}>${!!value && isValid===false ? errorMsg : ''}</div>
       </div>
     `;
   }

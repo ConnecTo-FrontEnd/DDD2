@@ -137,6 +137,7 @@ class UserSetting extends Component {
 
   onChangeNickname(e) {
     this.setState({ nickname: e.target.value, isValid: e.target.value.length });
+
   }
 
   onChangePlatform(e) {

@@ -2,7 +2,6 @@ import { render, eventHolder } from './render/index.js';
 
 const breakpoint = 900;
 window.matchMedia(`(max-width:  ${breakpoint}px)`).addEventListener('change', e => {
-  console.log('changed');
   render();
 });
 class Component {
@@ -32,7 +31,6 @@ class Component {
   }
 
   styleCombinator(domStr) {
-
     const tags = /<[^>]*>/g;
 
     return domStr.replaceAll(tags, tag => {
