@@ -1,5 +1,3 @@
-const pseudoRegex = /:/;
-
 const styled = styleObj =>
   ` style="${Object.entries(styleObj)
     .map(([property, value]) => {
@@ -18,7 +16,6 @@ const styled = styleObj =>
           .map(([p, v]) => `this.style['${p}']='${v}'`)
           .join(';')}}`;
       }
-
       return `${property}: ${value}`;
     })
     .join(';')} "`;
