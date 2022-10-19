@@ -7,6 +7,13 @@ import { router } from '../../../shared/router/index.js';
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
+  formContainer: styled({
+    position: 'relative',
+    '@desktop': {
+      margin: '0 auto',
+      width: '900px',
+    },
+  }),
   btnCommon: styled({
     'border-radius': '10px',
     font: theme['font-kr-bold'],
@@ -15,7 +22,7 @@ const styles = {
   }),
   positionCommon: styled({
     position: 'absolute',
-    top: '190px',
+    top: '23px',
     right: '64px',
     width: '65px',
   }),
@@ -62,7 +69,7 @@ class SignupForm extends Component {
     const canSubmit = isValid && isDuplicated === false;
 
     return `
-      <form class="signup-form">
+      <form ${styles.formContainer} class="signup-form">
         ${new SchemeInput({
           scheme: this.signupScheme.userid,
           onInput: this.onInput.bind(this),
@@ -122,8 +129,8 @@ class SignupForm extends Component {
 
           requestSignUp({
             id: e.target[0].value,
-            nickname: e.target[1].value,
-            password: e.target[2].value,
+            password: e.target[1].value,
+            nickname: e.target[2].value,
           }).then(() => {
             router.go('/signin');
           });
