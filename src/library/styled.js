@@ -1,14 +1,15 @@
 import { render } from '../../library/render/index.js';
 
-window.matchMedia('(max-width:  768px)').addEventListener('change', e => {
+const breakpoint = 850;
+window.matchMedia(`(max-width:  ${breakpoint}px)`).addEventListener('change', e => {
   render();
 });
 
 const styled = styleObj =>
   ` style="${Object.entries(styleObj)
     .map(([property, value]) => {
-      const isMobile = window.matchMedia('(max-width:  768px)').matches;
-      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      const isMobile = window.matchMedia(`(max-width:  ${breakpoint}px)`).matches;
+      const isDesktop = window.matchMedia(`(min-width:  ${breakpoint}px)`).matches;
       if (property === '@mobile') {
         if (isMobile) {
           return Object.entries(value)

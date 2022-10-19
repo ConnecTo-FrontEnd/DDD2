@@ -6,32 +6,17 @@ import { userInfo } from '../store/userInfo.js';
 
 const styles = {
   profileBtn: styled({
-    position: 'absolute',
-    right: '16px',
     width: '40px',
     height: '40px',
     background: 'url(../assets/profile.svg)',
-  }),
-
-  loginBtn: styled({
-    position: 'absolute',
-    right: '16px',
-    height: '40px',
-    font: theme['font-kr-bold'],
-    'font-size': '20px',
-    color: theme['orange-color'],
   }),
 };
 
 class Profile extends Component {
   domStr() {
-    const { nickname } = userInfo;
     return `
-    <div>
-      <div>${nickname}님 어서옵쇼!</div>
       <button ${styles.profileBtn} class="profile-btn"></button>
-    </div>
-      `;
+    `;
   }
 
   addEventListener() {
