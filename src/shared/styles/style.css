@@ -19,6 +19,16 @@ button {
   cursor: pointer;
 }
 
+html,
 body {
+  background-color: beige;
+  height: 100%;
+}
+
+#root {
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 100%;
+  background-color: white;
   text-align: center;
 }

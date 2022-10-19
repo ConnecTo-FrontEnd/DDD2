@@ -4,24 +4,30 @@ import theme from '../../../shared/styles/theme.js';
 
 const styles = {
   description: styled({
-    margin: '49px 0 14px 0',
+    margin: '30px 0 14px 0',
     font: theme['font-kr-bold'],
     'font-size': '20px',
   }),
 
   loadingImg: styled({
-    'margin-bottom': '118px',
-    width: '201px',
-    height: '201px',
-    background: 'url(../assets/loading.svg)',
+    width: '300px',
+    height: '300px',
+    background: 'url(../assets/searching.gif)',
+    'background-size': 'cover',
+    '@desktop': {
+      width: '400px',
+      height: '400px',
+    },
   }),
 };
 
 class Loading extends Component {
   domStr() {
     return `
+    <div>
       <p ${styles.description}>찾는 중..</p>
-      <div ${styles.loadingImg}></div>`;
+      <div ${styles.loadingImg} ></div>
+    </div>`;
   }
 }
 

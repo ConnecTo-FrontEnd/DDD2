@@ -6,7 +6,7 @@ import { userInfo } from '../../shared/store/userInfo.js';
 class Main extends Component {
   domStr() {
     return `
-      <div>
+      <div >
         ${new Header().render()}
         <div>
           ${new ProblemList().render()}
