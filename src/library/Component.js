@@ -22,6 +22,8 @@ class Component {
     result = this.uuidAdder(result);
     result = this.styleCombinator(result);
     result = this.mediaQueryProcessor(result);
+    result = this.pseudoClassProcessor(result);
+
     return result;
   }
 
@@ -60,6 +62,24 @@ class Component {
         tag = tag.replace(mobileRegex, '');
       }
       return tag;
+    });
+  }
+
+  pseudoClassProcessor(domStr) {
+    const tags = /<[^>]*>/g;
+    const pseudoRegex = /:on([^{])*={([^}])*}/g;
+
+    return domStr.replaceAll(tags, tag => {
+      const pseudos = tag.match(pseudoRegex);
+      if (!tag.includes('style') || !pseudos) return tag;
+
+      return (
+        tag.replace(pseudoRegex, '').split('>')[0] +
+        [...pseudos].map(p => p.replace('{', '"').replace('}', '"').replace(':', '')).join('') +
+        '>'
+      );
+
+      // return tag.replace(pseudoRegex, '').split('>')[0] + pseudos.replace('{', '"').replace('}', '"') + '>';
     });
   }
 

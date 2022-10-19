@@ -17,7 +17,7 @@ const styles = {
 class Main extends Component {
   domStr() {
     return `
-      <div ${styles.container}>
+      <div >
         ${new Header().render()}
         <div ${styles.problemHistoryContainer}>
           ${new ProblemList().render()}

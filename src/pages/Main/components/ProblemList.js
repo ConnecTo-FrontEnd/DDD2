@@ -117,7 +117,6 @@ class ProblemList extends Component {
 
   domStr() {
     const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
-    console.log(getGuestCategorizedProblems());
     if (this.state.isLoading)
       return `
         <div ${styles.container}>
