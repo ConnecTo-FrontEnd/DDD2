@@ -30,12 +30,6 @@ class Component {
     });
   }
 
-  converter(selector) {
-    return Object.entries(selector)
-      .map(([property, value]) => `${property}: ${value}`)
-      .join(';');
-  }
-
   holdEvents() {
     const events = this.addEventListener?.();
     if (!events) return;
