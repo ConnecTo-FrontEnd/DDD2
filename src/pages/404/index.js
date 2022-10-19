@@ -13,6 +13,12 @@ const styles = {
     gap: '40px',
     'align-items': 'center',
     'justify-content': 'center',
+    '@desktop': {
+      'background-color': 'red',
+    },
+    '@mobile': {
+      'background-color': 'green',
+    },
   }),
   homeBtn: styled({
     'background-color': theme['orange-color'],

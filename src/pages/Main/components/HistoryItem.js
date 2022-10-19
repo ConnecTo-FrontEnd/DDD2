@@ -8,7 +8,7 @@ const styles = {
     display: 'flex',
     'justify-content': 'space-between',
     'margin-bottom': '24px',
-    idth: '344px',
+    width: '100%',
   }),
 
   problemLink: styled({
@@ -20,6 +20,7 @@ const styles = {
     'flex-direction': 'column',
     'justify-content': 'space-between',
     'align-items': 'flex-start',
+    flex: 1,
   }),
 
   problemCategory: styled({

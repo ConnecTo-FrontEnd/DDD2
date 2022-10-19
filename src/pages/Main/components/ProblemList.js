@@ -22,20 +22,22 @@ const styles = {
     'justify-content': 'space-between',
     'text-align': 'left',
     width: '100%',
+
     'padding-left': '26px',
     'padding-right': '26px',
     font: theme['font-en-bold'],
     'font-size': '28px',
   }),
 
-  problems: styled({
+  problemsContainer: styled({
     display: 'flex',
-    margin: '23px 0 57px 26px',
+    margin: '23px 0 57px 0',
+    padding: '20px 20px 20px 5px',
     'white-space': 'nowrap',
     'overflow-x': 'scroll',
     'scrollbar-width': 'none',
     gap: '41px',
-    width: '100%',
+    width: '90vw',
   }),
 
   shuffle: styled({
@@ -76,7 +78,7 @@ class ProblemList extends Component {
           <span>Allsols</span>
           ${userInfo ? `<div class="shuffle" ${styles.shuffle}></div>` : ''}
         </div>
-        <ul ${styles.problems}>
+        <ul ${styles.problemsContainer}>
           ${unexpired.map((problem, idx) => new ProblemItem({ problem, blocked: !userInfo && idx > 0, onDeleteClick: this.deleteItem.bind(this) }).render()).join('')}
         </ul>
       </div>`;

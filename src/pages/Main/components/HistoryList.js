@@ -11,7 +11,8 @@ const styles = {
     'flex-direction': 'column',
     'align-items': 'flex-start',
     position: 'relative',
-    margin: '28px',
+    width: '100%',
+    padding: '0 20px 0 20px',
   }),
 
   title: styled({
@@ -23,8 +24,11 @@ const styles = {
   deleteAllBtn: styled({
     position: 'absolute',
     top: '7px',
-    right: '0',
+    right: '20px',
     color: theme['orange-color'],
+  }),
+  itemContainer: styled({
+    width: '100%',
   }),
 };
 
@@ -36,7 +40,7 @@ class HistoryList extends Component {
     return `
         <div ${styles.container}>
           <h2 ${styles.title}>Last</h2>
-          <ul>
+          <ul ${styles.itemContainer}>
             ${expired.map(problem => new HistoryItem({problem}).render()).join('')}
           </ul>
           <button ${styles.deleteAllBtn} class="delete-all-btn">Delete All</button>
