@@ -1,22 +1,26 @@
 import Component from '../../../library/Component.js';
-import PLATFORMS from '../../../shared/constants/platforms.js';
 import { requestLogout, requestSaveSetting, userInfo } from '../../../shared/store/userInfo.js';
 import { SelectBox } from './index.js';
 import { router } from '../../../shared/router/index.js';
 import StyledButton from '../../../shared/components/StyledButton.js';
 import styled from '../../../library/styled.js';
 import theme from '../../../shared/styles/theme.js';
+import Title from '../../../shared/components/Title.js';
+import PlatformContainer from './PlatformContainer.js';
+import PopUpMsg from '../../../shared/components/PopupMsg.js';
 
 const styles = {
   container: styled({
     display: 'flex',
     'flex-direction': 'column',
     padding: '0 2rem',
+    'max-width': '50rem',
+    margin: '0 auto',
   }),
   profileImage: styled({
     width: '7rem',
     'border-radius': '100%',
-    margin: '0 auto',
+    margin: '2rem auto',
   }),
   inputLabel: styled({
     display: 'block',
@@ -36,38 +40,6 @@ const styles = {
     display: 'flex',
     gap: '1rem',
   }),
-  platformContainer: styled({
-    display: 'flex',
-    'overflow-x': 'scroll',
-    'padding-bottom': '1rem',
-  }),
-  platformLabel: {
-    unchecked: styled({
-      display: 'flex',
-      'flex-direction': 'column',
-      width: '8rem',
-      'margin-right': '1rem',
-      border: `1px solid ${theme['lightgray-color']}`,
-      'border-radius': '1rem',
-    }),
-    checked: styled({
-      display: 'flex',
-      'flex-direction': 'column',
-      width: '8rem',
-      'margin-right': '1rem',
-      'border-radius': '1rem',
-      border: `none`,
-      background: theme['orange-color'],
-      color: theme['white-color'],
-    }),
-  },
-  platformImg: styled({
-    'border-radius': '100%',
-    padding: '1rem 2rem',
-  }),
-  platformItem: styled({
-    display: 'none',
-  }),
   settingBtn: styled({
     display: 'block',
     width: '100%',
@@ -86,30 +58,18 @@ const styles = {
     border: 'none',
     background: theme['lightgray-color'],
   }),
-  saveMsg: {
-    show: styled({
-      visibility: 'visible',
-      opacity: '100%',
-      'margin-top': '1rem',
-      transition: 'all 1s',
-    }),
-    hide: styled({
-      visibility: 'hidden',
-      opacity: '0%',
-      'margin-top': '1rem',
-    }),
-  },
 };
 
 class UserSetting extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...userInfo.setting, isSaving: true, isValid: true };
+    this.state = { ...userInfo.setting, isPopup: false, isValid: true };
   }
 
   domStr() {
     return `
     <div ${styles.container}>
+    ${new Title({ title: 'Setting' }).render()}
     <image ${styles.profileImage} src="./../assets/profile.svg" />
     <form>
       <label ${styles.inputLabel} for="setting-nickname">Nickname</label>
@@ -135,21 +95,7 @@ class UserSetting extends Component {
         }).render()}
       </div>
       <span ${styles.inputLabel}>Platforms</span>
-      <div ${styles.platformContainer}>
-        ${PLATFORMS.map(
-          ({ id, content }) => `<label ${
-            this.state.platform.includes(id) ? styles.platformLabel.checked : styles.platformLabel.unchecked
-          } for=${content}>
-              <img ${styles.platformImg} src='../../../assets/${id}.svg' />
-              <span>${content}</span>
-            </label>
-            <input class="platform-input" ${
-              styles.platformItem
-            } value=${id} type="checkbox" id=${content} name="platform" ${
-            this.state.platform.includes(id) ? 'checked' : ''
-          } />`
-        ).join('')}
-      </div>
+        ${new PlatformContainer({ platform: this.state.platform, onChange: this.onChangePlatform.bind(this) }).render()}
         ${new StyledButton({
           text: '저장',
           style: this.isDirty() && this.state.isValid ? styles.settingBtn : styles.disabledBtn,
@@ -165,9 +111,7 @@ class UserSetting extends Component {
           router.go('/');
         },
       }).render()}
-      <p ${this.state.isSaving ? styles.saveMsg.hide : styles.saveMsg.show}>
-        저장되었습니다!!
-      </p>
+      ${new PopUpMsg({ msg: '저장되었습니다!!', isPopup: this.state.isPopup }).render()}
     </div>`;
   }
 
@@ -175,11 +119,10 @@ class UserSetting extends Component {
     const isDirtyPlatform = () =>
       this.state.platform.length !== userInfo.setting.platform.length ||
       this.state.platform.some(item => !userInfo.setting.platform.includes(item));
-
     return (
       this.state.nickname !== userInfo.setting.nickname ||
-      this.state.number !== userInfo.setting.number ||
-      this.state.day !== userInfo.setting.day ||
+      +this.state.number !== +userInfo.setting.number ||
+      +this.state.day !== +userInfo.setting.day ||
       isDirtyPlatform()
     );
   }
@@ -193,8 +136,7 @@ class UserSetting extends Component {
   }
 
   onChangeNickname(e) {
-    console.log(this.state.nickname);
-    this.setState({ nickname: e.target.value, isValid: this.state.nickname.length !== 0 });
+    this.setState({ nickname: e.target.value, isValid: e.target.value.length });
   }
 
   onChangePlatform(e) {
@@ -209,10 +151,10 @@ class UserSetting extends Component {
     e.preventDefault();
 
     await requestSaveSetting(this.state);
-    this.setState({ ...this.state, isValid: true, isSaving: false });
+    this.setState({ ...this.state, isValid: true, isPopup: true });
     setTimeout(() => {
-      this.setState({ isSaving: true });
-    }, 1000);
+      this.setState({ isPopup: false });
+    }, 1200);
   }
 
   addEventListener() {
@@ -221,11 +163,6 @@ class UserSetting extends Component {
         type: 'input',
         selector: '.nickname-input',
         handler: this.onChangeNickname.bind(this),
-      },
-      {
-        type: 'input',
-        selector: '.platform-input',
-        handler: this.onChangePlatform.bind(this),
       },
       {
         type: 'keydown',
