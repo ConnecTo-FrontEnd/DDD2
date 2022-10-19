@@ -13,6 +13,14 @@ const styles = {
       transform: 'translateX(0)',
       width: '100vw',
     },
+    ':onMouseOver': {
+      zoom: '1.1',
+      'background-color': 'skyblue',
+    },
+    ':onMouseOut': {
+      zoom: '1',
+      'background-color': 'white',
+    },
   }),
 
   logoBtn: styled({
@@ -25,7 +33,7 @@ const styles = {
 class Header extends Component {
   domStr() {
     return `
-      <header ${styles.header}>
+      <header ${styles.header} >
         <button ${styles.logoBtn} class="logo-button"></button>
         ${this.props?.item ?? ''}
       </header>`;
