@@ -49,14 +49,14 @@ class SchemeInput extends Component {
     return `
       <div ${styles.container}>
         <label ${styles.label} for="${id}">${label}</label>
-        <input ${!!value && isValid===false ? styles.input.invalid : styles.input.valid}
+        <input ${isValid? styles.input.valid : styles.input.invalid}
           value="${value}" 
           type="${type}" 
           id="${id}" 
           name="${name}" 
           ${required ? 'required' : ''} 
           accept=${accept ?? ''} />
-        <div ${styles.errorMsg}>${!!value && isValid===false ? errorMsg : ''}</div>
+        <div ${styles.errorMsg}>${isValid ? '' : errorMsg ?? ''}</div>
       </div>
     `;
   }

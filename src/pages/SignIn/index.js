@@ -12,6 +12,11 @@ const styles = {
     font: theme['font-en-bold'],
     'font-size': '47px',
   }),
+  linkContainer: styled({
+    'margin-top': '27px',
+    font: theme['font-kr-regular'],
+    'font-size': '15px',
+  }),
   link: styled({
     color: theme['orange-color'],
   }),
@@ -23,7 +28,7 @@ class SignIn extends Component {
         ${new Header().render()}
         <h1 ${styles.title}>AllSol</h1>
         ${new SigninForm().render()}
-        <div>
+        <div ${styles.linkContainer}>
           Don't have an account?
           <button ${styles.link} class="signup-link">Sign up</button>
         </div>
