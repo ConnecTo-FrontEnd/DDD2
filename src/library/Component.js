@@ -32,6 +32,7 @@ class Component {
   }
 
   styleCombinator(domStr) {
+
     const tags = /<[^>]*>/g;
 
     return domStr.replaceAll(tags, tag => {

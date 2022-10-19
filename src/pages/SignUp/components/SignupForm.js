@@ -45,6 +45,9 @@ const styles = {
     color: 'white',
     'background-color': theme['orange-color'],
   }),
+  emailInput: styled({
+    width: 'calc(99% - 65px)',
+  }),
 };
 
 class SignupForm extends Component {
@@ -69,13 +72,18 @@ class SignupForm extends Component {
     this.signupScheme['confirm-password'].value = confirmPassword;
     const { userid: _userid, isValid } = this.signupScheme;
     const canSubmit = isValid && isDuplicated === false;
-    // prettier-ignore
+
     return `
       <form class="signup-form">
-      
-        ${Object.values(this.signupScheme)
-          .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
-          .join('')}
+        ${new SchemeInput({
+          scheme: this.signupScheme.userid,
+          onInput: this.onInput.bind(this),
+          style: styles.emailInput,
+        }).render()}
+        ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
+        ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
+        ${new SchemeInput({ scheme: this.signupScheme['confirm-password'], onInput: this.onInput.bind(this) }).render()}
+
         <div>
         ${
           isDuplicated === null || isDuplicated || isIdDirty
