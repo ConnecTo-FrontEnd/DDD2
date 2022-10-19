@@ -6,11 +6,13 @@ const styled = styleObj =>
           .map(([p, v]) => `${p}: ${v}`)
           .join(';')}}`;
       }
+
       if (property === '@desktop') {
         return `@desktop={${Object.entries(value)
           .map(([p, v]) => `${p}: ${v}`)
           .join(';')}}`;
       }
+
       if (property.startsWith(':')) {
         return `${property}={${Object.entries(value)
           .map(([p, v]) => `this.style['${p}']='${v}'`)
@@ -18,6 +20,6 @@ const styled = styleObj =>
       }
       return `${property}: ${value}`;
     })
-    .join(';')} "`;
+    .join(';')}; "`;
 
 export default styled;
