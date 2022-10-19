@@ -15,7 +15,7 @@ const styles = {
 class StyledButton extends Component {
   domStr() {
     const { style, text } = this.props;
-    return `<button ${styles.button} ${style}>${text}</button>`;
+    return `<button ${styles.button} ${style} ${this.props.disabled ? 'disabled' : ''}>${text}</button>`;
   }
 
   addEventListener() {

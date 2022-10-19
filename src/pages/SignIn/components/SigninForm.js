@@ -68,10 +68,6 @@ class SigninForm extends Component {
       },
     ];
   }
-
-  setInputValue(newState) {
-    this.setState(newState);
-  }
 }
 
 export default SigninForm;
