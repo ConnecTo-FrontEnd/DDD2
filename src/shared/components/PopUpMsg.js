@@ -18,10 +18,10 @@ const styles = {
     transition: 'all 1s',
   }),
   show: styled({
-    bottom: '0',
+    top: '0',
   }),
   hide: styled({
-    bottom: '-5rem',
+    top: '-5rem',
   }),
 };
 
