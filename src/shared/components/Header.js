@@ -1,6 +1,9 @@
 import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
 import { router } from '../router/index.js';
+import { userInfo } from '../store/userInfo.js';
+import LoginButton from './LoginButton.js';
+import Profile from './Profile.js';
 
 const styles = {
   header: styled({
@@ -33,7 +36,7 @@ class Header extends Component {
     return `
       <header ${styles.header} >
         <button ${styles.logoBtn} class="logo-button"></button>
-        ${this.props?.item ?? ''}
+        ${this.props?.isMain ? (userInfo ? new Profile().render() : new LoginButton().render()) : ''}
       </header>`;
   }
 
