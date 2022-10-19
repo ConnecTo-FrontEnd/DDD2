@@ -5,13 +5,11 @@ import { router } from '../router/index.js';
 const styles = {
   header: styled({
     display: 'flex',
-    width: '100%',
     'justify-content': 'space-between',
     padding: '33px 26px',
     height: '96px',
     '@desktop': {
       transform: 'translateX(0)',
-      width: '100vw',
     },
     ':onMouseOver': {
       zoom: '1.1',
