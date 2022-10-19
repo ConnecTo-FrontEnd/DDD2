@@ -7,19 +7,23 @@ import { router } from '../../../shared/router/index.js';
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
+  formContainer: styled({
+    '@desktop': {
+      margin: '0 auto',
+      width: '900px',
+    },
+  }),
+  btnCommon: styled({
+    'border-radius': '10px',
+    font: theme['font-kr-bold'],
+    'font-size': '16px',
+    color: 'white',
+  }),
   submitBtn: {
     active: styled({
-      'border-radius': '10px',
-      font: theme['font-kr-bold'],
-      'font-size': '16px',
-      color: 'white',
       'background-color': theme['orange-color'],
     }),
     disabled: styled({
-      'border-radius': '10px',
-      font: theme['font-kr-bold'],
-      'font-size': '16px',
-      color: 'white',
       'background-color': theme['lightgray-color'],
     }),
   },
@@ -45,13 +49,13 @@ class SigninForm extends Component {
     const { isValid } = this.signinScheme;
 
     return `
-      <form class="signin-form">
+      <form ${styles.formContainer} class="signin-form">
         ${Object.values(this.signinScheme)
           .map(scheme => new SchemeInput({ scheme, onInput: this.onInput.bind(this) }).render())
           .join('')}
         <div ${styles.errorMsg}>${errorMsg ?? ''}</div>  
         ${new StyledButton({
-          style: styles.submitBtn[isValid ? 'active' : 'disabled'],
+          style: styles.submitBtn[isValid ? 'active' : 'disabled'] + styles.btnCommon,
           text: 'Sign in',
           disabled: !isValid,
         }).render()}
