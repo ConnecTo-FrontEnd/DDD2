@@ -7,7 +7,7 @@ import styled from '../../../library/styled.js';
 import theme from '../../../shared/styles/theme.js';
 import Title from '../../../shared/components/Title.js';
 import PlatformContainer from './PlatformContainer.js';
-import PopUpMsg from '../../../shared/components/PopupMsg.js';
+import PopUpMsg from '../../../shared/components/PopUpMsg.js';
 
 const styles = {
   container: styled({
@@ -63,7 +63,7 @@ const styles = {
 class UserSetting extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...userInfo.setting, isPopup: false, isValid: true };
+    this.state = { ...userInfo.setting, isPopUp: false, isValid: true };
   }
 
   domStr() {
@@ -111,7 +111,7 @@ class UserSetting extends Component {
           router.go('/');
         },
       }).render()}
-      ${new PopUpMsg({ msg: '저장되었습니다!!', isPopup: this.state.isPopup }).render()}
+      ${new PopUpMsg({ msg: '저장되었습니다!!', isPopUp: this.state.isPopUp }).render()}
     </div>`;
   }
 
@@ -137,7 +137,6 @@ class UserSetting extends Component {
 
   onChangeNickname(e) {
     this.setState({ nickname: e.target.value, isValid: e.target.value.length });
-
   }
 
   onChangePlatform(e) {
@@ -152,9 +151,9 @@ class UserSetting extends Component {
     e.preventDefault();
 
     await requestSaveSetting(this.state);
-    this.setState({ ...this.state, isValid: true, isPopup: true });
+    this.setState({ ...this.state, isValid: true, isPopUp: true });
     setTimeout(() => {
-      this.setState({ isPopup: false });
+      this.setState.call(this, { isPopUp: false });
     }, 1200);
   }
 
