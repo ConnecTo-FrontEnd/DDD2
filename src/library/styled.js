@@ -1,29 +1,17 @@
 import { render } from '../../library/render/index.js';
 
-window.matchMedia('(max-width:  768px)').addEventListener('change', e => {
-  render();
-});
-
 const styled = styleObj =>
   ` style="${Object.entries(styleObj)
     .map(([property, value]) => {
-      const isMobile = window.matchMedia('(max-width:  768px)').matches;
-      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
       if (property === '@mobile') {
-        if (isMobile) {
-          return Object.entries(value)
-            .map(([p, v]) => `${p}: ${v}`)
-            .join(';');
-        }
-        return '';
+        return `@mobile={${Object.entries(value)
+          .map(([p, v]) => `${p}: ${v}`)
+          .join(';')}}`;
       }
       if (property === '@desktop') {
-        if (isDesktop) {
-          return Object.entries(value)
-            .map(([p, v]) => `${p}: ${v}`)
-            .join(';');
-        }
-        return '';
+        return `@desktop={${Object.entries(value)
+          .map(([p, v]) => `${p}: ${v}`)
+          .join(';')}}`;
       }
       return `${property}: ${value}`;
     })

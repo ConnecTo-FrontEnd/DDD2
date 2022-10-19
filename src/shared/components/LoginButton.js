@@ -3,18 +3,17 @@ import styled from '../../library/styled.js';
 import { router } from '../router/index.js';
 import theme from '../styles/theme.js';
 
-const loginButton = styled({
-  position: 'absolute',
-  right: '16px',
-  height: '40px',
-  font: theme['font-kr-bold'],
-  'font-size': '20px',
-  color: theme['orange-color'],
-});
+const styles = {
+  loginButton: styled({
+    font: theme['font-kr-bold'],
+    'font-size': '20px',
+    color: theme['orange-color'],
+  }),
+};
 
 class LoginButton extends Component {
   domStr() {
-    return `<button style="${loginButton}">Log In</button>`;
+    return `<button ${styles.loginButton}>로그인</button>`;
   }
 
   addEventListener() {

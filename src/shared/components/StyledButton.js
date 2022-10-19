@@ -6,7 +6,6 @@ const styles = {
     margin: '0 auto',
     width: '70%',
     height: '3rem',
-    border: '2px solid black',
     'border-radius': '10px',
     'font-size': '1rem',
     'background-color': '#f7f7f7',
@@ -14,12 +13,20 @@ const styles = {
 };
 class StyledButton extends Component {
   domStr() {
-    const { style, text } = this.props;
-    return `<button ${styles.button} ${style} ${this.props.disabled ? 'disabled' : ''}>${text}</button>`;
+    const { props } = this;
+    return `<button ${props.type ? 'type="button"' : ''} ${styles.button} ${props.style ?? ''} ${
+      props.disabled ? 'disabled' : ''
+    }>${props.text ?? ''}</button>`;
   }
 
   addEventListener() {
-    return [{ type: 'click', selector: 'button', handler: this.props?.onClick ?? (() => {}) }];
+    return [
+      {
+        type: 'click',
+        selector: 'button',
+        handler: this.props?.onClick ?? (() => {}),
+      },
+    ];
   }
 }
 
