@@ -162,8 +162,8 @@ class SignupForm extends Component {
 
           requestSignUp({
             id: e.target[0].value,
-            nickname: e.target[1].value,
-            password: e.target[2].value,
+            password: e.target[1].value,
+            nickname: e.target[2].value,
           }).then(() => {
             router.go('/signin');
           });
