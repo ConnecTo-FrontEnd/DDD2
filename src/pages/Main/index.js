@@ -8,8 +8,9 @@ const styles = {
   problemHistoryContainer: styled({
     '@desktop': {
       display: 'flex',
+      'flex-direction': 'column',
       margin: '0 auto',
-      width: '900px',
+      padding: '2rem',
     },
   }),
 };
@@ -18,7 +19,7 @@ class Main extends Component {
   domStr() {
     return `
       <div >
-        ${new Header().render()}
+        ${new Header({ isMain: true }).render()}
         <div ${styles.problemHistoryContainer}>
           ${new ProblemList().render()}
           ${userInfo ? new HistoryList().render() : new MoreFeatures().render()}

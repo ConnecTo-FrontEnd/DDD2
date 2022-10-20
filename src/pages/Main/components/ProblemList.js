@@ -1,7 +1,5 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
-import LoginButton from '../../../shared/components/LoginButton.js';
-import Profile from '../../../shared/components/Profile.js';
 import { getGuestCategorizedProblems, requestInitGuestInfo } from '../../../shared/store/guestInfo.js';
 import {
   getCategorizedProblems,
@@ -83,16 +81,6 @@ const styles = {
       'align-items': 'center',
     },
   }),
-  profileLoginContainer: styled({
-    '@mobile': {
-      position: 'absolute',
-      top: '30px',
-      right: '20px',
-    },
-    '@desktop': {
-      'padding-top': '10px',
-    },
-  }),
 };
 
 class ProblemList extends Component {
@@ -140,9 +128,6 @@ class ProblemList extends Component {
           <div ${styles.titleAndShuffle}>
             <span>Allsols</span>
             ${userInfo ? `<div class="shuffle" ${styles.shuffle}></div>` : ''}
-          </div>
-          <div ${styles.profileLoginContainer}>
-            ${userInfo ? new Profile().render() : new LoginButton().render()}
           </div>
         </div>
         ${this.state.isLoading ? `
