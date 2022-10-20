@@ -160,11 +160,11 @@ class SignupForm extends Component {
         selector: '.signup-form',
         handler: e => {
           e.preventDefault();
-
+          const { elements } = e.target;
           requestSignUp({
-            id: e.target[0].value,
-            password: e.target[1].value,
-            nickname: e.target[2].value,
+            id: elements['signup-userid'].value,
+            nickname: elements['signup-nickname'].value,
+            password: elements['signup-password'].value,
           }).then(() => {
             router.go('/signin');
           });

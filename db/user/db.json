@@ -3,7 +3,7 @@
     "lastVisit": "2022-10-19T05:36:19.717Z",
     "id": "guest@guest.com",
     "nickname": "게스트",
-    "setting": { "day": 3, "number": 3, "platform": ["boj"], "lastUpdate": "2022-10-17T05:36:19.717Z" },
+    "setting": { "day": 100000, "number": 3, "platform": ["boj"], "lastUpdate": "2022-10-17T05:36:19.717Z" },
     "problemList": [
       {
         "link": "https://www.acmicpc.net/problem/22864",

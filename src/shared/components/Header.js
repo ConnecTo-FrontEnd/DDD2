@@ -28,7 +28,7 @@ class Header extends Component {
     return `
       <header ${styles.header} >
         <button ${styles.logoBtn} class="logo-button"></button>
-        ${this.props.children ? this.props.children : ''}
+        ${this.props?.children ?? ''}
       </header>`;
   }
 
