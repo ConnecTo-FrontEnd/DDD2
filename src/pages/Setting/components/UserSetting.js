@@ -2,12 +2,12 @@ import Component from '../../../library/Component.js';
 import { requestLogout, requestSaveSetting, userInfo } from '../../../shared/store/userInfo.js';
 import { SelectBox } from './index.js';
 import { router } from '../../../shared/router/index.js';
-import StyledButton from '../../../shared/components/StyledButton.js';
+import { StyledButton, PopUpMsg, Title } from '../../../shared/components/index.js';
 import styled from '../../../library/styled.js';
 import theme from '../../../shared/styles/theme.js';
-import Title from '../../../shared/components/Title.js';
+// import Title from '../../../shared/components/Title.js';
 import PlatformContainer from './PlatformContainer.js';
-import PopUpMsg from '../../../shared/components/PopUpMsg.js';
+// import PopUpMsg from '../../../shared/components/PopUpMsg.js';
 
 const styles = {
   container: styled({

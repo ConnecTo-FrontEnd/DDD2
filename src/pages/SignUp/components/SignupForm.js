@@ -1,30 +1,41 @@
 import Component from '../../../library/Component.js';
-import { SchemeInput, StyledButton } from '../../../shared/components/index.js';
+import { SchemeInput, StyledButton, PopUpMsg } from '../../../shared/components/index.js';
 import { SignupScheme } from '../../../shared/scheme/scheme.js';
-import styled from '../../../library/styled.js';
 import { requestSignUp, requestCheckExistUser } from '../../../shared/store/userInfo.js';
 import { router } from '../../../shared/router/index.js';
+import styled from '../../../library/styled.js';
 import theme from '../../../shared/styles/theme.js';
 
 const styles = {
-  formContainer: styled({
+  form: styled({
     position: 'relative',
+    margin: '32px auto 0px',
+    padding: '0 2rem',
     '@desktop': {
-      margin: '0 auto',
       width: '900px',
+      padding: '0 4rem',
     },
   }),
   btnCommon: styled({
+    width: '100%',
+    'margin-top': '1rem',
     'border-radius': '10px',
     font: theme['font-kr-bold'],
     'font-size': '16px',
     color: 'white',
   }),
-  positionCommon: styled({
+  checkCommon: styled({
     position: 'absolute',
-    top: '23px',
-    right: '64px',
+    top: '2.6rem',
+    right: '2rem',
     width: '65px',
+    'border-radius': '10px',
+    font: theme['font-kr-bold'],
+    'font-size': '16px',
+    color: 'white',
+    '@desktop': {
+      right: '4rem',
+    },
   }),
   submitBtn: {
     active: styled({
@@ -43,6 +54,14 @@ const styles = {
   emailInput: styled({
     width: 'calc(99% - 65px)',
   }),
+  popUpMsg: {
+    invalid: styled({
+      'background-color': theme['lightgray-color'],
+    }),
+    valid: styled({
+      'background-color': theme['orange-color'],
+    }),
+  },
 };
 
 class SignupForm extends Component {
@@ -56,6 +75,7 @@ class SignupForm extends Component {
       'confirm-password': '',
       isDuplicated: null,
       isIdDirty: null,
+      isPopUp: false,
     };
   }
 
@@ -69,39 +89,48 @@ class SignupForm extends Component {
     const canSubmit = isValid && isDuplicated === false;
 
     return `
-      <form ${styles.formContainer} class="signup-form">
-        ${new SchemeInput({
-          scheme: this.signupScheme.userid,
-          onInput: this.onInput.bind(this),
-          style: styles.emailInput,
+      <div>
+        <form ${styles.form} class="signup-form">
+          ${new SchemeInput({
+            scheme: this.signupScheme.userid,
+            onInput: this.onInput.bind(this),
+            style: styles.emailInput,
+          }).render()}
+          ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
+          ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
+          ${new SchemeInput({
+            scheme: this.signupScheme['confirm-password'],
+            onInput: this.onInput.bind(this),
+          }).render()}
+          <div>
+          ${
+            isDuplicated === null || isDuplicated || isIdDirty
+              ? new StyledButton({
+                  type: 'button',
+                  style: styles.doubleCheckBtn + styles.checkCommon,
+                  text: '중복확인',
+                  disabled: !_userid.isValid,
+                  onClick: this.onClickBtn.bind(this),
+                }).render()
+              : new StyledButton({
+                  type: 'button',
+                  style: styles.checkedMsg + styles.checkCommon,
+                  text: '확인됨',
+                }).render()
+          }
+          </div>
+          ${new StyledButton({
+            style: styles.submitBtn[canSubmit ? 'active' : 'disabled'] + styles.btnCommon,
+            disabled: !canSubmit,
+            text: 'Sign up',
+          }).render()}
+        </form>
+        ${new PopUpMsg({
+          msg: isDuplicated ? '중복된 아이디 입니다.' : '사용가능한 아이디 입니다.',
+          isPopUp: this.state.isPopUp,
+          style: styles.popUpMsg[isDuplicated ? 'invalid' : 'valid'],
         }).render()}
-        ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
-        ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
-        ${new SchemeInput({ scheme: this.signupScheme['confirm-password'], onInput: this.onInput.bind(this) }).render()}
-        <div>
-        ${
-          isDuplicated === null || isDuplicated || isIdDirty
-            ? new StyledButton({
-                type: 'button',
-                style: styles.doubleCheckBtn + styles.btnCommon + styles.positionCommon,
-                text: '중복확인',
-                disabled: !_userid.isValid,
-                onClick: this.onClickBtn.bind(this),
-              }).render()
-            : new StyledButton({
-                type: 'button',
-                style: styles.checkedMsg + styles.btnCommon + styles.positionCommon,
-                text: '확인됨',
-              }).render()
-        }
-          <div> ${isDuplicated ? '중복된 아이디입니다.' : ''}</div>
-        </div>
-        ${new StyledButton({
-          style: styles.submitBtn[canSubmit ? 'active' : 'disabled'] + styles.btnCommon,
-          disabled: !canSubmit,
-          text: 'Sign up',
-        }).render()}
-      </form>`;
+      </div>`;
   }
 
   onInput(e) {
@@ -115,8 +144,12 @@ class SignupForm extends Component {
     e.preventDefault();
     const { userid } = this.state;
     const res = await requestCheckExistUser(userid);
-
-    if (res.ok) this.setState.call(this, { isDuplicated: res.isDuplicated, isIdDirty: false });
+    if (res.ok) {
+      this.setState.call(this, { isDuplicated: res.isDuplicated, isIdDirty: false, isPopUp: true });
+      setTimeout(() => {
+        this.setState.call(this, { isPopUp: false });
+      }, 1200);
+    }
   }
 
   addEventListener() {

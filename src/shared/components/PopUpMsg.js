@@ -15,7 +15,7 @@ const styles = {
     color: theme['white-color'],
     font: theme['font-kr-light'],
     'font-size': '1.4rem',
-    transition: 'all 1s',
+    transition: 'top 1s',
   }),
   show: styled({
     top: '0',
@@ -28,10 +28,10 @@ const styles = {
 class PopUpMsg extends Component {
   domStr() {
     return `
-      <p ${styles.baseMsg} ${this.props.isPopUp ? styles.show : styles.hide}>
+      <p ${styles.baseMsg} ${this.props.isPopUp ? styles.show : styles.hide} ${this.props.style}>
         ${this.props.msg}
       </p>
-    </div>`;
+    `;
   }
 }
 

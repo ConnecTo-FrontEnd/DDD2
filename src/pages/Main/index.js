@@ -2,6 +2,18 @@ import Component from '../../library/Component.js';
 import { ProblemList, HistoryList, MoreFeatures } from './components/index.js';
 import { Header } from '../../shared/components/index.js';
 import { userInfo } from '../../shared/store/userInfo.js';
+import styled from '../../library/styled.js';
+
+const styles = {
+  problemHistoryContainer: styled({
+    '@desktop': {
+      display: 'flex',
+      'flex-direction': 'column',
+      margin: '0 auto',
+      padding: '2rem',
+    },
+  }),
+};
 
 class Main extends Component {
   domStr() {
