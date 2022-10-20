@@ -30,6 +30,18 @@ const styles = {
   itemContainer: styled({
     width: '100%',
   }),
+  lastContainer: styled({
+    'margin-top': '20px',
+    width: '100%',
+    height: '200px',
+    font: theme['font-kr-bold'],
+    background: 'no-repeat center url(../../assets/choonsik2.svg)',
+    '@desktop': {
+      height: '220px',
+      'font-size': '20px',
+      background: 'no-repeat left url(../../assets/choonsik2.svg), no-repeat right url(../../assets/choonsik1.svg)',
+    },
+  }),
 };
 
 class HistoryList extends Component {
@@ -41,7 +53,7 @@ class HistoryList extends Component {
         <div ${styles.container}>
           <h2 ${styles.title}>Last</h2>
           ${expired.length === 0 ? 
-            `<div>아직 기한이 지난 문제가 없네요!</div>`:  
+            `<div ${styles.lastContainer}>"벌써 다 풀다니.. 대단해!"</div>`:  
             `<ul ${styles.itemContainer}>
               ${expired.map(problem => new HistoryItem({problem}).render()).join('')}
             </ul>

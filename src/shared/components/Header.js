@@ -14,14 +14,6 @@ const styles = {
     '@desktop': {
       transform: 'translateX(0)',
     },
-    // ':onMouseOver': {
-    //   zoom: '1.1',
-    //   'background-color': 'skyblue',
-    // },
-    // ':onMouseOut': {
-    //   zoom: '1',
-    //   'background-color': 'white',
-    // },
   }),
 
   logoBtn: styled({
@@ -36,7 +28,7 @@ class Header extends Component {
     return `
       <header ${styles.header} >
         <button ${styles.logoBtn} class="logo-button"></button>
-        ${this.props?.isMain ? (userInfo ? new Profile().render() : new LoginButton().render()) : ''}
+        ${this.props.children ? this.props.children : ''}
       </header>`;
   }
 
