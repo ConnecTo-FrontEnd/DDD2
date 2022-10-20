@@ -1,7 +1,7 @@
 const regExps = {
   styles: /style="([^"])*"/g,
   firstTag: /<[^>]*>/,
-  lastTag: /<\/[^\/]*>$/,
+  lastTag: /<\/[^\/]*>\s*$/,
   tags: /<[^>]*>/g,
   pseudos: /:on([^{])*={([^}])*}/g,
   mobiles: /@mobile={([^\}])*}/g,
@@ -57,8 +57,8 @@ const mediaQueryProcessor = domStr => {
       mediaQueryUUID
     );
   });
-
-  if ([..._mobiles, ..._desktops].length === 0) return originalDomStr;
+  // console.log(_mobiles);
+  // if ([..._mobiles, ..._desktops].length === 0) return originalDomStr;
 
   const converter = devices =>
     devices
@@ -71,7 +71,7 @@ const mediaQueryProcessor = domStr => {
 
   const styleDomStr = `
     <style>
-      @media screen and (max-width: ${breakpoint - 1}px){
+      @media screen and (max-width: ${breakpoint}px){
         ${_mobiles.length > 0 ? _mobiles.map(createMediaQuery).join('') : ''} 
       } 
       @media screen and (min-width: ${breakpoint}px){
@@ -79,8 +79,11 @@ const mediaQueryProcessor = domStr => {
       }
     </style>
     `;
-
-  return originalDomStr.replace(regExps.lastTag, tag => styleDomStr + tag);
+  console.log(originalDomStr);
+  return originalDomStr.replace(regExps.lastTag, tag => {
+    console.log(tag);
+    return styleDomStr + tag;
+  });
 };
 
 export {
