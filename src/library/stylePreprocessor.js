@@ -60,18 +60,22 @@ const mediaQueryProcessor = domStr => {
 
   if ([..._mobiles, ..._desktops].length === 0) return originalDomStr;
 
-  const converter = devices => devices.map(device => device.split('{')[1].replace('}', ';')).join('');
+  const converter = devices =>
+    devices
+      .map(device => device.split('{')[1].replace('}', ';'))
+      .join('')
+      .replaceAll(';', ' !important;');
 
   const createMediaQuery = ({ mediaQueryUUID, devices }) =>
     `[data-media-query="${mediaQueryUUID}"]{${converter(devices)}}`;
 
   const styleDomStr = `
     <style>
-      @media screen and (max-width: ${breakpoint}px){
+      @media screen and (max-width: ${breakpoint - 1}px){
         ${_mobiles.length > 0 ? _mobiles.map(createMediaQuery).join('') : ''} 
       } 
       @media screen and (min-width: ${breakpoint}px){
-        ${_desktops.length > 0 ? _desktops.map(createMediaQuery).join('') : ''}}
+        ${_desktops.length > 0 ? _desktops.map(createMediaQuery).join('') : ''}
       }
     </style>
     `;

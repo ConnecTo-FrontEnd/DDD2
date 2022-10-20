@@ -2,7 +2,6 @@ import Component from '../../library/Component.js';
 import { ProblemList, HistoryList, MoreFeatures } from './components/index.js';
 import { Header, LoginButton, Profile } from '../../shared/components/index.js';
 import { userInfo } from '../../shared/store/userInfo.js';
-import styled from '../../library/styled.js';
 
 class Main extends Component {
   domStr() {
