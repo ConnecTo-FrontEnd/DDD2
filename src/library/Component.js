@@ -18,8 +18,8 @@ class Component {
     let result = domStr;
     result = uuidAdder(result, this.uuid);
     result = styleCombinator(result);
-    result = mediaQueryProcessor(result);
     result = pseudoClassProcessor(result);
+    result = mediaQueryProcessor(result);
     return result;
   }
 

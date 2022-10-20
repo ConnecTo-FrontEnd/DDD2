@@ -1,6 +1,6 @@
 import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
-import theme from '../styles/theme.js';
+import { theme } from '../styles/theme.js';
 
 const styles = {
   container: styled({
@@ -8,9 +8,6 @@ const styles = {
     'flex-direction': 'column',
     'align-items': 'flex-start',
     gap: '0.2rem',
-    '@desktop': {
-      margin: '1rem 0px',
-    },
   }),
   label: styled({
     font: theme['font-en-bold'],
@@ -50,9 +47,9 @@ class SchemeInput extends Component {
     const { type, id, required, label, name, value, errorMsg, isValid, accept } = this.props.scheme;
     // prettier-ignore
     return `
-      <div ${styles.container}>
+      <div ${styles.container} ${this.props?.style ?? ''}>
         <label ${styles.label} for="${id}">${label}</label>
-        <input ${!!value && isValid===false ? styles.input.invalid : styles.input.valid} ${this.props.style ?? ''}
+        <input ${!!value && isValid===false ? styles.input.invalid : styles.input.valid} 
           value="${value}" 
           type="${type}" 
           id="${id}" 

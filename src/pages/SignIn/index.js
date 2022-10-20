@@ -1,36 +1,23 @@
 import Component from '../../library/Component.js';
-import { Header } from '../../shared/components/index.js';
+import { Header, Title } from '../../shared/components/index.js';
 import { router } from '../../shared/router/index.js';
 import { SigninForm } from './components/index.js';
-import styled from '../../library/styled.js';
-import theme from '../../shared/styles/theme.js';
+import { commonStyles } from '../../shared/styles/theme.js';
+import formStyles from '../../shared/styles/formStyles.js';
 
-const styles = {
-  title: styled({
-    'text-align': 'center',
-    width: '100%',
-    font: theme['font-en-bold'],
-    'font-size': '47px',
-  }),
-  linkContainer: styled({
-    font: theme['font-kr-regular'],
-    'font-size': '15px',
-    'margin-top': '0.5rem',
-  }),
-  link: styled({
-    color: theme['orange-color'],
-  }),
-};
 class SignIn extends Component {
   domStr() {
     return `
       <div>
         ${new Header().render()}
-        <h1 ${styles.title}>AllSol</h1>
-        ${new SigninForm().render()}
-        <div ${styles.linkContainer}>
-          Don't have an account?
-          <button ${styles.link} class="signup-link">Sign up</button>
+        <div ${commonStyles.mdContainer}>
+          ${new Title({ title: 'AllSol', style: formStyles.title }).render()}
+          <i ${formStyles.subtitle}>"Your future starts today"</i>
+          ${new SigninForm().render()}
+          <div ${formStyles.linkContainer}>
+            Don't have an account?
+            <button ${formStyles.link} class="signup-link">Sign up</button>
+          </div>
         </div>
       </div>
     `;

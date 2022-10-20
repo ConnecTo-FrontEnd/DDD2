@@ -1,7 +1,7 @@
 import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
 import { router } from '../router/index.js';
-import theme from '../styles/theme.js';
+import { theme } from '../styles/theme.js';
 
 const styles = {
   loginButton: styled({

@@ -1,11 +1,11 @@
-import { SignIn, Main, SignUp, Setting, NotFound } from '../../pages/index.js';
+import { SignIn, Home, SignUp, Setting, NotFound } from '../../pages/index.js';
 import { render } from '../../library/render/index.js';
 import { userInfo } from '../store/userInfo.js';
 
 const routes = [
   {
     path: '/',
-    page: Main,
+    page: Home,
     get shouldRedirect() {
       return false;
     },

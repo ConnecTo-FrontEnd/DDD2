@@ -4,7 +4,7 @@ import { SelectBox } from './index.js';
 import { router } from '../../../shared/router/index.js';
 import { StyledButton, PopUpMsg, Title } from '../../../shared/components/index.js';
 import styled from '../../../library/styled.js';
-import theme from '../../../shared/styles/theme.js';
+import { commonStyles, theme } from '../../../shared/styles/theme.js';
 // import Title from '../../../shared/components/Title.js';
 import PlatformContainer from './PlatformContainer.js';
 // import PopUpMsg from '../../../shared/components/PopUpMsg.js';
@@ -68,7 +68,7 @@ class UserSetting extends Component {
 
   domStr() {
     return `
-    <div ${styles.container}>
+    <div ${commonStyles.mdContainer}>
     ${new Title({ title: 'Setting' }).render()}
     <image ${styles.profileImage} src="./../assets/profile.svg" />
     <form>

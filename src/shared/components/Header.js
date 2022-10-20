@@ -1,8 +1,7 @@
 import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
 import { router } from '../router/index.js';
-import { userInfo } from '../store/userInfo.js';
-import LoginButton from './LoginButton.js';
+import { commonStyles } from '../styles/theme.js';
 import Profile from './Profile.js';
 
 const styles = {
@@ -11,9 +10,6 @@ const styles = {
     'justify-content': 'space-between',
     padding: '33px 26px',
     height: '96px',
-    '@desktop': {
-      transform: 'translateX(0)',
-    },
   }),
 
   logoBtn: styled({
@@ -26,7 +22,7 @@ const styles = {
 class Header extends Component {
   domStr() {
     return `
-      <header ${styles.header} >
+      <header ${styles.header} ${commonStyles.lgContainer} >
         <button ${styles.logoBtn} class="logo-button"></button>
         ${this.props?.children ?? ''}
       </header>`;

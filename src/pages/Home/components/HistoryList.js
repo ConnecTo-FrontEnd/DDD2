@@ -2,7 +2,7 @@ import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import { getGuestCategorizedProblems } from '../../../shared/store/guestInfo.js';
 import { getCategorizedProblems, requestDeleteProblem, userInfo } from '../../../shared/store/userInfo.js';
-import theme from '../../../shared/styles/theme.js';
+import {theme} from '../../../shared/styles/theme.js';
 import { HistoryItem } from './index.js';
 
 const styles = {

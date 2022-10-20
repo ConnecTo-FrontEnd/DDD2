@@ -1,14 +1,22 @@
 import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
+import { theme } from '../styles/theme.js';
 
 const styles = {
   button: styled({
-    margin: '0 auto',
-    width: '70%',
-    height: '3rem',
+    width: '100%',
+    padding: '0.5rem 1rem',
     'border-radius': '10px',
-    'font-size': '1rem',
-    'background-color': '#f7f7f7',
+    'background-color': theme['orange-color'],
+    color: theme['white-color'],
+    ':onMouseOver': {
+      color: theme['black-color'],
+      'background-color': theme['lightorange-color'],
+    },
+    ':onMouseOut': {
+      color: theme['white-color'],
+      'background-color': theme['orange-color'],
+    },
   }),
 };
 class StyledButton extends Component {

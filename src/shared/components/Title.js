@@ -1,6 +1,6 @@
 import Component from '../../library/Component.js';
 import styled from '../../library/styled.js';
-import theme from '../styles/theme.js';
+import { theme } from '../styles/theme.js';
 
 const styles = {
   title: styled({
@@ -16,7 +16,7 @@ const styles = {
 
 class Title extends Component {
   domStr() {
-    return `<h1 ${styles.title}>${this.props.title}</h1>`;
+    return `<h1 ${styles.title} ${this.props?.style ?? ''}>${this.props.title}</h1>`;
   }
 }
 

@@ -8,7 +8,7 @@ import {
   requestCheckSolvedProblem,
   userInfo,
 } from '../../../shared/store/userInfo.js';
-import theme from '../../../shared/styles/theme.js';
+import {theme} from '../../../shared/styles/theme.js';
 import { ProblemItem, Loading } from './index.js';
 
 const styles = {

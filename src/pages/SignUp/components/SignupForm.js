@@ -4,64 +4,36 @@ import { SignupScheme } from '../../../shared/scheme/scheme.js';
 import { requestSignUp, requestCheckExistUser } from '../../../shared/store/userInfo.js';
 import { router } from '../../../shared/router/index.js';
 import styled from '../../../library/styled.js';
-import theme from '../../../shared/styles/theme.js';
+import { theme } from '../../../shared/styles/theme.js';
+import formStyles from '../../../shared/styles/formStyles.js';
 
 const styles = {
-  form: styled({
-    position: 'relative',
-    margin: '32px auto 0px',
-    padding: '0 2rem',
-    '@desktop': {
-      width: '900px',
-      padding: '0 4rem',
-    },
-  }),
-  btnCommon: styled({
-    width: '100%',
-    'margin-top': '1rem',
-    'border-radius': '10px',
-    font: theme['font-kr-bold'],
-    'font-size': '16px',
-    color: 'white',
-  }),
-  checkCommon: styled({
-    position: 'absolute',
-    top: '2.6rem',
-    right: '2rem',
-    width: '65px',
-    'border-radius': '10px',
-    font: theme['font-kr-bold'],
-    'font-size': '16px',
-    color: 'white',
-    '@desktop': {
-      right: '4rem',
-    },
-  }),
-  submitBtn: {
-    active: styled({
+  checkBtn: {
+    common: styled({
+      width: '100px',
+      'border-radius': '10px',
+      font: theme['font-kr-bold'],
+      'font-size': '16px',
+      color: 'white',
+      height: '3rem',
+      'margin-bottom': '23px',
+    }),
+    checked: styled({
       'background-color': theme['orange-color'],
     }),
-    disabled: styled({
+    unchecked: styled({
       'background-color': theme['lightgray-color'],
     }),
   },
-  doubleCheckBtn: styled({
-    'background-color': theme['lightgray-color'],
-  }),
-  checkedMsg: styled({
-    'background-color': theme['orange-color'],
+  emailCheckContainer: styled({
+    display: 'flex',
+    width: '100%',
+    'column-gap': '1rem',
+    'align-items': 'end',
   }),
   emailInput: styled({
-    width: 'calc(99% - 65px)',
+    flex: 1,
   }),
-  popUpMsg: {
-    invalid: styled({
-      'background-color': theme['lightgray-color'],
-    }),
-    valid: styled({
-      'background-color': theme['orange-color'],
-    }),
-  },
 };
 
 class SignupForm extends Component {
@@ -90,7 +62,8 @@ class SignupForm extends Component {
 
     return `
       <div>
-        <form ${styles.form} class="signup-form">
+        <form class="signup-form">
+        <div ${styles.emailCheckContainer}>
           ${new SchemeInput({
             scheme: this.signupScheme.userid,
             onInput: this.onInput.bind(this),
@@ -100,17 +73,19 @@ class SignupForm extends Component {
             isDuplicated === null || isDuplicated || isIdDirty
               ? new StyledButton({
                   type: 'button',
-                  style: styles.doubleCheckBtn + styles.checkCommon,
+                  style: styles.checkBtn.common + styles.checkBtn.unchecked,
                   text: '중복확인',
                   disabled: !_userid.isValid,
                   onClick: this.onClickBtn.bind(this),
                 }).render()
               : new StyledButton({
                   type: 'button',
-                  style: styles.checkedMsg + styles.checkCommon,
+                  style: styles.checkBtn.common + styles.checkBtn.checked,
                   text: '확인됨',
                 }).render()
           }
+        </div>
+          
           ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
           ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
           ${new SchemeInput({
@@ -121,7 +96,7 @@ class SignupForm extends Component {
 
           </div>
           ${new StyledButton({
-            style: styles.submitBtn[canSubmit ? 'active' : 'disabled'] + styles.btnCommon,
+            style: formStyles.submitBtn[canSubmit ? 'active' : 'disabled'] + formStyles.submitBtn.common,
             disabled: !canSubmit,
             text: 'Sign up',
           }).render()}
@@ -129,7 +104,7 @@ class SignupForm extends Component {
         ${new PopUpMsg({
           msg: isDuplicated ? '중복된 아이디 입니다.' : '사용가능한 아이디 입니다.',
           isPopUp: this.state.isPopUp,
-          style: styles.popUpMsg[isDuplicated ? 'invalid' : 'valid'],
+          style: formStyles.popUpMsg[isDuplicated ? 'invalid' : 'valid'],
         }).render()}
       </div>`;
   }

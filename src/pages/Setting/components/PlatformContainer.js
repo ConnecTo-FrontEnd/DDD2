@@ -1,7 +1,7 @@
 import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import PLATFORMS from '../../../shared/constants/platforms.js';
-import theme from '../../../shared/styles/theme.js';
+import { theme } from '../../../shared/styles/theme.js';
 
 const styles = {
   platformContainer: styled({
