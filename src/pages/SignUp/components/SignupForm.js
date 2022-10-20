@@ -96,13 +96,6 @@ class SignupForm extends Component {
             onInput: this.onInput.bind(this),
             style: styles.emailInput,
           }).render()}
-          ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
-          ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
-          ${new SchemeInput({
-            scheme: this.signupScheme['confirm-password'],
-            onInput: this.onInput.bind(this),
-          }).render()}
-          <div>
           ${
             isDuplicated === null || isDuplicated || isIdDirty
               ? new StyledButton({
@@ -118,6 +111,14 @@ class SignupForm extends Component {
                   text: '확인됨',
                 }).render()
           }
+          ${new SchemeInput({ scheme: this.signupScheme.nickname, onInput: this.onInput.bind(this) }).render()}
+          ${new SchemeInput({ scheme: this.signupScheme.password, onInput: this.onInput.bind(this) }).render()}
+          ${new SchemeInput({
+            scheme: this.signupScheme['confirm-password'],
+            onInput: this.onInput.bind(this),
+          }).render()}
+          <div>
+
           </div>
           ${new StyledButton({
             style: styles.submitBtn[canSubmit ? 'active' : 'disabled'] + styles.btnCommon,
