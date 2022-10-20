@@ -1,9 +1,6 @@
 import { render, eventHolder } from './render/index.js';
+import { mediaQueryProcessor, pseudoClassProcessor, styleCombinator, uuidAdder } from './stylePreprocessor.js';
 
-const breakpoint = 900;
-window.matchMedia(`(max-width:  ${breakpoint}px)`).addEventListener('change', e => {
-  render();
-});
 class Component {
   constructor(props) {
     this.state = {};
@@ -19,68 +16,11 @@ class Component {
 
   preprocessor(domStr) {
     let result = domStr;
-    result = this.uuidAdder(result);
-    result = this.styleCombinator(result);
-    result = this.mediaQueryProcessor(result);
-    result = this.pseudoClassProcessor(result);
-
+    result = uuidAdder(result, this.uuid);
+    result = styleCombinator(result);
+    result = mediaQueryProcessor(result);
+    result = pseudoClassProcessor(result);
     return result;
-  }
-
-  uuidAdder(domStr) {
-    const firstTag = /<[^>]*>/;
-    return domStr.replace(firstTag, tag => tag.split('>')[0] + ` data-uuid="${this.uuid}">`);
-  }
-
-  styleCombinator(domStr) {
-    const tags = /<[^>]*>/g;
-
-    return domStr.replaceAll(tags, tag => {
-      if (!tag.includes('style')) return tag;
-
-      const styleRegex = /style="([^"])*"/g;
-      const styles = [...tag.match(styleRegex)].map(style => style.split('"')[1]).join('');
-      return tag.replaceAll(styleRegex, '').split('>')[0] + ` style="${styles}">`;
-    });
-  }
-
-  mediaQueryProcessor(domStr) {
-    const tags = /<[^>]*>/g;
-    const isMobile = window.matchMedia(`(max-width:  ${breakpoint}px)`).matches;
-    const isDesktop = window.matchMedia(`(min-width:  ${breakpoint}px)`).matches;
-    const mobileRegex = /@mobile={([^\}])*}/g;
-    const desktopRegex = /@desktop={([^\}])*}/g;
-    return domStr.replaceAll(tags, tag => {
-      if (!tag.includes('style')) return tag;
-
-      if (isMobile) {
-        tag = tag.replace(mobileRegex, mediaQuery => mediaQuery.split('{')[1].replace('}', ';'));
-        tag = tag.replace(desktopRegex, '');
-      }
-      if (isDesktop) {
-        tag = tag.replace(desktopRegex, mediaQuery => mediaQuery.split('{')[1].replace('}', ';'));
-        tag = tag.replace(mobileRegex, '');
-      }
-      return tag;
-    });
-  }
-
-  pseudoClassProcessor(domStr) {
-    const tags = /<[^>]*>/g;
-    const pseudoRegex = /:on([^{])*={([^}])*}/g;
-
-    return domStr.replaceAll(tags, tag => {
-      const pseudos = tag.match(pseudoRegex);
-      if (!tag.includes('style') || !pseudos) return tag;
-
-      return (
-        tag.replace(pseudoRegex, '').split('>')[0] +
-        [...pseudos].map(p => p.replace('{', '"').replace('}', '"').replace(':', '')).join('') +
-        '>'
-      );
-
-      // return tag.replace(pseudoRegex, '').split('>')[0] + pseudos.replace('{', '"').replace('}', '"') + '>';
-    });
   }
 
   holdEvents() {
