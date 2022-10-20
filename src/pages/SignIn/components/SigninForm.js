@@ -29,7 +29,7 @@ class SigninForm extends Component {
             text: 'Sign in',
             disabled: !isValid,
           }).render()}
-          ${new PopUpMsg({ msg: errorMsg, isPopUp, style: formStyles.popUpMsg }).render()}
+          ${new PopUpMsg({ msg: errorMsg, isPopUp, style: formStyles.popUpMsg.invalid }).render()}
         </form>
       </div>
       `;

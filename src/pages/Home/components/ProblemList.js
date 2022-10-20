@@ -8,24 +8,16 @@ import {
   requestCheckSolvedProblem,
   userInfo,
 } from '../../../shared/store/userInfo.js';
-import {theme} from '../../../shared/styles/theme.js';
+import { theme } from '../../../shared/styles/theme.js';
 import { ProblemItem, Loading } from './index.js';
 
 const styles = {
-  container: styled({
-    display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-  }),
-
   allsols: styled({
     display: 'flex',
     'justify-content': 'space-between',
     'text-align': 'left',
     width: '100%',
 
-    'padding-left': '26px',
-    'padding-right': '26px',
     font: theme['font-en-bold'],
     'font-size': '28px',
   }),
@@ -33,14 +25,13 @@ const styles = {
     display: 'flex',
     'justify-content': 'center',
     margin: '23px 0 0 0',
-    padding: '20px',
+
     'white-space': 'nowrap',
     'overflow-x': 'scroll',
     'scrollbar-width': 'none',
     gap: '41px',
-    width: '90vw',
+
     '@desktop': {
-      width: '650px',
       'overflow-x': 'hidden',
       'flex-wrap': 'wrap',
       'column-gap': '80px',
@@ -52,11 +43,11 @@ const styles = {
     padding: '20px 20px 20px 5px',
     'white-space': 'nowrap',
     'overflow-x': 'scroll',
+    'overflow-y': 'hidden',
     'scrollbar-width': 'none',
     gap: '41px',
-    width: '90vw',
+
     '@desktop': {
-      width: '650px',
       'overflow-x': 'hidden',
       'flex-wrap': 'wrap',
       'column-gap': '80px',
@@ -123,7 +114,7 @@ class ProblemList extends Component {
     const { unexpired } = userInfo ? getCategorizedProblems() : getGuestCategorizedProblems();
     // prettier-ignore
     return `
-      <div ${styles.container}>
+      <div>
         <div ${styles.allsols}>
           <div ${styles.titleAndShuffle}>
             <span>Allsols</span>

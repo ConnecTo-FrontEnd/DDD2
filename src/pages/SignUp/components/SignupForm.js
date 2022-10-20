@@ -18,10 +18,10 @@ const styles = {
       height: '3rem',
       'margin-bottom': '23px',
     }),
-    checked: styled({
+    active: styled({
       'background-color': theme['orange-color'],
     }),
-    unchecked: styled({
+    inactive: styled({
       'background-color': theme['lightgray-color'],
     }),
   },
@@ -59,7 +59,6 @@ class SignupForm extends Component {
     this.signupScheme['confirm-password'].value = confirmPassword;
     const { userid: _userid, isValid } = this.signupScheme;
     const canSubmit = isValid && isDuplicated === false;
-
     return `
       <div>
         <form class="signup-form">
@@ -73,15 +72,18 @@ class SignupForm extends Component {
             isDuplicated === null || isDuplicated || isIdDirty
               ? new StyledButton({
                   type: 'button',
-                  style: styles.checkBtn.common + styles.checkBtn.unchecked,
+                  style:
+                    styles.checkBtn.common +
+                    (this.signupScheme.userid.isValid ? styles.checkBtn.active : styles.checkBtn.inactive),
                   text: '중복확인',
                   disabled: !_userid.isValid,
                   onClick: this.onClickBtn.bind(this),
                 }).render()
               : new StyledButton({
                   type: 'button',
-                  style: styles.checkBtn.common + styles.checkBtn.checked,
+                  style: styles.checkBtn.common + styles.checkBtn.inactive,
                   text: '확인됨',
+                  disabled: true,
                 }).render()
           }
         </div>

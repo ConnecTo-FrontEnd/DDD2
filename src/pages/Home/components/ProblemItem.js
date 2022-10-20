@@ -2,17 +2,19 @@ import Component from '../../../library/Component.js';
 import styled from '../../../library/styled.js';
 import { router } from '../../../shared/router/index.js';
 import { userInfo } from '../../../shared/store/userInfo.js';
-import {theme} from '../../../shared/styles/theme.js';
+import { theme } from '../../../shared/styles/theme.js';
 
 const styles = {
   solIcon: styled({
-    'background-color': 'red',
+    background: 'url(../../../assets/solved.png)',
+    'background-repeat': 'no-repeat',
+    'background-size': 'contain',
     color: 'white',
     position: 'absolute',
-    top: '10px',
-    right: '20px',
-    width: '40px',
-    height: '40px',
+    bottom: '-2rem',
+    right: '-3rem',
+    width: '8rem',
+    height: '8rem',
   }),
 
   container: styled({
@@ -104,9 +106,14 @@ const styles = {
     right: '18px',
     width: '20px',
     height: '20px',
+    padding: '1rem',
+    border: '1px solid white',
+    'border-radius': '100%',
     'font-size': '16px',
     color: 'white',
     background: 'url(../assets/trashbox-unexpired.svg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
   }),
 };
 
@@ -148,7 +155,7 @@ class ProblemItem extends Component {
             <div ${styles.deadlineContainer}>
               <span>${getDeadline(givenDate, userInfo.setting.day)}</span>
             </div>` : ''}
-            ${solved? `<div ${styles.solIcon}>solved</div>`:''}
+            ${solved? `<div ${styles.solIcon}></div>`:''}
           </div>
         </a>
         ${userInfo ? `<button ${styles.deleteBtn} class="delete-btn" data-problem-id="${id}"></button>` : ''}

@@ -79,11 +79,7 @@ const mediaQueryProcessor = domStr => {
       }
     </style>
     `;
-  console.log(originalDomStr);
-  return originalDomStr.replace(regExps.lastTag, tag => {
-    console.log(tag);
-    return styleDomStr + tag;
-  });
+  return originalDomStr.replace(regExps.lastTag, tag => styleDomStr + tag);
 };
 
 export {

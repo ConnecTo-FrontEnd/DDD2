@@ -15,23 +15,19 @@ const styles = {
     margin: '0.8rem 0 0.5rem',
   }),
   input: {
-    valid: styled({
+    common: styled({
       width: '100%',
       height: '3rem',
-      border: `solid 1px ${theme['lightgray-color']}`,
       'border-radius': '6px',
       padding: '1rem',
       font: theme['font-kr-regular'],
       'font-size': '16px',
     }),
+    valid: styled({
+      border: `solid 1px ${theme['lightgray-color']}`,
+    }),
     invalid: styled({
-      width: '100%',
-      height: '3rem',
       border: `solid 1px ${theme['orange-color']}`,
-      'border-radius': '6px',
-      'padding-left': '8px',
-      font: theme['font-kr-regular'],
-      'font-size': '16px',
     }),
   },
   errorMsg: styled({
@@ -49,7 +45,7 @@ class SchemeInput extends Component {
     return `
       <div ${styles.container} ${this.props?.style ?? ''}>
         <label ${styles.label} for="${id}">${label}</label>
-        <input ${!!value && isValid===false ? styles.input.invalid : styles.input.valid} 
+        <input ${!!value && isValid===false ? styles.input.invalid : styles.input.valid} ${styles.input.common}
           value="${value}" 
           type="${type}" 
           id="${id}" 
