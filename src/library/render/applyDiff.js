@@ -45,7 +45,9 @@ const updateDOM = (parentNode, realNode, virtualNode) => {
 const applyDiff = (realDOM, virtualDOM) => {
   const [realNodes, virtualNodes] = [[...realDOM.childNodes], [...virtualDOM.childNodes]];
   const max = Math.max(realNodes.length, virtualNodes.length);
-
+  [...virtualDOM.attributes].forEach(attr => {
+    realDOM.setAttribute(attr.name, attr.value);
+  });
   for (let i = 0; i < max; i++) {
     updateDOM(realDOM, realNodes[i], virtualNodes[i]);
   }
