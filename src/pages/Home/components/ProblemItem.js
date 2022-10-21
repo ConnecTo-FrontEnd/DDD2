@@ -142,7 +142,7 @@ class ProblemItem extends Component {
           <img src="../assets/lock.svg" ${styles.lockImg} />
           <p ${styles.lockMsg}>Sign in & Unlock</p>
         </div>` : ''}
-        <a href="${link}" target="_blank' rel="noopener noreferrer" class="link-problem" data-problem-id="${id}">
+        <a href="${link}" target="_blank" rel="noopener noreferrer" class="link-problem" data-problem-id="${id}">
           <div ${styles.problemTitleContainer}>
             <div ${styles.blurBg}>
               <span ${styles.problemTitle}>${title}</span>
